@@ -1,0 +1,35 @@
+source 'http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecs.git'
+source 'http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecsMirror.git'
+platform :ios, '9.0'
+
+target 'SportsLife' do
+
+    project 'SportsLife'#新增内容
+use_frameworks!
+pod 'AFNetworking'
+pod 'MJRefresh'
+pod 'IQKeyboardManager'
+pod 'SDWebImage', '~> 5.0.4'
+pod 'MBProgressHUD'
+pod 'SwiftyJSON'
+pod 'WMPageController'
+pod 'FMDB'
+pod 'UMengUShare/UI'
+ # U-Share SDK UI模块（分享面板，建议添加）
+pod 'UMengUShare/Social/Sina'
+ # 集成微信
+pod 'UMengUShare/Social/WeChat'
+ 
+ # 集成QQ
+pod 'UMengUShare/Social/QQ'
+#pod 'Alamofire'
+pod 'YYKit'
+pod 'JSONModel'
+pod 'YWFeedbackFMWK', '~> 2.0.3.1'
+
+pod 'Google-Mobile-Ads-SDK'#谷歌ADs
+pod 'Masonry'
+#pod 'Zip'
+#pod 'SnapKit'
+
+end

@@ -1,0 +1,128 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - BCUserTrack (5.1.0.9):
+    - UTDID
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - Google-Mobile-Ads-SDK (7.20.0)
+  - IQKeyboardManager (4.0.10)
+  - JSONModel (1.7.0)
+  - Masonry (1.0.2)
+  - MBProgressHUD (1.0.0)
+  - MJRefresh (3.1.15)
+  - SDWebImage (4.3.0):
+    - SDWebImage/Core (= 4.3.0)
+  - SDWebImage/Core (4.3.0)
+  - SecurityGuardSDK (5.1.94)
+  - SGMain (5.1.94):
+    - SecurityGuardSDK (= 5.1.94)
+  - SwiftyJSON (3.1.4)
+  - UMengUShare/Core (6.4.4):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.4.4)
+  - UMengUShare/Social/QQ (6.4.4):
+    - UMengUShare/Core
+    - UMengUShare/Social/ReducedQQ
+  - UMengUShare/Social/ReducedQQ (6.4.4):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedSina (6.4.4):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedWeChat (6.4.4):
+    - UMengUShare/Core
+  - UMengUShare/Social/Sina (6.4.4):
+    - UMengUShare/Core
+    - UMengUShare/Social/ReducedSina
+  - UMengUShare/Social/WeChat (6.4.4):
+    - UMengUShare/Core
+    - UMengUShare/Social/ReducedWeChat
+  - UMengUShare/UI (6.4.4):
+    - UMengUShare/Core
+  - UTDID (1.1.0.16)
+  - WMPageController (2.3.0)
+  - YWFeedbackFMWK (2.0.3.1):
+    - BCUserTrack
+    - SecurityGuardSDK
+    - SGMain
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - AFNetworking
+  - FMDB
+  - Google-Mobile-Ads-SDK
+  - IQKeyboardManager
+  - JSONModel
+  - Masonry
+  - MBProgressHUD
+  - MJRefresh
+  - SDWebImage
+  - SwiftyJSON
+  - UMengUShare/Social/QQ
+  - UMengUShare/Social/Sina
+  - UMengUShare/Social/WeChat
+  - UMengUShare/UI
+  - WMPageController
+  - YWFeedbackFMWK (~> 2.0.3.1)
+  - YYKit
+
+SPEC REPOS:
+  http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecs.git:
+    - BCUserTrack
+    - SecurityGuardSDK
+    - SGMain
+    - UTDID
+    - YWFeedbackFMWK
+  http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecsMirror.git:
+    - AFNetworking
+    - FMDB
+    - Google-Mobile-Ads-SDK
+    - IQKeyboardManager
+    - JSONModel
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - SDWebImage
+    - SwiftyJSON
+    - UMengUShare
+    - WMPageController
+    - YYKit
+
+SPEC CHECKSUMS:
+  AFNetworking: 18af9c7b41a3fd4d184bc1d3a9f0f32ddb90179b
+  BCUserTrack: 684f468b8143be7a2ed10a8c449fd959b2a3a099
+  FMDB: dcbf7ce43a65d015d5e88cef383b9693b819f108
+  Google-Mobile-Ads-SDK: 168312cdc167fa22746d4ea8e839fc4825dd2966
+  IQKeyboardManager: 12b63a9a5a7574f7f1ebdcbf3e24bfb93de32eb3
+  JSONModel: a0a877cd66151ed0a205449c11c8f4f718ba468c
+  Masonry: 51cb76bcc3fea78dad2c7f2ae97c6ec5c0f5c102
+  MBProgressHUD: 3a0586c59f596fc6c20a64e56c65b8207541addc
+  MJRefresh: 4185131563afd208972fe2406208e16ae9354c56
+  SDWebImage: e2c42df193dbe741d8ff3a42591b69a88396699e
+  SecurityGuardSDK: 05f6d782189160f2b23b731eed5cb314ce584855
+  SGMain: 8a3008d8a709259d4868f78ae3265659e58e4416
+  SwiftyJSON: daa3156b55d1bc42358f1fd57b240d79c56c409a
+  UMengUShare: cd54ae52958426b79aa9193a7b02058d6a6d9aa0
+  UTDID: c28855683c5ea2e77e597cb14609328f7d470d6e
+  WMPageController: 47b255e54f6e769179c85e687bd65a67cc98c5fa
+  YWFeedbackFMWK: dcf0f60a24099f9a35d3445ae9ef79f3633ef9f6
+  YYKit: fa4ab6a1758d7cf2d4ff6959bc0c711f5874a3d0
+
+PODFILE CHECKSUM: 52a31d3619c98fbdb43f9f42121cd1094fc245b1
+
+COCOAPODS: 1.7.2
