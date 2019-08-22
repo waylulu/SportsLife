@@ -9,7 +9,7 @@ use_frameworks!
 pod 'AFNetworking'
 pod 'MJRefresh'
 pod 'IQKeyboardManager'
-pod 'SDWebImage', '~> 5.0.4'
+pod 'SDWebImage'
 pod 'MBProgressHUD'
 pod 'SwiftyJSON'
 pod 'WMPageController'
