@@ -54,6 +54,7 @@
 - (IBAction)rightClickBtn:(id)sender{
     
     HTWebViewViewController * vc = [HTWebViewViewController new];
+    vc.url = @"https://www.baidu.com";
     [self.navigationController pushViewController:vc animated:true];
     
 }

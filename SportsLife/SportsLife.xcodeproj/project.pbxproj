@@ -29,10 +29,22 @@
 		14DB2CF6230E2FD20014F19C /* HTBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CD7230E2FD20014F19C /* HTBaseTableViewController.swift */; };
 		14DB2CF7230E2FD20014F19C /* HTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CD8230E2FD20014F19C /* HTBaseViewController.swift */; };
 		14DB2CF8230E2FD20014F19C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CD9230E2FD20014F19C /* AppDelegate.swift */; };
-		14DB2CF9230E2FD20014F19C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14DB2CDA230E2FD20014F19C /* Info.plist */; };
 		14DB2CFA230E2FD20014F19C /* ShopCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CDE230E2FD20014F19C /* ShopCollectionViewController.swift */; };
 		14DB2CFB230E2FD20014F19C /* GamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CE2230E2FD20014F19C /* GamesTableViewController.swift */; };
-		777ED5D017549E5CD81CDA03 /* Pods_SportsLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 533DA9604F19D714F6EF2D3C /* Pods_SportsLife.framework */; };
+		14DB2CFD230E31220014F19C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2CFC230E31220014F19C /* Accelerate.framework */; };
+		14DB2CFF230E312A0014F19C /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2CFE230E312A0014F19C /* AssetsLibrary.framework */; };
+		14DB2D01230E31310014F19C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2D00230E31310014F19C /* CoreFoundation.framework */; };
+		14DB2D03230E313B0014F19C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2D02230E313B0014F19C /* CoreGraphics.framework */; };
+		14DB2D05230E31430014F19C /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2D04230E31430014F19C /* CoreImage.framework */; };
+		14DB2D07230E314A0014F19C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2D06230E314A0014F19C /* CoreText.framework */; };
+		14DB2D09230E31510014F19C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2D08230E31510014F19C /* CoreTelephony.framework */; };
+		14DB2D0B230E31590014F19C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2D0A230E31590014F19C /* Foundation.framework */; };
+		14DB2D0D230E31610014F19C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2D0C230E31610014F19C /* ImageIO.framework */; };
+		14DB2D0F230E316F0014F19C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2D0E230E316F0014F19C /* MobileCoreServices.framework */; };
+		14DB2D11230E31780014F19C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2D10230E31780014F19C /* QuartzCore.framework */; };
+		14DB2D13230E317E0014F19C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2D12230E317E0014F19C /* SystemConfiguration.framework */; };
+		14DB2D15230E31850014F19C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2D14230E31850014F19C /* Security.framework */; };
+		14DB2D17230E318C0014F19C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2D16230E318C0014F19C /* UIKit.framework */; };
 		7E7F330020DB9D1E00AA02EE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7E7F32FF20DB9D1D00AA02EE /* Podfile */; };
 		7EFC38D220DA2CCE005616D0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EFC38D120DA2CCE005616D0 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
@@ -61,10 +73,24 @@
 		14DB2CD7230E2FD20014F19C /* HTBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTBaseTableViewController.swift; sourceTree = "<group>"; };
 		14DB2CD8230E2FD20014F19C /* HTBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTBaseViewController.swift; sourceTree = "<group>"; };
 		14DB2CD9230E2FD20014F19C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		14DB2CDA230E2FD20014F19C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14DB2CDB230E2FD20014F19C /* OCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCViewController.h; sourceTree = "<group>"; };
 		14DB2CDE230E2FD20014F19C /* ShopCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewController.swift; sourceTree = "<group>"; };
 		14DB2CE2230E2FD20014F19C /* GamesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesTableViewController.swift; sourceTree = "<group>"; };
+		14DB2CFC230E31220014F19C /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		14DB2CFE230E312A0014F19C /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		14DB2D00230E31310014F19C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		14DB2D02230E313B0014F19C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		14DB2D04230E31430014F19C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		14DB2D06230E314A0014F19C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		14DB2D08230E31510014F19C /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		14DB2D0A230E31590014F19C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		14DB2D0C230E31610014F19C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		14DB2D0E230E316F0014F19C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		14DB2D10230E31780014F19C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		14DB2D12230E317E0014F19C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		14DB2D14230E31850014F19C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		14DB2D16230E318C0014F19C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		14DB2D1A230E33190014F19C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		533DA9604F19D714F6EF2D3C /* Pods_SportsLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7F32FF20DB9D1D00AA02EE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7EFC389C20DA2884005616D0 /* SportsLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +104,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				777ED5D017549E5CD81CDA03 /* Pods_SportsLife.framework in Frameworks */,
+				14DB2D17230E318C0014F19C /* UIKit.framework in Frameworks */,
+				14DB2D15230E31850014F19C /* Security.framework in Frameworks */,
+				14DB2D13230E317E0014F19C /* SystemConfiguration.framework in Frameworks */,
+				14DB2D11230E31780014F19C /* QuartzCore.framework in Frameworks */,
+				14DB2D0F230E316F0014F19C /* MobileCoreServices.framework in Frameworks */,
+				14DB2D0D230E31610014F19C /* ImageIO.framework in Frameworks */,
+				14DB2D0B230E31590014F19C /* Foundation.framework in Frameworks */,
+				14DB2D09230E31510014F19C /* CoreTelephony.framework in Frameworks */,
+				14DB2D07230E314A0014F19C /* CoreText.framework in Frameworks */,
+				14DB2D05230E31430014F19C /* CoreImage.framework in Frameworks */,
+				14DB2D03230E313B0014F19C /* CoreGraphics.framework in Frameworks */,
+				14DB2D01230E31310014F19C /* CoreFoundation.framework in Frameworks */,
+				14DB2CFF230E312A0014F19C /* AssetsLibrary.framework in Frameworks */,
+				14DB2CFD230E31220014F19C /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +193,7 @@
 		14DB2CCD230E2FD20014F19C /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				14DB2D1A230E33190014F19C /* Info.plist */,
 				14DB2CCE230E2FD20014F19C /* ViewController.swift */,
 				14DB2CCF230E2FD20014F19C /* RootTabBarViewController.swift */,
 				14DB2CD0230E2FD20014F19C /* Assets.xcassets */,
@@ -164,7 +204,6 @@
 				14DB2CD7230E2FD20014F19C /* HTBaseTableViewController.swift */,
 				14DB2CD8230E2FD20014F19C /* HTBaseViewController.swift */,
 				14DB2CD9230E2FD20014F19C /* AppDelegate.swift */,
-				14DB2CDA230E2FD20014F19C /* Info.plist */,
 				14DB2CDB230E2FD20014F19C /* OCViewController.h */,
 			);
 			path = Other;
@@ -212,6 +251,20 @@
 		4EB67C44752F295A0C4B1E3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				14DB2D16230E318C0014F19C /* UIKit.framework */,
+				14DB2D14230E31850014F19C /* Security.framework */,
+				14DB2D12230E317E0014F19C /* SystemConfiguration.framework */,
+				14DB2D10230E31780014F19C /* QuartzCore.framework */,
+				14DB2D0E230E316F0014F19C /* MobileCoreServices.framework */,
+				14DB2D0C230E31610014F19C /* ImageIO.framework */,
+				14DB2D0A230E31590014F19C /* Foundation.framework */,
+				14DB2D08230E31510014F19C /* CoreTelephony.framework */,
+				14DB2D06230E314A0014F19C /* CoreText.framework */,
+				14DB2D04230E31430014F19C /* CoreImage.framework */,
+				14DB2D02230E313B0014F19C /* CoreGraphics.framework */,
+				14DB2D00230E31310014F19C /* CoreFoundation.framework */,
+				14DB2CFE230E312A0014F19C /* AssetsLibrary.framework */,
+				14DB2CFC230E31220014F19C /* Accelerate.framework */,
 				533DA9604F19D714F6EF2D3C /* Pods_SportsLife.framework */,
 			);
 			name = Frameworks;
@@ -324,7 +377,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14DB2CF9230E2FD20014F19C /* Info.plist in Resources */,
 				14DB2CF5230E2FD20014F19C /* Main.storyboard in Resources */,
 				14DB2CEC230E2FD20014F19C /* 文档 in Resources */,
 				7E7F330020DB9D1E00AA02EE /* Podfile in Resources */,

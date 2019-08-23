@@ -46,7 +46,7 @@ class PresentChooseViewController: UIViewController ,UIGestureRecognizerDelegate
     
     func configUI(){
         
-        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)//蒙版
+        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)//蒙版//子视图不透明
         sourceView.backgroundColor = UIColor.white;
         self.view.addSubview(sourceView);
 //        self.view.addSubview(self.leftBtn);
