@@ -48,9 +48,9 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
     }
     
     func setSegmentUI(){
-//        segmentTitles = ["1","2","3","4"]
+        segmentTitles = ["1","2","3","4"]
         seg = UISegmentedControl.init(items: segmentTitles);
-        seg.frame = CGRect(x: (WIDTH - SegWidth) / 2, y: 0, width: SegWidth, height: 35)
+        seg.frame = CGRect(x: (WIDTH -  SegWidth * CGFloat(segmentTitles.count)) / 2, y: 0, width: SegWidth * CGFloat(segmentTitles.count), height: 35)
         self.navigationController?.navigationBar.addSubview(seg);
         seg.backgroundColor = UIColor.white;
         seg.tintColor = UIColor.orange;
@@ -125,12 +125,20 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
         print(tableView.tag);
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row)";
+        cell.textLabel?.text = "\(arc4random())";
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let alert = UIAlertController.init(title: "", message: "点击了第\(tableView.tag)tableView的\(indexPath.row)", preferredStyle: .alert)
         
-        AlertView.shard.MBProgressHUDWithMessage(view: self.view, message: "点击了第\(tableView.tag)tableView的\(indexPath.row)")
+        let okBtn = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.cancel) { (alert) in
+            
+        }
+        alert.addAction(okBtn)
+        
+        self.present(alert, animated: true, completion: nil)
+//        AlertView.shard.MBProgressHUDWithMessage(view: self.view, message: "点击了第\(tableView.tag)tableView的\(indexPath.row)")
     }
     //    MARK:# 其他
     override func didReceiveMemoryWarning() {
@@ -149,8 +157,16 @@ extension SportsTableViewController{
     
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        self.seg.selectedSegmentIndex = Int(scrollView.contentOffset.x / WIDTH)
+        print(scrollView.contentOffset.x)
+//        if scrollView == self.scrollView {
+//            self.seg.selectedSegmentIndex = Int(scrollView.contentOffset.x / WIDTH)
+//        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView == self.scrollView {
+            self.seg.selectedSegmentIndex = Int(scrollView.contentOffset.x / WIDTH)
+        }
     }
     
 }

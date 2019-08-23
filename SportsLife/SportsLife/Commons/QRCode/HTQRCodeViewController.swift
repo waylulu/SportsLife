@@ -51,7 +51,7 @@ class HTQRCodeViewController: HTBaseViewController,AVCaptureMetadataOutputObject
         
         
         //right按钮
-        let rightBtn = UIBarButtonItem.init(title: "验证记录", style: .plain, target: self, action: #selector(self.verifyRecordClick))
+        let rightBtn = UIBarButtonItem.init(title: "right", style: .plain, target: self, action: #selector(self.verifyRecordClick))
         rightBtn.tintColor = UIColor.black
         self.navigationItem.rightBarButtonItem = rightBtn
         
@@ -180,9 +180,6 @@ class HTQRCodeViewController: HTBaseViewController,AVCaptureMetadataOutputObject
         }
         self.session.stopRunning()
         
-        //        let str = zyk_aes.aesDecode(content: stringValue!, key: "QWerwqTYU2Y86eezxcvbnmASDFGHJK86")
-        
-        //      print(stringValue)
         
         let url = stringValue?.removingPercentEncoding
         if url != "" {

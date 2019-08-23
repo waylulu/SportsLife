@@ -18,7 +18,7 @@ let btnWidth:CGFloat = 60;
 let isIPhoneX = HEIGHT == 812 || HEIGHT == 896 ? true : false
 let bottomHeight:CGFloat = isIPhoneX ? 34 : 0
 
-let SegWidth:CGFloat = 120;
+let SegWidth:CGFloat = 40;
 
 let naviHeight:CGFloat = isIPhoneX ? 88 : 64
 ///支付类型
