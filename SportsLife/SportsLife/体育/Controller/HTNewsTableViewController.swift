@@ -8,10 +8,11 @@
 
 import UIKit
 
-class HTNewsTableViewController: UITableViewController {
+class HTNewsTableViewController: HTBaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.tableView = UITableView.init(frame: self.view.bounds, style: .grouped);
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,7 +25,6 @@ class HTNewsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        self.tableView = UITableView.init(frame: self.view.bounds, style: .grouped);
     }
     //    MARK:# 代理方法
     override func numberOfSections(in tableView: UITableView) -> Int {

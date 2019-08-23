@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1424690D230F8D0B008E6987 /* HTQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424690C230F8D0B008E6987 /* HTQRCodeViewController.swift */; };
+		1424690F230F8D2C008E6987 /* HTQRErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424690E230F8D2C008E6987 /* HTQRErrorViewController.swift */; };
+		14246911230F8DEA008E6987 /* HTQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14246910230F8DEA008E6987 /* HTQRCode.swift */; };
+		14246913230FB606008E6987 /* tipsSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14246912230FB606008E6987 /* tipsSound.mp3 */; };
+		14246915230FC4EC008E6987 /* HTBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14246914230FC4EC008E6987 /* HTBaseTableViewController.swift */; };
 		14DB2CE3230E2FD20014F19C /* MineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CBB230E2FD20014F19C /* MineTableViewController.swift */; };
 		14DB2CE4230E2FD20014F19C /* PresentChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CBC230E2FD20014F19C /* PresentChooseViewController.swift */; };
 		14DB2CE5230E2FD20014F19C /* PresentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CBE230E2FD20014F19C /* PresentDataModel.swift */; };
@@ -26,7 +31,6 @@
 		14DB2CF3230E2FD20014F19C /* OCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CD1230E2FD20014F19C /* OCViewController.m */; };
 		14DB2CF4230E2FD20014F19C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DB2CD2230E2FD20014F19C /* LaunchScreen.storyboard */; };
 		14DB2CF5230E2FD20014F19C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DB2CD4230E2FD20014F19C /* Main.storyboard */; };
-		14DB2CF6230E2FD20014F19C /* HTBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CD7230E2FD20014F19C /* HTBaseTableViewController.swift */; };
 		14DB2CF7230E2FD20014F19C /* HTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CD8230E2FD20014F19C /* HTBaseViewController.swift */; };
 		14DB2CF8230E2FD20014F19C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CD9230E2FD20014F19C /* AppDelegate.swift */; };
 		14DB2CFA230E2FD20014F19C /* ShopCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CDE230E2FD20014F19C /* ShopCollectionViewController.swift */; };
@@ -47,9 +51,15 @@
 		14DB2D17230E318C0014F19C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2D16230E318C0014F19C /* UIKit.framework */; };
 		7E7F330020DB9D1E00AA02EE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7E7F32FF20DB9D1D00AA02EE /* Podfile */; };
 		7EFC38D220DA2CCE005616D0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EFC38D120DA2CCE005616D0 /* Default-568h@2x.png */; };
+		B763FD29657F778BF255C48D /* Pods_SportsLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 533DA9604F19D714F6EF2D3C /* Pods_SportsLife.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1424690C230F8D0B008E6987 /* HTQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTQRCodeViewController.swift; sourceTree = "<group>"; };
+		1424690E230F8D2C008E6987 /* HTQRErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTQRErrorViewController.swift; sourceTree = "<group>"; };
+		14246910230F8DEA008E6987 /* HTQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTQRCode.swift; sourceTree = "<group>"; };
+		14246912230FB606008E6987 /* tipsSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tipsSound.mp3; sourceTree = "<group>"; };
+		14246914230FC4EC008E6987 /* HTBaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTBaseTableViewController.swift; sourceTree = "<group>"; };
 		14DB2CBB230E2FD20014F19C /* MineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineTableViewController.swift; sourceTree = "<group>"; };
 		14DB2CBC230E2FD20014F19C /* PresentChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentChooseViewController.swift; sourceTree = "<group>"; };
 		14DB2CBE230E2FD20014F19C /* PresentDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentDataModel.swift; sourceTree = "<group>"; };
@@ -70,7 +80,6 @@
 		14DB2CD3230E2FD20014F19C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14DB2CD5230E2FD20014F19C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14DB2CD6230E2FD20014F19C /* SportsLife-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SportsLife-Bridging-Header.h"; sourceTree = "<group>"; };
-		14DB2CD7230E2FD20014F19C /* HTBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTBaseTableViewController.swift; sourceTree = "<group>"; };
 		14DB2CD8230E2FD20014F19C /* HTBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTBaseViewController.swift; sourceTree = "<group>"; };
 		14DB2CD9230E2FD20014F19C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14DB2CDB230E2FD20014F19C /* OCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCViewController.h; sourceTree = "<group>"; };
@@ -118,12 +127,24 @@
 				14DB2D01230E31310014F19C /* CoreFoundation.framework in Frameworks */,
 				14DB2CFF230E312A0014F19C /* AssetsLibrary.framework in Frameworks */,
 				14DB2CFD230E31220014F19C /* Accelerate.framework in Frameworks */,
+				B763FD29657F778BF255C48D /* Pods_SportsLife.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1424690B230F8C92008E6987 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				14246912230FB606008E6987 /* tipsSound.mp3 */,
+				1424690C230F8D0B008E6987 /* HTQRCodeViewController.swift */,
+				1424690E230F8D2C008E6987 /* HTQRErrorViewController.swift */,
+				14246910230F8DEA008E6987 /* HTQRCode.swift */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
 		14DB2CB9230E2FD20014F19C /* 个人中心 */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +187,7 @@
 		14DB2CC5230E2FD20014F19C /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				1424690B230F8C92008E6987 /* QRCode */,
 				14DB2CC6230E2FD20014F19C /* HelperClass.swift */,
 				14DB2CC7230E2FD20014F19C /* 文档 */,
 				14DB2CC8230E2FD20014F19C /* HTWebViewViewController.swift */,
@@ -201,10 +223,10 @@
 				14DB2CD2230E2FD20014F19C /* LaunchScreen.storyboard */,
 				14DB2CD4230E2FD20014F19C /* Main.storyboard */,
 				14DB2CD6230E2FD20014F19C /* SportsLife-Bridging-Header.h */,
-				14DB2CD7230E2FD20014F19C /* HTBaseTableViewController.swift */,
 				14DB2CD8230E2FD20014F19C /* HTBaseViewController.swift */,
 				14DB2CD9230E2FD20014F19C /* AppDelegate.swift */,
 				14DB2CDB230E2FD20014F19C /* OCViewController.h */,
+				14246914230FC4EC008E6987 /* HTBaseTableViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -381,6 +403,7 @@
 				14DB2CEC230E2FD20014F19C /* 文档 in Resources */,
 				7E7F330020DB9D1E00AA02EE /* Podfile in Resources */,
 				14DB2CEA230E2FD20014F19C /* TableViewCell.xib in Resources */,
+				14246913230FB606008E6987 /* tipsSound.mp3 in Resources */,
 				14DB2CF4230E2FD20014F19C /* LaunchScreen.storyboard in Resources */,
 				7EFC38D220DA2CCE005616D0 /* Default-568h@2x.png in Resources */,
 				14DB2CF2230E2FD20014F19C /* Assets.xcassets in Resources */,
@@ -404,6 +427,8 @@
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/WMPageController/WMPageController.framework",
@@ -418,6 +443,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WMPageController.framework",
@@ -483,9 +510,10 @@
 				14DB2CE9230E2FD20014F19C /* ChooseTypeHeaderView.swift in Sources */,
 				14DB2CF3230E2FD20014F19C /* OCViewController.m in Sources */,
 				14DB2CEB230E2FD20014F19C /* HelperClass.swift in Sources */,
+				1424690D230F8D0B008E6987 /* HTQRCodeViewController.swift in Sources */,
 				14DB2CFB230E2FD20014F19C /* GamesTableViewController.swift in Sources */,
+				14246915230FC4EC008E6987 /* HTBaseTableViewController.swift in Sources */,
 				14DB2CE6230E2FD20014F19C /* CradsModel.swift in Sources */,
-				14DB2CF6230E2FD20014F19C /* HTBaseTableViewController.swift in Sources */,
 				14DB2CFA230E2FD20014F19C /* ShopCollectionViewController.swift in Sources */,
 				14DB2CED230E2FD20014F19C /* HTWebViewViewController.swift in Sources */,
 				14DB2CE7230E2FD20014F19C /* ChooseTypeTableViewCell.swift in Sources */,
@@ -495,8 +523,10 @@
 				14DB2CF7230E2FD20014F19C /* HTBaseViewController.swift in Sources */,
 				14DB2CEE230E2FD20014F19C /* HTNewsTableViewController.swift in Sources */,
 				14DB2CE4230E2FD20014F19C /* PresentChooseViewController.swift in Sources */,
+				14246911230F8DEA008E6987 /* HTQRCode.swift in Sources */,
 				14DB2CEF230E2FD20014F19C /* SportsTableViewController.swift in Sources */,
 				14DB2CF8230E2FD20014F19C /* AppDelegate.swift in Sources */,
+				1424690F230F8D2C008E6987 /* HTQRErrorViewController.swift in Sources */,
 				14DB2CF1230E2FD20014F19C /* RootTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

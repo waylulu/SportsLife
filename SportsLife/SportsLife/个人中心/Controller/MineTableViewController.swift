@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MineTableViewController: UITableViewController {
+class MineTableViewController: HTBaseTableViewController {
 
     var defaultPayData:(payType:String,model:CardsModel)?
     var defaultData:(payType:String,model:CardsModel)?
@@ -66,7 +66,7 @@ class MineTableViewController: UITableViewController {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "cell")
         cell.textLabel?.text = "\(indexPath.row)";
-        cell.detailTextLabel?.text = "1sfsdgd"
+        cell.detailTextLabel?.text = "\(indexPath.row)";
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -101,12 +101,12 @@ class MineTableViewController: UITableViewController {
         }
         
         //type = ""时是其他选择.不等于""是选择了支付方式
-        vc.choosePayTypeBlock = { type ,model in
+        vc.choosePayTypeBlock = {[weak self] type ,model in
             cell?.detailTextLabel?.text = type == "" ? model.title : type
             if type == "" {
-                self.defaultData = (type,model)
+                self?.defaultData = (type,model)
             }else{
-                self.defaultPayData = (type,model)
+                self?.defaultPayData = (type,model)
             }
         }
     }
@@ -123,9 +123,9 @@ class AlertView {
     
     static let shard = AlertView()
     //MARK: - 纯文字吐司
-   public func MBProgressHUDWithMessage(message: String) {
+    public func MBProgressHUDWithMessage(view:UIView ,message: String) {
         DispatchQueue.main.async {
-            let mb = MBProgressHUD.showAdded(to:UIApplication.shared.keyWindow!, animated: true)
+            let mb = MBProgressHUD.showAdded(to:view, animated: true)
             mb.mode = .text
             mb.label.textColor = UIColor.gray
             mb.label.text = message

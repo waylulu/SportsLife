@@ -29,6 +29,8 @@ pod 'YWFeedbackFMWK', '~> 2.0.3.1'
 
 pod 'Google-Mobile-Ads-SDK'#谷歌ADs
 pod 'Masonry'
+pod 'RxSwift'
+pod 'RxCocoa'
 #pod 'Zip'
 #pod 'SnapKit'
 

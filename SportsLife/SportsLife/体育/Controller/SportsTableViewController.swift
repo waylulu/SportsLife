@@ -12,27 +12,43 @@ import UIKit
 class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITableViewDataSource {
     var scrollView = UIScrollView()
     var seg = UISegmentedControl()
-    var tableView = UITableView()
+    var tableViewArr = NSMutableArray()
     var segmentTitles = ["第一","第二"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configUI()
         self.loadData()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.seg.isHidden = false;
     }
     //    MARK:# UI
     func configUI() {
 //        self.navigationItem.title = "体育"
 //        self.tabBarItem.title = "体育"
         
+        let rightItem = UIBarButtonItem.init(title: "扫描", style: UIBarButtonItem.Style.plain, target: self, action: #selector(rightClick))
+        self.navigationItem.rightBarButtonItem = rightItem;
         self.automaticallyAdjustsScrollViewInsets = false
      
         self.setSegmentUI()
-        self.setTableViewUI();
         self.setScrollviewUI()
+        self.setTableViewUI();
+
     }
 
+    func rightClick(){
+        let vc = HTQRCodeViewController()
+        vc.hidesBottomBarWhenPushed = true;
+        self.seg.isHidden = true;
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     func setSegmentUI(){
+//        segmentTitles = ["1","2","3","4"]
         seg = UISegmentedControl.init(items: segmentTitles);
         seg.frame = CGRect(x: (WIDTH - SegWidth) / 2, y: 0, width: SegWidth, height: 35)
         self.navigationController?.navigationBar.addSubview(seg);
@@ -53,24 +69,22 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         self.view.addSubview(scrollView)
-        for i in 0..<segmentTitles.count {
-            let view = UIView.init(frame: CGRect(x: WIDTH * CGFloat(i), y: naviHeight, width: WIDTH, height: HEIGHT))
-            let vc = HTNewsTableViewController()
-            vc.view.tag = i;
-            view.addSubview(vc.view)
-            view.backgroundColor = i == 1 ? UIColor.cyan : UIColor.green
-            scrollView.addSubview(view)
-        }
+        
+  
     }
     
     
     func setTableViewUI(){
-        self.tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: WIDTH, height: HEIGHT), style: .grouped);
-        
-        self.tableView.register(UINib.init(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        
-        self.tableView.delegate = self
-        self.tableView.dataSource = self;
+        for i in 0..<segmentTitles.count {
+            let tableView = UITableView.init(frame: CGRect(x: WIDTH * CGFloat(i), y: naviHeight, width: WIDTH, height: HEIGHT))
+            
+            tableView.tag = i;
+            tableView.register(UINib.init(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+            tableView.dataSource = self;
+            tableView.delegate = self
+            view.backgroundColor = i == 1 ? UIColor.cyan : UIColor.green
+            scrollView.addSubview(tableView)
+        }
     }
     //    MARK:# 数据
     func loadData() {
@@ -107,11 +121,16 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
         return 40
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        print(tableView.tag);
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = "\(indexPath.row)";
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        AlertView.shard.MBProgressHUDWithMessage(view: self.view, message: "点击了第\(tableView.tag)tableView的\(indexPath.row)")
     }
     //    MARK:# 其他
     override func didReceiveMemoryWarning() {
@@ -133,4 +152,5 @@ extension SportsTableViewController{
         
         self.seg.selectedSegmentIndex = Int(scrollView.contentOffset.x / WIDTH)
     }
+    
 }

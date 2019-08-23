@@ -59,14 +59,7 @@ class PresentChooseViewController: UIViewController ,UIGestureRecognizerDelegate
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.tableView.register(ChooseTypeTableViewCell.self, forCellReuseIdentifier: "chooseCell")
         self.tableView.backgroundColor = UIColor.white
-//        self.leftBtn.setTitle("取消", for: UIControl.State.normal)
-//        self.leftBtn.setTitleColor(UIColor.gray, for: UIControl.State.normal)
-//        self.leftBtn.addTarget(self, action: #selector(cancelBtn(sender:)), for: UIControl.Event.touchUpInside)
-//        leftBtn.isHidden = self.cardType == .one ? true : false
-//        self.rightBtn.setTitle(self.cardType == .more ? "确定" : "取消" , for: UIControl.State.normal)
-//        self.rightBtn.setTitleColor(self.cardType == .more ? UIColor.red : UIColor.gray, for: UIControl.State.normal)
-//        self.rightBtn.addTarget(self, action: #selector(chooseBtn(sender:)), for: UIControl.Event.touchUpInside)
-        
+
         self.btnBGView.rightBtn.setTitle(self.cardType == .one ? "取消" : "确定", for: UIControl.State.normal)
         self.btnBGView.rightBtn.setTitleColor(self.cardType == .one ? UIColor.gray : UIColor.red , for: UIControl.State.normal)
         self.btnBGView.leftBtn.isHidden = self.cardType == .one ? true : false
@@ -84,31 +77,6 @@ class PresentChooseViewController: UIViewController ,UIGestureRecognizerDelegate
         self.cardType = self.cardType == .defalut ? arc4random() % 2 == 1 ? CradType.one : CradType.more : self.cardType
         
         cellHeight = self.cardType == .one ? 50 : 40;
-        
-//        if self.cardType == .one {
-//            self.dataArr = [["a":"frist"],["a":"secend"],["a":"third"],["a":"forth"]]
-//
-//        }else{
-//            self.dataArr = [["title":"银行卡", "detail" : [["a":"frist"],["a":"secend"]]],["title":"支付宝", "detail" : [["a":"frist"],["a":"secend"]]],["title":"微信", "detail" : [["a":"frist"],["a":"secend"]]]]
-//
-//            for dic in self.dataArr {
-//                if ((dic as? NSDictionary) != nil) {
-//                    let arr = (dic as? NSDictionary)!["detail"]
-//
-//                    if ((arr as? Array<[String:String]>) != nil){
-//                        for dict in (arr as? Array<[String:String]>)! {
-//                            self.arrArr.add(dict)
-//                        }
-//
-//                    }
-//                }
-//            }
-//        }
-        
-//        let sourceViewY = (self.cardType == .one ? HEIGHT -  cellHeight * CGFloat(self.dataArr.count) - headerHeight : (HEIGHT -  headerHeight * CGFloat(self.dataArr.count) - headerHeight - cellHeight * CGFloat(self.arrArr.count))) - bottomHeight;
-//
-//        let sourceViewHeight = (self.cardType == .one ? cellHeight * CGFloat(self.dataArr.count) + headerHeight : (cellHeight * CGFloat(self.dataArr.count) + headerHeight + cellHeight * CGFloat(arrArr.count))) + bottomHeight;
-        
         
         
         self.model.cardModelArr.removeAll()
@@ -191,14 +159,14 @@ class PresentChooseViewController: UIViewController ,UIGestureRecognizerDelegate
         if string == "确定" {
             if self.choosePayTypeBlock != nil{
                 if self.choosePayData != nil {
-                    AlertView.shard.MBProgressHUDWithMessage(message: string);
+                    AlertView.shard.MBProgressHUDWithMessage(view: self.view, message: string);
                     self.choosePayTypeBlock!(self.choosePayData!.payType, self.choosePayData!.model)
                 }else{
-                    AlertView.shard.MBProgressHUDWithMessage(message: "未选择");
+                    AlertView.shard.MBProgressHUDWithMessage(view: self.view, message: "未选择");
                 }
             }
         }else{
-            AlertView.shard.MBProgressHUDWithMessage(message: string);
+            AlertView.shard.MBProgressHUDWithMessage(view: self.view, message: string);
 
         }
         self.dismissView()
@@ -214,21 +182,12 @@ class PresentChooseViewController: UIViewController ,UIGestureRecognizerDelegate
 extension PresentChooseViewController:UITableViewDelegate,UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-//        return  self.cardType == .one ? 1 : self.dataArr.count
         return  self.cardType == .one ? 1 : self.model.cardTypeModelArr.count
 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-//        if self.cardType == .more {
-//            for dic in self.dataArr {
-//                let arr = ((dic as! NSDictionary)["detail"])
-//                return (arr as? Array<[String:String]>)!.count
-//            }
-//        }
-//        return self.dataArr.count
-
         if self.cardType == .more {
 
             return model.cardTypeModelArr[section].detail.count
@@ -278,29 +237,15 @@ extension PresentChooseViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:ChooseTypeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "chooseCell", for: indexPath) as! ChooseTypeTableViewCell
-        //            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         if self.cardType == .one {
-//            cell.textLabel?.text = (self.dataArr[indexPath.row] as! Dictionary)["a"]
             let model = self.model.cardModelArr[indexPath.row]
-//            cell.textLabel?.text = model.title
-//            cell.textLabel?.textColor = model.isChoose == true ? UIColor.red : UIColor.black
-//            cell.imageView?.image = UIImage.init(named:model.titleImage )
-//            cell.detailTextLabel?.text = model.detail
-//            cell.imageView?.image =  model.isChoose == true ? UIImage.init(named: "choose") :  UIImage.init(named: "")
             cell.setData(type: self.cardType, model: self.choosePayData?.model.title == model.title ? self.choosePayData!.model : model)
-//            return cell
         }else{
-//            let arr =  ((self.dataArr[indexPath.section] as! NSDictionary)["detail"])
-//            let dic = (arr as? Array<[String:String]>)![indexPath.row]
-//            cell.textLabel?.text = dic["a"]
+
             let baseModel = self.model.cardTypeModelArr[indexPath.section]
             let model =  self.model.cardTypeModelArr[indexPath.section].detail[indexPath.row]
-//            cell.textLabel?.text = model.title;
-//            cell.imageView?.image =  model.isChoose == true ? UIImage.init(named: "choose") :  UIImage.init(named: "")
-//            cell.imageView?.contentMode = .scaleToFill
-//            cell.detailTextLabel?.text = model.detail
+
             cell.setData(type: cardType, model: self.choosePayData?.payType == baseModel.title ? self.choosePayData?.model.title == model.title ? self.choosePayData!.model : model : model)
-//            return cell
         }
         return cell
     }
