@@ -22,7 +22,7 @@ pod 'UMengUShare/Social/WeChat'
  
  # 集成QQ
 pod 'UMengUShare/Social/QQ'
-#pod 'Alamofire'
+pod 'Alamofire'
 pod 'YYKit'
 pod 'JSONModel'
 pod 'YWFeedbackFMWK', '~> 2.0.3.1'
@@ -31,7 +31,8 @@ pod 'Google-Mobile-Ads-SDK'#谷歌ADs
 pod 'Masonry'
 pod 'RxSwift'
 pod 'RxCocoa'
+pod 'XLPagerTabStrip'
 #pod 'Zip'
-#pod 'SnapKit'
+#pod 'SnapKit', '~> 4.0.0'
 
 end

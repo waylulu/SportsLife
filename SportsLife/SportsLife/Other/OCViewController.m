@@ -49,6 +49,12 @@
     UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithTitle:@"跳网页" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightClickBtn:)];
     self.navigationItem.rightBarButtonItem = item;
     
+    
+    NSString * str = @"123124124";
+    NSString * s = @"12";
+    str = [str stringByReplacingOccurrencesOfString:s withString:@"hhh"];
+    NSLog(@"%@",str);
+    
 }
 
 - (IBAction)rightClickBtn:(id)sender{

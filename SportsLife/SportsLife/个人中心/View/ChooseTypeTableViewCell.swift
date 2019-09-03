@@ -96,7 +96,6 @@ class ChooseTypeTableViewCell: UITableViewCell {
         self.headerImageview.image = type == .one ? HTImage(model.titleImage) : UIImage()
         self.headerImageview.contentMode = .scaleToFill
 //        self.headerImageview.downloadedFrom(imageurl: "https://upload.jianshu.io/users/upload_avatars/1862499/0262d4cb861b?imageMogr2/auto-orient/strip|imageView2/1/w/120/h/120")
-        
         chooseImageView.image = model.isChoose == true ?  UIImage.init(named:"choose") : UIImage()
     }
     

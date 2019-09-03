@@ -18,7 +18,7 @@ let btnWidth:CGFloat = 60;
 let isIPhoneX = HEIGHT == 812 || HEIGHT == 896 ? true : false
 let bottomHeight:CGFloat = isIPhoneX ? 34 : 0
 
-let SegWidth:CGFloat = 40;
+let SegWidth:CGFloat = 60;
 
 let naviHeight:CGFloat = isIPhoneX ? 88 : 64
 ///支付类型
@@ -39,39 +39,80 @@ enum CradType {
 var HTImage:(String) ->UIImage = { string in
     return UIImage.init(named: string) ?? UIImage()
 }
-//颜色RGB加透明度
-var HTColor:(_ r:CGFloat,_ g:CGFloat,_ b:CGFloat,_ alpha:CGFloat)->UIColor = {r,g,b,a in
-    
-    return UIColor.init(red: r / 255.0, green: r / 255.0, blue: r / 255.0, alpha: a);
+
+var HTurlString:(_ string:String)->String = { str in
+    return str.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
 }
 
-var HTHex:(_ hex:String,_ alpha:CGFloat)->UIColor = {hex,alpha in
-    
-    var rgb : UInt32 = 0
-    
-    let scanner = Scanner(string: hex)
-    
-    if hex.hasPrefix("#") { // 跳过“#”号
-        scanner.scanLocation = 1
-    }
-    
-    scanner.scanHexInt32(&rgb)
-    
-    let r = CGFloat((rgb & 0xff0000) >> 16) / 255.0
-    let g = CGFloat((rgb & 0xff00) >> 8) / 255.0
-    let b = CGFloat(rgb & 0xff) / 255.0
-    
-    return UIColor(red: r, green: g, blue: b, alpha: alpha)
+///size:字体大小 font:字体样式""为默认
 
+let HTFont:(_:CGFloat,_:String)->UIFont = { size,font in
+    
+    return (font == "" ? UIFont.systemFont(ofSize: size) : UIFont.init(name: font, size: size)) ?? defalutFont
+    
 }
+
 
 class HelperClass {
  
     static let shared = HelperClass()
 
 
-  
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//    //设置格式
+//    formatter.dateFormat = @"yyyy-MM-dd";//【重点】
+//    //获取当前系统时间
+//    //    NSDate *date = [NSDate date];
+//    NSDate *date1 = [NSDate   dateWithTimeIntervalSinceNow:page * TIME_MORE];
+//    //把时间对象转换成字符串对象
+//    NSString *dateString = [formatter  stringFromDate:date1];
+//    NSString * url = [NSString stringWithFormat:@"http://m.zhibo8.cc/json/news/zuqiu/%@.json?",dateString];
+    
+    func  getTime()->String{
+        let formatter = DateFormatter.init()
+        formatter.dateFormat = "yyyy-MM-dd";
+        return ""
+    }
+    
+    func requestUrl(urlString: String) -> Bool {
+        let url: NSURL = NSURL(string: urlString)!
+        let request: NSMutableURLRequest = NSMutableURLRequest(url: url as URL)
+        request.timeoutInterval = 5
+        
+        var response: URLResponse?
+        
+        do {
+            try NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: &response)
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+                    print("response:\(httpResponse.statusCode)")
+                    return true
+                }
+            }
+            return false
+        }
+        catch (let error) {
+            print("error:\(error)")
+            return false
+        }
+    }
+    
+    
+
 }
+
+let TIME_MORE:Double = (-8 * 60 * 60);
+
+
+var currentTime:(_ formatterSample:String)->String = { str in
+    let formatter = DateFormatter.init()
+    formatter.dateFormat = str;
+    let date = Date.init(timeIntervalSinceNow: TIME_MORE)
+    
+    return formatter.string(from: date)
+}
+
+
 
 ///数据处理
 extension HelperClass{
@@ -231,4 +272,80 @@ extension UIColor{
 
 }
 
+//    MARK:# 其他
 
+class AlertView {
+    
+    static let shard = AlertView()
+    
+    //MARK: - 纯文字吐司
+    public func MBProgressHUDWithMessage(view:UIView ,message: String) {
+        DispatchQueue.main.async {
+            let mb = MBProgressHUD.showAdded(to:view, animated: true)
+            mb.mode = .text
+            mb.label.textColor = UIColor.gray
+            mb.label.text = message
+            mb.hide(animated:true, afterDelay: 2)
+            
+        }
+        
+    }
+
+    
+    public func alertWithTitle(controller:UIViewController ,title:String, bloack:@escaping ()->()){
+        
+        let alert = UIAlertController.init(title: "", message: title, preferredStyle: .alert)
+//        let attri = NSMutableAttributedString.init(string: title)
+//        attri.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 18), range: NSMakeRange(0, title.count))
+//        attri.setValue(attri, forKey: "attributedDetailMessage")
+        
+        controller.present(alert, animated: true, completion: {
+            sleep(1)
+            alert.dismiss(animated: true, completion: {
+                bloack()
+            })
+        })
+    }
+    
+    
+    func  alertDetail(controller:UIViewController ,title:String, bloack:@escaping ()->()){
+        let alert = UIAlertController.init(title: "", message: title, preferredStyle: .alert)
+
+        let ok = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (a) in
+            alert.dismiss(animated: true, completion: {
+                bloack()
+            })
+        }
+        alert.addAction(ok);
+        controller.present(alert, animated: true, completion: {
+          
+        })
+    }
+
+}
+/**
+ //批量替换字符串
+ var str = "121412132515125213123134125"
+ let old = ["12","13"]
+ let new = ["aa","bb"]
+ */
+var HTrep:(_ str:String,_ old:[String],_ new:[String])->String = { str,old,new in
+    
+    var string = str
+    for i in 0..<old.count {
+        string = string.replacingOccurrences(of: old[i], with: new[i])
+    }
+    
+    return string
+}
+
+
+extension String{
+    func chineseToPinYin()->String{
+        let mutableString = NSMutableString(string: self)
+        CFStringTransform(mutableString, nil, kCFStringTransformToLatin, false)
+        CFStringTransform(mutableString, nil, kCFStringTransformStripDiacritics, false)
+        let string = String(mutableString)
+        return string.replacingOccurrences(of: " ", with: "")
+    }
+}

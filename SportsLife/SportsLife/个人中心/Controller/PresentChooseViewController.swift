@@ -35,7 +35,7 @@ class PresentChooseViewController: UIViewController ,UIGestureRecognizerDelegate
     var choosePayTypeBlock:ChoosePayTypeBlock?
     
     var choosePayData:(payType:String,model:CardsModel)?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -159,17 +159,29 @@ class PresentChooseViewController: UIViewController ,UIGestureRecognizerDelegate
         if string == "确定" {
             if self.choosePayTypeBlock != nil{
                 if self.choosePayData != nil {
-                    AlertView.shard.MBProgressHUDWithMessage(view: self.view, message: string);
+//                    AlertView.shard.MBProgressHUDWithMessage(view: self.view, message: string);
+//                    AlertView.shard.alertWithTitle(controller: self, title: string, bloack: {[weak self] in
+                        self.dismissView()
+//
+//                    })
                     self.choosePayTypeBlock!(self.choosePayData!.payType, self.choosePayData!.model)
                 }else{
-                    AlertView.shard.MBProgressHUDWithMessage(view: self.view, message: "未选择");
+//                    AlertView.shard.MBProgressHUDWithMessage(view: self.view, message: "未选择");
+                    AlertView.shard.alertWithTitle(controller: self, title: "未选择", bloack: {//[weak self] in
+//                        self?.dismissView()
+
+                    })
+
                 }
             }
         }else{
-            AlertView.shard.MBProgressHUDWithMessage(view: self.view, message: string);
+//            AlertView.shard.MBProgressHUDWithMessage(view: self.view, message: string);
+//            AlertView.shard.alertWithTitle(controller: self, title: string, bloack:  {[weak self] in
+                self.dismissView()
+
+//            })
 
         }
-        self.dismissView()
 
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class HTNewsTableViewController: HTBaseTableViewController {
 
@@ -20,6 +21,8 @@ class HTNewsTableViewController: HTBaseTableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.tableView.register(UINib.init(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        let btn = UIButton.init()
+        btn.rx.base.titleLabel?.text = "124";
     }
 
     override func viewWillAppear(_ animated: Bool) {

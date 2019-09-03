@@ -20,7 +20,7 @@ class HTQRCode: UIView {
     private var timer:Timer!
     private let scanSize:CGSize = CGSize.init(width: UIScreen.main.bounds.size.width*1/2, height: UIScreen.main.bounds.size.width*1/2)
     
-    private let SizeH = UIScreen.main.bounds.size.height-94
+    private let sizeH = UIScreen.main.bounds.size.height-94
     
     var manualVerifBtn = UIButton()
     
@@ -31,7 +31,7 @@ class HTQRCode: UIView {
         
         if (imgLine == nil) {
             
-            rectY = (SizeH-scanSize.height)/2
+            rectY = (sizeH-scanSize.height)/2
             self.addLine()
             timer = Timer(timeInterval: SsLineAnimateDuration, target: self, selector: #selector(lineDrop), userInfo: nil, repeats: true)
             RunLoop.current.add(timer, forMode: .default)
@@ -109,7 +109,7 @@ class HTQRCode: UIView {
         
         
         
-        let clearDrawRect = CGRect.init(x: (UIScreen.main.bounds.size.width-scanSize.width)/2, y: (SizeH-scanSize.height)/2, width: scanSize.width, height: scanSize.height)
+        let clearDrawRect = CGRect.init(x: (UIScreen.main.bounds.size.width-scanSize.width)/2, y: (sizeH-scanSize.height)/2, width: scanSize.width, height: scanSize.height)
         
         let ctx:CGContext = UIGraphicsGetCurrentContext()!
         self.addScreenFillRect(ctx: ctx, rect: screenDrawRect)

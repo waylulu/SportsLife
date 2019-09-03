@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class ShopCollectionViewController: UICollectionViewController {
+class ShopCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class ShopCollectionViewController: UICollectionViewController {
         self.tabBarItem.title = "购物"
         self.view.backgroundColor = UIColor.white
         self.collectionView.backgroundColor = UIColor.white
-
+        self.collectionView.alwaysBounceVertical = true;
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
     }
@@ -45,7 +45,12 @@ class ShopCollectionViewController: UICollectionViewController {
         // #warning Incomplete implementation, return the number of items
         return 10
     }
-
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: WIDTH, height: 180)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         cell.backgroundColor = indexPath.item % 2 == 1 ? UIColor.cyan : UIColor.yellow //arc4random()随机数

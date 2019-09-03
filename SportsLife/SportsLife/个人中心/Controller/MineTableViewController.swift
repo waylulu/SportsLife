@@ -118,20 +118,3 @@ class MineTableViewController: HTBaseTableViewController {
     }
 }
 
-class AlertView {
-    //    MARK:# 其他
-    
-    static let shard = AlertView()
-    //MARK: - 纯文字吐司
-    public func MBProgressHUDWithMessage(view:UIView ,message: String) {
-        DispatchQueue.main.async {
-            let mb = MBProgressHUD.showAdded(to:view, animated: true)
-            mb.mode = .text
-            mb.label.textColor = UIColor.gray
-            mb.label.text = message
-            mb.hide(animated:true, afterDelay: 2)
-            
-        }
-        
-    }
-}

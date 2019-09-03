@@ -7,11 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14022711231D0004006B0063 /* YTBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14022710231D0004006B0063 /* YTBubbleView.swift */; };
+		14022713231E00C5006B0063 /* HTRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14022712231E00C5006B0063 /* HTRankViewController.swift */; };
+		1403313E231652D800CFC872 /* HTRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1403313D231652D800CFC872 /* HTRankTableViewCell.swift */; };
+		140D49D52314E00900FDA4E8 /* NetworkError.html in Resources */ = {isa = PBXBuildFile; fileRef = 140D49D42314E00900FDA4E8 /* NetworkError.html */; };
 		1424690D230F8D0B008E6987 /* HTQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424690C230F8D0B008E6987 /* HTQRCodeViewController.swift */; };
 		1424690F230F8D2C008E6987 /* HTQRErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424690E230F8D2C008E6987 /* HTQRErrorViewController.swift */; };
 		14246911230F8DEA008E6987 /* HTQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14246910230F8DEA008E6987 /* HTQRCode.swift */; };
 		14246913230FB606008E6987 /* tipsSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14246912230FB606008E6987 /* tipsSound.mp3 */; };
 		14246915230FC4EC008E6987 /* HTBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14246914230FC4EC008E6987 /* HTBaseTableViewController.swift */; };
+		1440A53523138C8700165CA5 /* HTServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A53423138C8700165CA5 /* HTServices.swift */; };
+		1440A5372313D00600165CA5 /* HTHotNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A5362313D00600165CA5 /* HTHotNewsTableViewCell.swift */; };
+		1440A5392313D9AD00165CA5 /* HTNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A5382313D9AD00165CA5 /* HTNewsModel.swift */; };
+		1440A53B2313DA7600165CA5 /* HTNewsDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A53A2313DA7600165CA5 /* HTNewsDataViewModel.swift */; };
+		1440A53D23142BB900165CA5 /* HTColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A53C23142BB900165CA5 /* HTColors.swift */; };
+		146517E42316C3CB00A7E19D /* HTRankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146517E32316C3CB00A7E19D /* HTRankModel.swift */; };
+		146517E62317A79900A7E19D /* HTRankBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146517E52317A79900A7E19D /* HTRankBaseViewController.swift */; };
 		14DB2CE3230E2FD20014F19C /* MineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CBB230E2FD20014F19C /* MineTableViewController.swift */; };
 		14DB2CE4230E2FD20014F19C /* PresentChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CBC230E2FD20014F19C /* PresentChooseViewController.swift */; };
 		14DB2CE5230E2FD20014F19C /* PresentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CBE230E2FD20014F19C /* PresentDataModel.swift */; };
@@ -34,7 +45,6 @@
 		14DB2CF7230E2FD20014F19C /* HTBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CD8230E2FD20014F19C /* HTBaseViewController.swift */; };
 		14DB2CF8230E2FD20014F19C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CD9230E2FD20014F19C /* AppDelegate.swift */; };
 		14DB2CFA230E2FD20014F19C /* ShopCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CDE230E2FD20014F19C /* ShopCollectionViewController.swift */; };
-		14DB2CFB230E2FD20014F19C /* GamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CE2230E2FD20014F19C /* GamesTableViewController.swift */; };
 		14DB2CFD230E31220014F19C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2CFC230E31220014F19C /* Accelerate.framework */; };
 		14DB2CFF230E312A0014F19C /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2CFE230E312A0014F19C /* AssetsLibrary.framework */; };
 		14DB2D01230E31310014F19C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2D00230E31310014F19C /* CoreFoundation.framework */; };
@@ -55,11 +65,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14022710231D0004006B0063 /* YTBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTBubbleView.swift; sourceTree = "<group>"; };
+		14022712231E00C5006B0063 /* HTRankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTRankViewController.swift; sourceTree = "<group>"; };
+		1403313D231652D800CFC872 /* HTRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTRankTableViewCell.swift; sourceTree = "<group>"; };
+		140D49D42314E00900FDA4E8 /* NetworkError.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NetworkError.html; sourceTree = "<group>"; };
 		1424690C230F8D0B008E6987 /* HTQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTQRCodeViewController.swift; sourceTree = "<group>"; };
 		1424690E230F8D2C008E6987 /* HTQRErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTQRErrorViewController.swift; sourceTree = "<group>"; };
 		14246910230F8DEA008E6987 /* HTQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTQRCode.swift; sourceTree = "<group>"; };
 		14246912230FB606008E6987 /* tipsSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tipsSound.mp3; sourceTree = "<group>"; };
 		14246914230FC4EC008E6987 /* HTBaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTBaseTableViewController.swift; sourceTree = "<group>"; };
+		1440A53423138C8700165CA5 /* HTServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTServices.swift; sourceTree = "<group>"; };
+		1440A5362313D00600165CA5 /* HTHotNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTHotNewsTableViewCell.swift; sourceTree = "<group>"; };
+		1440A5382313D9AD00165CA5 /* HTNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTNewsModel.swift; sourceTree = "<group>"; };
+		1440A53A2313DA7600165CA5 /* HTNewsDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTNewsDataViewModel.swift; sourceTree = "<group>"; };
+		1440A53C23142BB900165CA5 /* HTColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTColors.swift; sourceTree = "<group>"; };
+		146517E32316C3CB00A7E19D /* HTRankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTRankModel.swift; sourceTree = "<group>"; };
+		146517E52317A79900A7E19D /* HTRankBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTRankBaseViewController.swift; sourceTree = "<group>"; };
 		14DB2CBB230E2FD20014F19C /* MineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineTableViewController.swift; sourceTree = "<group>"; };
 		14DB2CBC230E2FD20014F19C /* PresentChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentChooseViewController.swift; sourceTree = "<group>"; };
 		14DB2CBE230E2FD20014F19C /* PresentDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentDataModel.swift; sourceTree = "<group>"; };
@@ -145,6 +166,47 @@
 			path = QRCode;
 			sourceTree = "<group>";
 		};
+		1440A53123138C2E00165CA5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1440A5362313D00600165CA5 /* HTHotNewsTableViewCell.swift */,
+				1403313D231652D800CFC872 /* HTRankTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1440A53223138C3400165CA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1440A5382313D9AD00165CA5 /* HTNewsModel.swift */,
+				1440A53A2313DA7600165CA5 /* HTNewsDataViewModel.swift */,
+				146517E32316C3CB00A7E19D /* HTRankModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1440A53323138C4A00165CA5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1440A53423138C8700165CA5 /* HTServices.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		146517E12316904700A7E19D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		146517E22316905100A7E19D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		14DB2CB9230E2FD20014F19C /* 个人中心 */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,8 +251,11 @@
 			children = (
 				1424690B230F8C92008E6987 /* QRCode */,
 				14DB2CC6230E2FD20014F19C /* HelperClass.swift */,
+				14022710231D0004006B0063 /* YTBubbleView.swift */,
+				1440A53C23142BB900165CA5 /* HTColors.swift */,
 				14DB2CC7230E2FD20014F19C /* 文档 */,
 				14DB2CC8230E2FD20014F19C /* HTWebViewViewController.swift */,
+				140D49D42314E00900FDA4E8 /* NetworkError.html */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -198,6 +263,8 @@
 		14DB2CC9230E2FD20014F19C /* 体育 */ = {
 			isa = PBXGroup;
 			children = (
+				1440A53223138C3400165CA5 /* Model */,
+				1440A53123138C2E00165CA5 /* View */,
 				14DB2CCA230E2FD20014F19C /* Controller */,
 			);
 			path = "体育";
@@ -257,6 +324,8 @@
 		14DB2CE0230E2FD20014F19C /* 游戏 */ = {
 			isa = PBXGroup;
 			children = (
+				146517E22316905100A7E19D /* View */,
+				146517E12316904700A7E19D /* Model */,
 				14DB2CE1230E2FD20014F19C /* Controller */,
 			);
 			path = "游戏";
@@ -266,6 +335,8 @@
 			isa = PBXGroup;
 			children = (
 				14DB2CE2230E2FD20014F19C /* GamesTableViewController.swift */,
+				146517E52317A79900A7E19D /* HTRankBaseViewController.swift */,
+				14022712231E00C5006B0063 /* HTRankViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -324,6 +395,7 @@
 		7EFC389E20DA2884005616D0 /* SportsLife */ = {
 			isa = PBXGroup;
 			children = (
+				1440A53323138C4A00165CA5 /* Network */,
 				14DB2CB9230E2FD20014F19C /* 个人中心 */,
 				14DB2CDC230E2FD20014F19C /* 购物 */,
 				14DB2CC9230E2FD20014F19C /* 体育 */,
@@ -401,6 +473,7 @@
 			files = (
 				14DB2CF5230E2FD20014F19C /* Main.storyboard in Resources */,
 				14DB2CEC230E2FD20014F19C /* 文档 in Resources */,
+				140D49D52314E00900FDA4E8 /* NetworkError.html in Resources */,
 				7E7F330020DB9D1E00AA02EE /* Podfile in Resources */,
 				14DB2CEA230E2FD20014F19C /* TableViewCell.xib in Resources */,
 				14246913230FB606008E6987 /* tipsSound.mp3 in Resources */,
@@ -421,6 +494,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SportsLife/Pods-SportsLife-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
@@ -432,11 +506,13 @@
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/WMPageController/WMPageController.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
@@ -448,6 +524,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WMPageController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,22 +588,31 @@
 				14DB2CF3230E2FD20014F19C /* OCViewController.m in Sources */,
 				14DB2CEB230E2FD20014F19C /* HelperClass.swift in Sources */,
 				1424690D230F8D0B008E6987 /* HTQRCodeViewController.swift in Sources */,
-				14DB2CFB230E2FD20014F19C /* GamesTableViewController.swift in Sources */,
+				1440A53523138C8700165CA5 /* HTServices.swift in Sources */,
+				146517E42316C3CB00A7E19D /* HTRankModel.swift in Sources */,
+				1403313E231652D800CFC872 /* HTRankTableViewCell.swift in Sources */,
 				14246915230FC4EC008E6987 /* HTBaseTableViewController.swift in Sources */,
 				14DB2CE6230E2FD20014F19C /* CradsModel.swift in Sources */,
 				14DB2CFA230E2FD20014F19C /* ShopCollectionViewController.swift in Sources */,
 				14DB2CED230E2FD20014F19C /* HTWebViewViewController.swift in Sources */,
 				14DB2CE7230E2FD20014F19C /* ChooseTypeTableViewCell.swift in Sources */,
+				1440A53D23142BB900165CA5 /* HTColors.swift in Sources */,
+				14022713231E00C5006B0063 /* HTRankViewController.swift in Sources */,
+				14022711231D0004006B0063 /* YTBubbleView.swift in Sources */,
 				14DB2CF0230E2FD20014F19C /* ViewController.swift in Sources */,
 				14DB2CE8230E2FD20014F19C /* TableViewCell.swift in Sources */,
 				14DB2CE5230E2FD20014F19C /* PresentDataModel.swift in Sources */,
+				1440A53B2313DA7600165CA5 /* HTNewsDataViewModel.swift in Sources */,
+				146517E62317A79900A7E19D /* HTRankBaseViewController.swift in Sources */,
 				14DB2CF7230E2FD20014F19C /* HTBaseViewController.swift in Sources */,
 				14DB2CEE230E2FD20014F19C /* HTNewsTableViewController.swift in Sources */,
 				14DB2CE4230E2FD20014F19C /* PresentChooseViewController.swift in Sources */,
+				1440A5392313D9AD00165CA5 /* HTNewsModel.swift in Sources */,
 				14246911230F8DEA008E6987 /* HTQRCode.swift in Sources */,
 				14DB2CEF230E2FD20014F19C /* SportsTableViewController.swift in Sources */,
 				14DB2CF8230E2FD20014F19C /* AppDelegate.swift in Sources */,
 				1424690F230F8D2C008E6987 /* HTQRErrorViewController.swift in Sources */,
+				1440A5372313D00600165CA5 /* HTHotNewsTableViewCell.swift in Sources */,
 				14DB2CF1230E2FD20014F19C /* RootTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

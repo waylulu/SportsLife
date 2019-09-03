@@ -8,6 +8,10 @@
 
 let BGColor = UIColor.init(red: 244 / 255, green: 244 / 255, blue: 244 / 255, alpha: 1)
 
+var color : (red:CGFloat,green:CGFloat,blue:CGFloat,alpha:CGFloat)?
+
+
+let colorRGB = UIColor.init(red:color!.red , green: color!.green, blue: color!.blue, alpha: color!.alpha) //(red:CGFloat,green:CGFloat,blue:CGFloat).self
 
 import UIKit
 import Masonry

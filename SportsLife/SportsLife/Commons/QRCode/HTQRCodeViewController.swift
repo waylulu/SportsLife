@@ -26,11 +26,13 @@ class HTQRCodeViewController: HTBaseViewController,AVCaptureMetadataOutputObject
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.session.startRunning()
+       
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.session.stopRunning()
+        if session != nil {
+            self.session.stopRunning()
+        }
     }
     
     override func viewDidLoad() {
@@ -43,6 +45,8 @@ class HTQRCodeViewController: HTBaseViewController,AVCaptureMetadataOutputObject
 
     func configUI(){
         self.title = "扫码"
+        
+        self.view.backgroundColor = BGColor;
         //返回图标
         let leftBtn = UIBarButtonItem(image: UIImage(named: "Icon_Back"), style: .plain, target: self, action: #selector(BackControl))
         leftBtn.tintColor = UIColor.black
@@ -61,9 +65,10 @@ class HTQRCodeViewController: HTBaseViewController,AVCaptureMetadataOutputObject
     
     
     func loadData(){
-        
-        qrCodeView.startAnimation()
+        if (self.session != nil) {
+            qrCodeView.startAnimation()
 
+        }
     }
     
     func BackControl (){
@@ -93,75 +98,85 @@ class HTQRCodeViewController: HTBaseViewController,AVCaptureMetadataOutputObject
     func showQRCode(){
         
         self.device = AVCaptureDevice.default(for: .video)
-        
-        do{
+        if (device != nil) {
             
-            self.input = try AVCaptureDeviceInput(device: device)
-            
-            self.output = AVCaptureMetadataOutput()
-            output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            
-            self.session = AVCaptureSession()
-            
-            if UIScreen.main.bounds.size.height<500 {
-                self.session.sessionPreset = AVCaptureSession.Preset.vga640x480
-            }else{
-                self.session.sessionPreset = AVCaptureSession.Preset.high
+            do{
+                
+                self.input = try AVCaptureDeviceInput(device: device)
+                
+                self.output = AVCaptureMetadataOutput()
+                output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+                
+                self.session = AVCaptureSession()
+                
+                if UIScreen.main.bounds.size.height<500 {
+                    self.session.sessionPreset = AVCaptureSession.Preset.vga640x480
+                }else{
+                    self.session.sessionPreset = AVCaptureSession.Preset.high
+                }
+                
+                if self.session.canAddInput(self.input){
+                    
+                    self.session.addInput(self.input)
+                    
+                }
+                
+                if self.session.canAddOutput(self.output){
+                    
+                    self.session.addOutput(self.output)
+                    
+                }
+                
+                
+                self.output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+                
+                //计算中间可探测区域
+                let scanSize:CGSize = CGSize.init(width: windowSize.width*1/2, height: windowSize.width*1/2)
+                
+                
+                let scanRect:CGRect = CGRect(x: (windowSize.width-scanSize.width)/2, y: (windowSize.height - 94 - scanSize.height)/2, width: scanSize.width, height: scanSize.height)
+                
+                
+                self.preview = AVCaptureVideoPreviewLayer(session:self.session)
+                self.preview.videoGravity = AVLayerVideoGravity.resizeAspectFill
+                self.preview.frame = UIScreen.main.bounds
+                self.view.layer.insertSublayer(self.preview, at:0)
+                
+                //设置扫描区域
+                NotificationCenter.default.addObserver(forName: NSNotification.Name.AVCaptureInputPortFormatDescriptionDidChange, object: nil, queue: nil, using: {[weak self] (noti) in
+                    
+                    self?.output.rectOfInterest = (self?.preview.metadataOutputRectConverted(fromLayerRect: scanRect))!
+                    
+                })
+                
+                qrCodeView.frame = self.view.frame
+                qrCodeView.backgroundColor = UIColor.clear
+                self.view.addSubview(qrCodeView)
+                qrCodeView.manualVerifBtn.addTarget(self, action: #selector(self.pushInputCodeClick), for: .touchUpInside)
+                
+                
+                //开始捕获
+                self.session.startRunning()
+                
+            }catch _ as NSError{
+                //打印错误消息
+                //            self.ShowMyAlertController("", info: "请在iPhone的\"设置-隐私-相机\"选项中,允许本程序访问您的相机")
+                //            return
+                
+                //            BartAlert.showAlertController(title: "提示", message: "请在iPhone的\"设置-隐私-相机\"选项中,允许本程序访问您的相机", target: self, actionOrNot: false, action: {
+                //
+                //            })
+                AlertView.shard.alertWithTitle(controller: self, title: "请在iPhone的\"设置-隐私-相机\"选项中,允许本程序访问您的相机") {
+                    self.navigationController?.popViewController(animated: true)
+                }
+
             }
-            
-            if self.session.canAddInput(self.input){
-                
-                self.session.addInput(self.input)
-                
+        }else{
+            AlertView.shard.alertWithTitle(controller: self, title: "该设备无法使用摄像头") {
+                self.navigationController?.popViewController(animated: true)
             }
-            
-            if self.session.canAddOutput(self.output){
-                
-                self.session.addOutput(self.output)
-                
-            }
-            
-            
-            self.output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
-            
-            //计算中间可探测区域
-            let scanSize:CGSize = CGSize.init(width: windowSize.width*1/2, height: windowSize.width*1/2)
-            
-            
-            let scanRect:CGRect = CGRect(x: (windowSize.width-scanSize.width)/2, y: (windowSize.height - 94 - scanSize.height)/2, width: scanSize.width, height: scanSize.height)
-            
-            
-            self.preview = AVCaptureVideoPreviewLayer(session:self.session)
-            self.preview.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            self.preview.frame = UIScreen.main.bounds
-            self.view.layer.insertSublayer(self.preview, at:0)
-            
-            //设置扫描区域
-            NotificationCenter.default.addObserver(forName: NSNotification.Name.AVCaptureInputPortFormatDescriptionDidChange, object: nil, queue: nil, using: {[weak self] (noti) in
-                
-                self?.output.rectOfInterest = (self?.preview.metadataOutputRectConverted(fromLayerRect: scanRect))!
-                
-            })
-            
-            qrCodeView.frame = self.view.frame
-            qrCodeView.backgroundColor = UIColor.clear
-            self.view.addSubview(qrCodeView)
-            qrCodeView.manualVerifBtn.addTarget(self, action: #selector(self.pushInputCodeClick), for: .touchUpInside)
-            
-            
-            //开始捕获
-            self.session.startRunning()
-            
-        }catch _ as NSError{
-            //打印错误消息
-            //            self.ShowMyAlertController("", info: "请在iPhone的\"设置-隐私-相机\"选项中,允许本程序访问您的相机")
-            //            return
-            
-//            BartAlert.showAlertController(title: "提示", message: "请在iPhone的\"设置-隐私-相机\"选项中,允许本程序访问您的相机", target: self, actionOrNot: false, action: {
-//
-//            })
         }
-        
+
         
     }
     

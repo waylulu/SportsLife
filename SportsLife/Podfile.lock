@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Alamofire (4.4.0)
   - BCUserTrack (5.1.0.9):
     - UTDID
   - FMDB (2.6.2):
@@ -57,6 +58,7 @@ PODS:
     - UMengUShare/Core
   - UTDID (1.1.0.16)
   - WMPageController (2.3.0)
+  - XLPagerTabStrip (7.0.0)
   - YWFeedbackFMWK (2.0.3.1):
     - BCUserTrack
     - SecurityGuardSDK
@@ -67,6 +69,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - Alamofire
   - FMDB
   - Google-Mobile-Ads-SDK
   - IQKeyboardManager
@@ -83,6 +86,7 @@ DEPENDENCIES:
   - UMengUShare/Social/WeChat
   - UMengUShare/UI
   - WMPageController
+  - XLPagerTabStrip
   - YWFeedbackFMWK (~> 2.0.3.1)
   - YYKit
 
@@ -95,6 +99,7 @@ SPEC REPOS:
     - YWFeedbackFMWK
   http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecsMirror.git:
     - AFNetworking
+    - Alamofire
     - FMDB
     - Google-Mobile-Ads-SDK
     - IQKeyboardManager
@@ -108,10 +113,12 @@ SPEC REPOS:
     - SwiftyJSON
     - UMengUShare
     - WMPageController
+    - XLPagerTabStrip
     - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: 18af9c7b41a3fd4d184bc1d3a9f0f32ddb90179b
+  Alamofire: 82ed740d1619f6978ef60302f3140855cbd28f62
   BCUserTrack: 684f468b8143be7a2ed10a8c449fd959b2a3a099
   FMDB: dcbf7ce43a65d015d5e88cef383b9693b819f108
   Google-Mobile-Ads-SDK: 168312cdc167fa22746d4ea8e839fc4825dd2966
@@ -129,9 +136,10 @@ SPEC CHECKSUMS:
   UMengUShare: cd54ae52958426b79aa9193a7b02058d6a6d9aa0
   UTDID: c28855683c5ea2e77e597cb14609328f7d470d6e
   WMPageController: 47b255e54f6e769179c85e687bd65a67cc98c5fa
+  XLPagerTabStrip: 17c475afa98ec80c43ae87498f39b7514d06deac
   YWFeedbackFMWK: dcf0f60a24099f9a35d3445ae9ef79f3633ef9f6
   YYKit: fa4ab6a1758d7cf2d4ff6959bc0c711f5874a3d0
 
-PODFILE CHECKSUM: b10c09a4326f9037cb4c0156505a3f7d01291cb4
+PODFILE CHECKSUM: f3343081f044e771d0c339be577ca49023583d82
 
 COCOAPODS: 1.7.2

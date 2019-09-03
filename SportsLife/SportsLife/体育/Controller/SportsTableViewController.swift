@@ -7,19 +7,24 @@
 //
 
 import UIKit
+import Alamofire
+
+
 
 @objcMembers
 class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITableViewDataSource {
     var scrollView = UIScrollView()
     var seg = UISegmentedControl()
-    var tableViewArr = NSMutableArray()
-    var segmentTitles = ["第一","第二"]
-    
+    var tableViewArr = [UITableView]()
+    var segmentTitles = ["热文","比分"]
+    var model = HTNewsDataViewModel()
+    var newsArr = [HTNewsModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configUI()
         self.loadData()
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,13 +32,11 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
     }
     //    MARK:# UI
     func configUI() {
-//        self.navigationItem.title = "体育"
-//        self.tabBarItem.title = "体育"
         
         let rightItem = UIBarButtonItem.init(title: "扫描", style: UIBarButtonItem.Style.plain, target: self, action: #selector(rightClick))
         self.navigationItem.rightBarButtonItem = rightItem;
         self.automaticallyAdjustsScrollViewInsets = false
-     
+        view.backgroundColor = UIColor.white;
         self.setSegmentUI()
         self.setScrollviewUI()
         self.setTableViewUI();
@@ -48,7 +51,6 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
     }
     
     func setSegmentUI(){
-        segmentTitles = ["1","2","3","4"]
         seg = UISegmentedControl.init(items: segmentTitles);
         seg.frame = CGRect(x: (WIDTH -  SegWidth * CGFloat(segmentTitles.count)) / 2, y: 0, width: SegWidth * CGFloat(segmentTitles.count), height: 35)
         self.navigationController?.navigationBar.addSubview(seg);
@@ -76,18 +78,59 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
     
     func setTableViewUI(){
         for i in 0..<segmentTitles.count {
-            let tableView = UITableView.init(frame: CGRect(x: WIDTH * CGFloat(i), y: naviHeight, width: WIDTH, height: HEIGHT))
+            let tableView = UITableView.init(frame: CGRect(x: WIDTH * CGFloat(i), y: naviHeight, width: WIDTH, height: HEIGHT - naviHeight)) 
             
             tableView.tag = i;
             tableView.register(UINib.init(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+            if i == 0 {
+                tableView.register(HTHotNewsTableViewCell.self, forCellReuseIdentifier: hCellId)
+            }
             tableView.dataSource = self;
             tableView.delegate = self
-            view.backgroundColor = i == 1 ? UIColor.cyan : UIColor.green
+            self.tableViewArr.append(tableView)
+//            view.backgroundColor = i == 1 ? UIColor.cyan : UIColor.green
             scrollView.addSubview(tableView)
         }
     }
     //    MARK:# 数据
     func loadData() {
+
+//        HTServices.htNet.getData(urlString: newsUrl, method: .get, parameters: [:]) { (json) -> (Void) in
+//            DispatchQueue.main.async {
+//                if json["toplist"].arrayValue.count > 0{
+//                    for js in json["toplist"].arrayValue {
+//                        self.newsArr.append(HTNewsModel.init(json: js))
+//                    }
+//                }
+//                for tab in self.tableViewArr {
+//                    tab.reloadData()
+//                }
+//            }
+//
+//        }
+        HTNewsDataViewModel().getNewsArr(loadingView: self.view) {[weak self] arr,json  in
+//            DispatchQueue.main.async {
+    
+                if arr.count > 0{
+                    self?.newsArr = arr;
+                    for tab in self?.tableViewArr ?? [] {
+                        tab.reloadData()
+                    }
+                }else{
+                    AlertView.shard.alertDetail(controller: self!, title: json.stringValue, bloack: {
+                        
+                    })
+                }
+             
+//            }
+           
+        }
+
+        
+//       self.newsArr = self.model.getNewsArr()
+//        self.newsArr = self.model.newsModels
+        
+     
         
     }
     //    MARK:# 代理方法
@@ -95,6 +138,9 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView.tag == 0 {
+            return newsArr.count
+        }
         return 10
     }
     //rowheaderheight
@@ -118,26 +164,32 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
         return view
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if tableView.tag == 0 {
+            return hotCellHeight
+        }
         return 40
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        print(tableView.tag);
+        if tableView.tag == 0 {
+            let cell:HTHotNewsTableViewCell = tableView.dequeueReusableCell(withIdentifier: hCellId, for: indexPath) as! HTHotNewsTableViewCell
+            cell.setData(model: self.newsArr[indexPath.row])
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            cell.textLabel?.text = "\(arc4random())";
+            return cell
+        }
+      
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "\(arc4random())";
-        return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let alert = UIAlertController.init(title: "", message: "点击了第\(tableView.tag)tableView的\(indexPath.row)", preferredStyle: .alert)
-        
-        let okBtn = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.cancel) { (alert) in
-            
-        }
-        alert.addAction(okBtn)
-        
-        self.present(alert, animated: true, completion: nil)
+//        let url = URL(string: "https://itunes.apple.com/us/app/%E7%83%AD%E5%8A%9B%E8%B6%B3%E7%90%83/id1224540082?l=zh&ls=1&mt=8")!
+//        UIApplication.shared.openURL(url)
+
+        self.getData()
+
 //        AlertView.shard.MBProgressHUDWithMessage(view: self.view, message: "点击了第\(tableView.tag)tableView的\(indexPath.row)")
     }
     //    MARK:# 其他
@@ -148,7 +200,6 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
 }
 extension SportsTableViewController{
     func segmentClick(segment :UISegmentedControl){
-        print("segmentClick");
         let index = segment.selectedSegmentIndex;
         //改变当前的显示范围
         scrollView.setContentOffset(CGPoint(x: WIDTH * CGFloat(index), y: 0), animated: true);
@@ -157,7 +208,7 @@ extension SportsTableViewController{
     
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset.x)
+//        print(scrollView.contentOffset.x)
 //        if scrollView == self.scrollView {
 //            self.seg.selectedSegmentIndex = Int(scrollView.contentOffset.x / WIDTH)
 //        }
@@ -167,6 +218,22 @@ extension SportsTableViewController{
         if scrollView == self.scrollView {
             self.seg.selectedSegmentIndex = Int(scrollView.contentOffset.x / WIDTH)
         }
+    }
+    
+    
+    
+    func getData(){
+        HTServices.htNet.getData(loadingView: self.view, urlString: yingChaoRickoUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: .get, parameters: [:]) { json  -> (Void)  in
+
+            AlertView.shard.alertDetail(controller: self, title: "点击了\(json)", bloack: {
+                
+            })
+        }
+//        HTServices.htNet.getAFNData(urlString:  yingChaoRickoUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: .get, parameters: [:]) { (json, err) -> (Void) in
+//            AlertView.shard.alertWithTitle(controller: self, title: "点击了\(json)", bloack: {
+//
+//            })
+//        }
     }
     
 }

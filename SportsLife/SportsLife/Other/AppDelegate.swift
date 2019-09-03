@@ -30,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
         self.window?.rootViewController = RootTabBarViewController()
+        
+//        AlertView.shard.alertDetail(controller: (self.window?.rootViewController!)!, title: "该版本已不支持请前往App Store更新") {
+//        }
     }
     func applicationWillResignActive(_ application: UIApplication) {
 
@@ -50,5 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    
 }
+
+
 
