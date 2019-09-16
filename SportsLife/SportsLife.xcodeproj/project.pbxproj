@@ -9,8 +9,14 @@
 /* Begin PBXBuildFile section */
 		14022711231D0004006B0063 /* YTBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14022710231D0004006B0063 /* YTBubbleView.swift */; };
 		14022713231E00C5006B0063 /* HTRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14022712231E00C5006B0063 /* HTRankViewController.swift */; };
+		14022717231E367F006B0063 /* HTNODataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14022716231E367F006B0063 /* HTNODataView.swift */; };
+		14022719231E4486006B0063 /* HTBaseVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14022718231E4486006B0063 /* HTBaseVideoViewController.swift */; };
+		1402271B231E450E006B0063 /* HTVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1402271A231E450E006B0063 /* HTVideoViewController.swift */; };
+		1402271E231E4582006B0063 /* HTVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1402271D231E4582006B0063 /* HTVideoModel.swift */; };
+		14022721231E4BB4006B0063 /* HTVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14022720231E4BB4006B0063 /* HTVideoTableViewCell.swift */; };
 		1403313E231652D800CFC872 /* HTRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1403313D231652D800CFC872 /* HTRankTableViewCell.swift */; };
 		140D49D52314E00900FDA4E8 /* NetworkError.html in Resources */ = {isa = PBXBuildFile; fileRef = 140D49D42314E00900FDA4E8 /* NetworkError.html */; };
+		141F7BFA2320A981001B1716 /* HTTimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141F7BF92320A981001B1716 /* HTTimeHelper.swift */; };
 		1424690D230F8D0B008E6987 /* HTQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424690C230F8D0B008E6987 /* HTQRCodeViewController.swift */; };
 		1424690F230F8D2C008E6987 /* HTQRErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424690E230F8D2C008E6987 /* HTQRErrorViewController.swift */; };
 		14246911230F8DEA008E6987 /* HTQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14246910230F8DEA008E6987 /* HTQRCode.swift */; };
@@ -67,8 +73,14 @@
 /* Begin PBXFileReference section */
 		14022710231D0004006B0063 /* YTBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTBubbleView.swift; sourceTree = "<group>"; };
 		14022712231E00C5006B0063 /* HTRankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTRankViewController.swift; sourceTree = "<group>"; };
+		14022716231E367F006B0063 /* HTNODataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTNODataView.swift; sourceTree = "<group>"; };
+		14022718231E4486006B0063 /* HTBaseVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTBaseVideoViewController.swift; sourceTree = "<group>"; };
+		1402271A231E450E006B0063 /* HTVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTVideoViewController.swift; sourceTree = "<group>"; };
+		1402271D231E4582006B0063 /* HTVideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTVideoModel.swift; sourceTree = "<group>"; };
+		14022720231E4BB4006B0063 /* HTVideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTVideoTableViewCell.swift; sourceTree = "<group>"; };
 		1403313D231652D800CFC872 /* HTRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTRankTableViewCell.swift; sourceTree = "<group>"; };
 		140D49D42314E00900FDA4E8 /* NetworkError.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NetworkError.html; sourceTree = "<group>"; };
+		141F7BF92320A981001B1716 /* HTTimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTimeHelper.swift; sourceTree = "<group>"; };
 		1424690C230F8D0B008E6987 /* HTQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTQRCodeViewController.swift; sourceTree = "<group>"; };
 		1424690E230F8D2C008E6987 /* HTQRErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTQRErrorViewController.swift; sourceTree = "<group>"; };
 		14246910230F8DEA008E6987 /* HTQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTQRCode.swift; sourceTree = "<group>"; };
@@ -155,6 +167,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1402271C231E4570006B0063 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1402271D231E4582006B0063 /* HTVideoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1402271F231E4B94006B0063 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14022720231E4BB4006B0063 /* HTVideoTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1424690B230F8C92008E6987 /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +284,8 @@
 				14DB2CC7230E2FD20014F19C /* 文档 */,
 				14DB2CC8230E2FD20014F19C /* HTWebViewViewController.swift */,
 				140D49D42314E00900FDA4E8 /* NetworkError.html */,
+				14022716231E367F006B0063 /* HTNODataView.swift */,
+				141F7BF92320A981001B1716 /* HTTimeHelper.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -309,7 +339,11 @@
 		14DB2CDD230E2FD20014F19C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1402271F231E4B94006B0063 /* View */,
+				1402271C231E4570006B0063 /* Model */,
 				14DB2CDE230E2FD20014F19C /* ShopCollectionViewController.swift */,
+				14022718231E4486006B0063 /* HTBaseVideoViewController.swift */,
+				1402271A231E450E006B0063 /* HTVideoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -438,7 +472,7 @@
 			attributes = {
 				CLASSPREFIX = HT;
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = west;
 				TargetAttributes = {
 					7EFC389B20DA2884005616D0 = {
@@ -496,36 +530,42 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/WMPageController/WMPageController.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WMPageController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -584,15 +624,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				14DB2CE3230E2FD20014F19C /* MineTableViewController.swift in Sources */,
+				141F7BFA2320A981001B1716 /* HTTimeHelper.swift in Sources */,
 				14DB2CE9230E2FD20014F19C /* ChooseTypeHeaderView.swift in Sources */,
 				14DB2CF3230E2FD20014F19C /* OCViewController.m in Sources */,
 				14DB2CEB230E2FD20014F19C /* HelperClass.swift in Sources */,
 				1424690D230F8D0B008E6987 /* HTQRCodeViewController.swift in Sources */,
 				1440A53523138C8700165CA5 /* HTServices.swift in Sources */,
 				146517E42316C3CB00A7E19D /* HTRankModel.swift in Sources */,
+				14022721231E4BB4006B0063 /* HTVideoTableViewCell.swift in Sources */,
 				1403313E231652D800CFC872 /* HTRankTableViewCell.swift in Sources */,
 				14246915230FC4EC008E6987 /* HTBaseTableViewController.swift in Sources */,
 				14DB2CE6230E2FD20014F19C /* CradsModel.swift in Sources */,
+				14022719231E4486006B0063 /* HTBaseVideoViewController.swift in Sources */,
 				14DB2CFA230E2FD20014F19C /* ShopCollectionViewController.swift in Sources */,
 				14DB2CED230E2FD20014F19C /* HTWebViewViewController.swift in Sources */,
 				14DB2CE7230E2FD20014F19C /* ChooseTypeTableViewCell.swift in Sources */,
@@ -600,6 +643,7 @@
 				14022713231E00C5006B0063 /* HTRankViewController.swift in Sources */,
 				14022711231D0004006B0063 /* YTBubbleView.swift in Sources */,
 				14DB2CF0230E2FD20014F19C /* ViewController.swift in Sources */,
+				1402271B231E450E006B0063 /* HTVideoViewController.swift in Sources */,
 				14DB2CE8230E2FD20014F19C /* TableViewCell.swift in Sources */,
 				14DB2CE5230E2FD20014F19C /* PresentDataModel.swift in Sources */,
 				1440A53B2313DA7600165CA5 /* HTNewsDataViewModel.swift in Sources */,
@@ -610,6 +654,8 @@
 				1440A5392313D9AD00165CA5 /* HTNewsModel.swift in Sources */,
 				14246911230F8DEA008E6987 /* HTQRCode.swift in Sources */,
 				14DB2CEF230E2FD20014F19C /* SportsTableViewController.swift in Sources */,
+				14022717231E367F006B0063 /* HTNODataView.swift in Sources */,
+				1402271E231E4582006B0063 /* HTVideoModel.swift in Sources */,
 				14DB2CF8230E2FD20014F19C /* AppDelegate.swift in Sources */,
 				1424690F230F8D2C008E6987 /* HTQRErrorViewController.swift in Sources */,
 				1440A5372313D00600165CA5 /* HTHotNewsTableViewCell.swift in Sources */,
@@ -653,6 +699,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -660,6 +707,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -710,6 +758,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -717,6 +766,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

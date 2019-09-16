@@ -38,19 +38,19 @@ class HTRankModel: NSObject {
     }
 }
 
-var yingChaoRickoUrl = "https://dc.qiumibao.com/shuju/public/index.php?_url=/data/index&league=英超&tab=积分榜&year=2019"
+var yingChaoRickoUrl = "http://dc.qiumibao.com/shuju/public/index.php?_url=/data/index&league=英超&tab=积分榜&year=2019"
 
 
 ///积分url
 var HTRankUrl:(_ league:String,_ tab:String,_ year:String)->String = { league,tab,year in
     
-    return HTurlString("https://dc.qiumibao.com/shuju/public/index.php?_url=/data/index&league=\(league)&tab=\(tab)&year=\(year)")
+    return HTurlString("http://dc.qiumibao.com/shuju/public/index.php?_url=/data/index&league=\(league)&tab=\(tab)&year=\(year)")
 
 }
 ///规则url
 var HTRuleWebUrl:( _ type:String)->String = { string in
     
-    return HTurlString("https://dc.qiumibao.com/data/rule/words/\(string).php")
+    return HTurlString("http://dc.qiumibao.com/data/rule/words/\(string).php")   
 }
 
 

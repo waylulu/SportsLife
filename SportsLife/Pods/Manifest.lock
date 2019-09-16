@@ -1,64 +1,95 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - Alamofire (4.4.0)
+  - Alamofire (4.9.0)
   - BCUserTrack (5.1.0.9):
     - UTDID
-  - FMDB (2.6.2):
-    - FMDB/standard (= 2.6.2)
-  - FMDB/standard (2.6.2)
-  - Google-Mobile-Ads-SDK (7.20.0)
-  - IQKeyboardManager (4.0.10)
-  - JSONModel (1.7.0)
-  - Masonry (1.0.2)
-  - MBProgressHUD (1.0.0)
-  - MJRefresh (3.1.15)
-  - RxCocoa (4.1.0):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.1.0)
-  - SDWebImage (4.3.0):
-    - SDWebImage/Core (= 4.3.0)
-  - SDWebImage/Core (4.3.0)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - Google-Mobile-Ads-SDK (7.49.0):
+    - GoogleAppMeasurement (~> 6.0)
+  - GoogleAppMeasurement (6.1.1):
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (~> 0.3)
+  - GoogleUtilities/AppDelegateSwizzler (6.2.5):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (6.2.5)
+  - GoogleUtilities/Logger (6.2.5):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (6.2.5):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (6.2.5):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (6.2.5)"
+  - GoogleUtilities/Reachability (6.2.5):
+    - GoogleUtilities/Logger
+  - IQKeyboardManager (6.4.2)
+  - JSONModel (1.8.0)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
+  - MJRefresh (3.2.0)
+  - nanopb (0.3.901):
+    - nanopb/decode (= 0.3.901)
+    - nanopb/encode (= 0.3.901)
+  - nanopb/decode (0.3.901)
+  - nanopb/encode (0.3.901)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
+  - SDWebImage (5.1.1):
+    - SDWebImage/Core (= 5.1.1)
+  - SDWebImage/Core (5.1.1)
   - SecurityGuardSDK (5.1.94)
   - SGMain (5.1.94):
     - SecurityGuardSDK (= 5.1.94)
-  - SwiftyJSON (3.1.4)
-  - UMengUShare/Core (6.4.4):
+  - SwiftyJSON (5.0.0)
+  - UMengUShare/Core (6.4.8.2):
     - UMengUShare/Network
-  - UMengUShare/Network (6.4.4)
-  - UMengUShare/Social/QQ (6.4.4):
+  - UMengUShare/Network (6.4.8.2)
+  - UMengUShare/Social/QQ (6.4.8.2):
     - UMengUShare/Core
     - UMengUShare/Social/ReducedQQ
-  - UMengUShare/Social/ReducedQQ (6.4.4):
+  - UMengUShare/Social/ReducedQQ (6.4.8.2):
     - UMengUShare/Core
-  - UMengUShare/Social/ReducedSina (6.4.4):
+  - UMengUShare/Social/ReducedSina (6.4.8.2):
     - UMengUShare/Core
-  - UMengUShare/Social/ReducedWeChat (6.4.4):
+  - UMengUShare/Social/ReducedWeChat (6.4.8.2):
     - UMengUShare/Core
-  - UMengUShare/Social/Sina (6.4.4):
+  - UMengUShare/Social/Sina (6.4.8.2):
     - UMengUShare/Core
     - UMengUShare/Social/ReducedSina
-  - UMengUShare/Social/WeChat (6.4.4):
+  - UMengUShare/Social/WeChat (6.4.8.2):
     - UMengUShare/Core
     - UMengUShare/Social/ReducedWeChat
-  - UMengUShare/UI (6.4.4):
+  - UMengUShare/UI (6.4.8.2):
     - UMengUShare/Core
   - UTDID (1.1.0.16)
-  - WMPageController (2.3.0)
-  - XLPagerTabStrip (7.0.0)
+  - WMPageController (2.5.2)
+  - XLPagerTabStrip (8.1.0)
   - YWFeedbackFMWK (2.0.3.1):
     - BCUserTrack
     - SecurityGuardSDK
@@ -98,48 +129,57 @@ SPEC REPOS:
     - UTDID
     - YWFeedbackFMWK
   http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecsMirror.git:
+    - YYKit
+  https://github.com/cocoapods/specs.git:
     - AFNetworking
     - Alamofire
     - FMDB
     - Google-Mobile-Ads-SDK
+    - GoogleAppMeasurement
+    - GoogleUtilities
     - IQKeyboardManager
     - JSONModel
     - Masonry
     - MBProgressHUD
     - MJRefresh
+    - nanopb
     - RxCocoa
+    - RxRelay
     - RxSwift
     - SDWebImage
     - SwiftyJSON
     - UMengUShare
     - WMPageController
     - XLPagerTabStrip
-    - YYKit
 
 SPEC CHECKSUMS:
-  AFNetworking: 18af9c7b41a3fd4d184bc1d3a9f0f32ddb90179b
-  Alamofire: 82ed740d1619f6978ef60302f3140855cbd28f62
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   BCUserTrack: 684f468b8143be7a2ed10a8c449fd959b2a3a099
-  FMDB: dcbf7ce43a65d015d5e88cef383b9693b819f108
-  Google-Mobile-Ads-SDK: 168312cdc167fa22746d4ea8e839fc4825dd2966
-  IQKeyboardManager: 12b63a9a5a7574f7f1ebdcbf3e24bfb93de32eb3
-  JSONModel: a0a877cd66151ed0a205449c11c8f4f718ba468c
-  Masonry: 51cb76bcc3fea78dad2c7f2ae97c6ec5c0f5c102
-  MBProgressHUD: 3a0586c59f596fc6c20a64e56c65b8207541addc
-  MJRefresh: 4185131563afd208972fe2406208e16ae9354c56
-  RxCocoa: 21d8ee0292431a5b21436a9bd3a23e13d60c7df8
-  RxSwift: f68537af25d21a6e41a5a063c04e84ca44aeba87
-  SDWebImage: e2c42df193dbe741d8ff3a42591b69a88396699e
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  Google-Mobile-Ads-SDK: df315e371b29cf935f7ea872e7bdec39462a100e
+  GoogleAppMeasurement: 86a82f0e1f20b8eedf8e20326530138fd71409de
+  GoogleUtilities: e7dc37039b19df7fe543479d3e4a02ac8d11bb69
+  IQKeyboardManager: b41e0a4943fbac4c11a239d31a688667675f962e
+  JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
   SecurityGuardSDK: 05f6d782189160f2b23b731eed5cb314ce584855
   SGMain: 8a3008d8a709259d4868f78ae3265659e58e4416
-  SwiftyJSON: daa3156b55d1bc42358f1fd57b240d79c56c409a
-  UMengUShare: cd54ae52958426b79aa9193a7b02058d6a6d9aa0
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
   UTDID: c28855683c5ea2e77e597cb14609328f7d470d6e
-  WMPageController: 47b255e54f6e769179c85e687bd65a67cc98c5fa
-  XLPagerTabStrip: 17c475afa98ec80c43ae87498f39b7514d06deac
+  WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
+  XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   YWFeedbackFMWK: dcf0f60a24099f9a35d3445ae9ef79f3633ef9f6
   YYKit: fa4ab6a1758d7cf2d4ff6959bc0c711f5874a3d0
 
-PODFILE CHECKSUM: f3343081f044e771d0c339be577ca49023583d82
+PODFILE CHECKSUM: d4c63802c149632be8df13cb62a1134c903ecb4c
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.7.5

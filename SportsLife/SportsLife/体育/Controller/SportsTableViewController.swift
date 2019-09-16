@@ -187,9 +187,15 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
         tableView.deselectRow(at: indexPath, animated: true)
 //        let url = URL(string: "https://itunes.apple.com/us/app/%E7%83%AD%E5%8A%9B%E8%B6%B3%E7%90%83/id1224540082?l=zh&ls=1&mt=8")!
 //        UIApplication.shared.openURL(url)
-
-        self.getData()
-
+        let model = self.newsArr[indexPath.row]
+        let vc = HTWebViewViewController();
+        vc.hidesBottomBarWhenPushed = true
+        vc.type = "zhibo8"
+        vc.url = "https://m.zhibo8.cc/news/web" + model.url
+        self.navigationController?.pushViewController(vc, animated: true)
+//        https://m.zhibo8.cc/news/web/zuqiu/2019-09-03/5d6e7562d45b4.htm?key=20190904095944
+//        self.getData()
+//        self.login();
 //        AlertView.shard.MBProgressHUDWithMessage(view: self.view, message: "点击了第\(tableView.tag)tableView的\(indexPath.row)")
     }
     //    MARK:# 其他
@@ -197,6 +203,65 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        seg.isHidden = true
+
+    }
+    /**
+     vcode    8274
+     ip    192.168.1.68
+     version_code    4.8.3
+     time    1567649205
+     usersports    1
+     operator    46001
+     ts    1567649206
+     opentype    phone
+     IDFA    00000000-0000-0000-0000-000000000000
+     vendor    Apple
+     udid    f9842ff0c21fc7e2e86133bd99bbddb21f463206
+     lan    zh-Hans-CN
+     os    iOS
+     geo    113.947532,22.540005
+     net    2
+     appname    zhibo8
+     openudid    f9842ff0c21fc7e2e86133bd99bbddb21f463206
+     orientation    0
+     phone_no    13296697969
+     UDID    f9842ff0c21fc7e2e86133bd99bbddb21f463206
+     _platform    ios
+     time_zone    Asia/Shanghai
+     os_version    12.4
+     chk    1c71d3faa5da2972b0e4be7fefa047c9
+     pk    com.zhibo8.tenyears
+     density    359
+     model    iPhone11,8
+     zone_code    +86
+     device    iPhone11,8
+     blacks_status    disable
+     */
+
+    
+    /**
+     device    iPhone11,8
+     time_zone    Asia/Shanghai
+     gateway_sdk_version    2.2
+     verify_id    1935715
+     appname    zhibo8
+     time    1567649206
+     os    iOS
+     UDID    f9842ff0c21fc7e2e86133bd99bbddb21f463206
+     pk    com.zhibo8.tenyears
+     chk    3d7ed38189a41b477ed949a0b1f87f89
+     _platform    ios
+     version_code    4.8.3
+     os_version    12.4
+     usersports    1
+     blacks_status    disable
+     IDFA    00000000-0000-0000-0000-000000000000
+     */
+    
 }
 extension SportsTableViewController{
     func segmentClick(segment :UISegmentedControl){
@@ -229,11 +294,14 @@ extension SportsTableViewController{
                 
             })
         }
-//        HTServices.htNet.getAFNData(urlString:  yingChaoRickoUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: .get, parameters: [:]) { (json, err) -> (Void) in
-//            AlertView.shard.alertWithTitle(controller: self, title: "点击了\(json)", bloack: {
-//
-//            })
-//        }
+
     }
     
+    func login(){
+        let dic = ["user_auth":"bf5Pqu7yrG3110vAulsqk6x807%2Bqp8XlApTwqy1etrkBfrR%2BhGR8IGBAcWNjA%2FeT0jizECpj%2Bggaw7YDeLnlu%2Fpz8F2rk1mrNVFrWLS0QXuSL8wfmYYz6YvRXzTrJEcGl%2691bcg3Zb5p6eK3Jkp4cIyiui%2BPVWz5rf15f3yDNri4jizhgi1kg%60pHiFZeiBMvdTGGuRv5GXg9sYxv","is_rookie":"0"]
+        HTServices.htNet.getData(loadingView: self.view, urlString: "https://pl.zhibo8.cc/mobile/sms_login_and_check.php", method: .post, parameters: dic) { (json) -> (Void) in
+            print(json)
+        }
+    }
+  
 }

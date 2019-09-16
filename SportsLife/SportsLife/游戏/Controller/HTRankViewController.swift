@@ -26,11 +26,14 @@ class HTRankViewController:  HTBaseViewController ,UIWebViewDelegate,IndicatorIn
     var tab    = "积分榜"//赛程
     ///年份
     var year   = "2019"
+    var isaddObserver:Bool = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configUI()
         self.loadData(year: year)
+        
+      
     }
     //    MARK:# UI
     func configUI() {
@@ -73,21 +76,34 @@ class HTRankViewController:  HTBaseViewController ,UIWebViewDelegate,IndicatorIn
     }
     
     func setCellWeb(){
+        
         cellWeb.delegate = self
         cellWeb.loadRequest(URLRequest.init(url: URL.init(string: HTRuleWebUrl(league.chineseToPinYin()))!))
         
-        self.tableView.tableFooterView = HelperClass.shared.requestUrl(urlString: HTRuleWebUrl(league.chineseToPinYin())) ? cellWeb : nil
+        self.tableView.tableFooterView = self.isRequest() ? cellWeb : nil
+        
+        
+        if self.isRequest() {
+            self.isaddObserver = true
+            cellWeb.scrollView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        }
     }
     
     //    MARK:# 数据
     func loadData(year:String) {
-        HTRankServices().getNewsArr(league: league, tab: tab, year: year, loadingView: self.view) { (arr, json) in
+        HTRankServices().getNewsArr(league: league, tab: tab, year: year, loadingView: self.view) {[weak self] (arr, json) in
             print(json)
             if arr.count > 0{
-                self.dataArr = arr;
+                self?.dataArr = arr;
+            }else
+            {
+                let view = HTNODataView.init(frame: CGRect(x: 0, y: 30, width: WIDTH, height: HEIGHT - naviHeight - 30 - bottomHeight - 49), titleString: "noData")
+                self?.tableView.tableFooterView = view
             }
-            self.tableView.reloadData()
+            self?.tableView.reloadData()
         }
+        
+      
     }
     
     
@@ -154,7 +170,6 @@ class HTRankViewController:  HTBaseViewController ,UIWebViewDelegate,IndicatorIn
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         
-        cellWeb.scrollView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
         
         let height = (Double(self.cellWeb.stringByEvaluatingJavaScript(from: "document.body.offsetHeight")!) ?? 0)
         self.cellWeb.frame = CGRect(x: self.cellWeb.frame.origin.x, y: self.cellWeb.frame.origin.y, width: UIScreen.main.bounds.width, height: CGFloat(height))
@@ -163,7 +178,7 @@ class HTRankViewController:  HTBaseViewController ,UIWebViewDelegate,IndicatorIn
     }
     
     deinit {
-        if self.tableView.tableFooterView != nil {
+        if self.isaddObserver {
             self.cellWeb.scrollView.removeObserver(self, forKeyPath: "contentSize")
         }
     }
@@ -177,7 +192,9 @@ class HTRankViewController:  HTBaseViewController ,UIWebViewDelegate,IndicatorIn
     }
     
     
-    
+    func isRequest()->Bool{
+        return  HelperClass.shared.requestUrl(urlString: HTRuleWebUrl(league.chineseToPinYin()))
+    }
 
 }
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,11 +27,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
         self.window?.rootViewController = RootTabBarViewController()
+        #if DEBUG
+
+//        Bundle.init(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load();
         
+        #endif
+
 //        AlertView.shard.alertDetail(controller: (self.window?.rootViewController!)!, title: "该版本已不支持请前往App Store更新") {
 //        }
     }

@@ -34,7 +34,7 @@ class YTBubbleView: UIView {
     }
     */
     
-    let imgArr = ["ic-tianjia","ic-chazhao","ic-saoyisao","ic-qunzu"]
+    let imgArr = ["ic-tianjia","ic-chazhao","ic-saoyisao","ic-qunzu","ic-qunzu"]
     
     typealias clickBlock = (String)->()
     var popItemAction: clickBlock?

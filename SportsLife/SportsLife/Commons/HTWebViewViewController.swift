@@ -8,11 +8,11 @@
 
 import UIKit
 import WebKit
+import GoogleMobileAds
 
 @objcMembers
-class HTWebViewViewController: HTBaseViewController ,WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler{
+class HTWebViewViewController: HTBaseViewController ,WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler,GADAdSizeDelegate{
 
-    
 
     var webView = WKWebView()
     var userContent = WKUserContentController()
@@ -21,6 +21,9 @@ class HTWebViewViewController: HTBaseViewController ,WKNavigationDelegate,WKUIDe
     var progress = CGFloat()
     var url = String()
     var closeBtn = UIButton()
+    var type = ""
+    var bannerView: GADBannerView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,8 @@ class HTWebViewViewController: HTBaseViewController ,WKNavigationDelegate,WKUIDe
         self.setWebUI()
         self.setProgressView()
         self.loadData()
+        self.ads()
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -79,21 +84,94 @@ class HTWebViewViewController: HTBaseViewController ,WKNavigationDelegate,WKUIDe
         config.allowsAirPlayForMediaPlayback = true;
         
         webView = WKWebView.init(frame: self.view.bounds, configuration: config);
-        self.webView.navigationDelegate = self;
-        self.webView.uiDelegate = self;
         self.view.addSubview(webView);
+        self.webView.scrollView.bounces = false;//回弹效果
+        self.webView.scrollView.showsVerticalScrollIndicator = false;
     }
 
     func loadData(){
         if url.contains("http://") || url.contains("https://"){
-            webView.load(URLRequest.init(url: URL.init(string: url)!))
+//            if type == "zhibo8"{
+//                self.editWebData()
+//            }else{
+                self.webView.navigationDelegate = self;
+                self.webView.uiDelegate = self;
+
+                webView.load(URLRequest.init(url: URL.init(string: url)!))
+//            }
 
         }else{
-            webView.loadHTMLString(url, baseURL: nil);
+//            let errorString = try! String.init(contentsOfFile: Bundle.main.path(forResource: url, ofType: "html")!)
+//
+//            webView.loadHTMLString(errorString, baseURL: URL.init(string: Bundle.main.path(forResource: url, ofType: "html")!));
+            webView.load(URLRequest.init(url: URL.init(fileURLWithPath: Bundle.main.path(forResource: "NetworkError", ofType: "html")!)))
+
         }
         
     }
     
+    
+    func editWebData(){
+        let request = URLRequest.init(url: URL.init(string: url)!)
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, res, err) in
+            DispatchQueue.main.async {
+                var str = String.init(data: data!, encoding: .utf8)
+                let range1 = str?.range(of: "<a href=\"http://m.zhibo8.cc/download/\">更多新闻请下载直播吧客户端</a>")
+                let range2 = str?.range(of: "<a href=\"http://m.zhibo8.cc/\">直播吧</a>")
+                let range3 = str?.range(of: "<a class=\"float_right\" href=\"")
+                            str = str?.replacingCharacters(in: range1!, with: "")
+                            str = str?.replacingCharacters(in: range2!, with: "")
+                            str = str?.replacingCharacters(in: range3!, with: "")
+                //
+                self.webView.loadHTMLString(str!, baseURL: URL.init(string: self.url))
+            }
+  
+        }
+    }
+    
+    func ads(){
+        
+        
+        bannerView = GADBannerView.init(frame: CGRect(x: 0, y: naviHeight, width: WIDTH, height: 60))
+        bannerView.backgroundColor = UIColor.white
+        view.addSubview(bannerView)
+        
+        bannerView.adUnitID = "ca-app-pub-9033627101784845/4539885860"//ca-app-pub-9033627101784845/4539885860
+        
+        let request = GADRequest()
+        request.testDevices = [ "5e9154e34ae2bda23a66973377c77859" ]
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.adSizeDelegate = self;
+    }
+    
+    func adView(_ bannerView: GADBannerView, willChangeAdSizeTo size: GADAdSize) {
+        print(size);
+    }
+    
+
+//    
+//    func addBannerViewToView(_ bannerView: GADBannerView) {
+//        bannerView.translatesAutoresizingMaskIntoConstraints = false
+//        view.addSubview(bannerView)
+//        view.addConstraints(
+//            [NSLayoutConstraint(item: bannerView,
+//                                attribute: .bottom,
+//                                relatedBy: .equal,
+//                                toItem: bottomLayoutGuide,
+//                                attribute: .top,
+//                                multiplier: 1,
+//                                constant: 0),
+//             NSLayoutConstraint(item: bannerView,
+//                                attribute: .centerX,
+//                                relatedBy: .equal,
+//                                toItem: view,
+//                                attribute: .centerX,
+//                                multiplier: 1,
+//                                constant: 0)
+//            ])
+//    }
     
     func goBackWeb(){
         if webView.canGoBack {
@@ -161,6 +239,8 @@ class HTWebViewViewController: HTBaseViewController ,WKNavigationDelegate,WKUIDe
         
         decisionHandler(WKNavigationActionPolicy.cancel)
     }
+    
+    
     
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {

@@ -8,6 +8,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import SwiftyJSON
 
 typealias  ChooseYearCallback = (_ year:String)->()
 
@@ -23,6 +24,7 @@ class HTRankBaseViewController: ButtonBarPagerTabStripViewController {
     var packView:UIView!
     var chooseYearBlock:ChooseYearCallback?
     weak var chooseYearDelagate:YearDelegate?
+    var year = "2019"
     
     override func viewDidLoad() {
         self.setPageView()
@@ -33,7 +35,7 @@ class HTRankBaseViewController: ButtonBarPagerTabStripViewController {
     
     
     func configUI(){
-        self.title = "2019"
+        self.navigationItem.title =  year + " - \(String(describing: Int(year)! + 1))" + "赛季"
         self.buttonBarView.frame = CGRect(x: 0, y: naviHeight, width: WIDTH, height: 30)
         let r = UIBarButtonItem.init(title: "赛季", style: .plain, target: self, action: #selector(rClick))
         self.navigationItem.rightBarButtonItem = r;
@@ -48,7 +50,7 @@ class HTRankBaseViewController: ButtonBarPagerTabStripViewController {
         self.packView.addGestureRecognizer(tap)
         keyWindow.addSubview(self.packView)
 //
-        self.popview = YTBubbleView.init(frame:CGRect(x: WIDTH - 314 * scaleWidth, y: naviHeight, width: 300 * scaleWidth, height: CGFloat(titleArr.count * 60) * scaleHeight))
+        self.popview = YTBubbleView.init(frame:CGRect(x: WIDTH - 314 * scaleWidth, y: naviHeight, width: 300 * scaleWidth, height: CGFloat(textArr.count * 65) * scaleHeight + 15))
         self.popview.backgroundColor = UIColor.clear
         self.popview.popItemAction = {[weak self] index in
 //            print(index)
@@ -57,8 +59,10 @@ class HTRankBaseViewController: ButtonBarPagerTabStripViewController {
 //            vc.loadData(year: index)
 
             if self?.chooseYearDelagate != nil {
-                self?.title = index
+                self?.navigationItem.title =  index + " - \(String(describing: Int(index)! + 1))" + "赛季"
+                self?.year = index
                 self?.chooseYearDelagate?.chooseyear(index, self?.titleArr[self?.currentIndex ?? 0] ?? "西甲")
+                self?.reloadPagerTabStripView()
         }
 //            if  self?.chooseYearBlock != nil {
 //                self?.chooseYearBlock!(index)
@@ -126,12 +130,13 @@ class HTRankBaseViewController: ButtonBarPagerTabStripViewController {
         
         //        settings.style.buttonBarLeftContentInset = 15
         //        settings.style.buttonBarRightContentInset = 15
-        changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+        changeCurrentIndexProgressive = {[weak self] (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
             oldCell?.label.textColor = UIColor.black
             newCell?.label.textColor = .orange
             oldCell?.backgroundColor = UIColor.white
-            
+//            self!.navigationItem.title = self?.currentIndex == 0 ? self?.navigationItem.title : (self!.titleArr[(self?.currentIndex)!]) + self!.year + " - \(String(describing: Int(self!.year)! + 1))" + "赛季"
+
         }
         self.view.backgroundColor = UIColor.white
         
@@ -146,7 +151,7 @@ class HTRankBaseViewController: ButtonBarPagerTabStripViewController {
             self.chooseYearDelagate = vc
             vc.league = i
             vc.itemTitle.title = i
-            vc.year = self.title ?? "2019"
+            vc.year = self.year
             arr.append(vc)
         }
         return arr;
@@ -154,9 +159,10 @@ class HTRankBaseViewController: ButtonBarPagerTabStripViewController {
 }
 
 extension HTRankBaseViewController{
-//    func chooseyear(_ yaer: String) {
-//        print(yaer)
+
+//    func injected(){
+//        print("injected")
+//        self.configUI()
 //    }
-    
     
 }

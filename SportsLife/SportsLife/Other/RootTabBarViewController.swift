@@ -25,7 +25,8 @@ class RootTabBarViewController: UITabBarController {
         let shopVC = ShopCollectionViewController.init(collectionViewLayout: layout)
         //使用collectionView时要加layout不然会crash
         let one = self.setController(viewController: SportsTableViewController())
-        let two = self.setController(viewController: ShopCollectionViewController.init(collectionViewLayout: UICollectionViewFlowLayout()))
+//        let two = self.setController(viewController: ShopCollectionViewController.init(collectionViewLayout: UICollectionViewFlowLayout()))
+        let two  = self.setController(viewController: HTBaseVideoViewController())
         let three = self.setController(viewController: HTRankBaseViewController())
         let four = self.setController(viewController: MineTableViewController())
         self.viewControllers = [one,

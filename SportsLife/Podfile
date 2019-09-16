@@ -1,5 +1,7 @@
 source 'http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecs.git'
 source 'http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecsMirror.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '9.0'
 
 target 'SportsLife' do

@@ -60,7 +60,7 @@
 - (IBAction)rightClickBtn:(id)sender{
     
     HTWebViewViewController * vc = [HTWebViewViewController new];
-    vc.url = @"https://www.baidu.com";
+    vc.url = @"NetworkError";
     [self.navigationController pushViewController:vc animated:true];
     
 }

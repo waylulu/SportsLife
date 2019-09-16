@@ -25,21 +25,28 @@
 import Foundation
 
 open class ButtonBarViewCell: UICollectionViewCell {
-    
+
     @IBOutlet open var imageView: UIImageView!
-    @IBOutlet open lazy var label: UILabel! = { [unowned self] in
-        let label = UILabel(frame: self.contentView.bounds)
-        label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 14.0)
-        return label
-    }()
-    
-    open override func willMove(toSuperview newSuperview: UIView?) {
-        super.willMove(toSuperview: newSuperview)
+    @IBOutlet open var label: UILabel!
+
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         
-        if label.superview != nil {
-            contentView.addSubview(label)
+        isAccessibilityElement = true
+        accessibilityTraits.insert([.button, .header])
+    }
+    
+    open override var isSelected: Bool {
+        get {
+            return super.isSelected
+        }
+        set {
+            super.isSelected = newValue
+            if (newValue) {
+                accessibilityTraits.insert(.selected)
+            } else {
+                accessibilityTraits.remove(.selected)
+            }
         }
     }
 }
