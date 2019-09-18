@@ -10,9 +10,9 @@ import UIKit
 import SwiftyJSON
 import Metal
 import XLPagerTabStrip
+import SDWebImage
 
 class HTRankViewController:  HTBaseViewController ,UIWebViewDelegate,IndicatorInfoProvider,UITableViewDelegate,UITableViewDataSource,YearDelegate{
-
     
     
     var tableView = UITableView();
@@ -31,7 +31,7 @@ class HTRankViewController:  HTBaseViewController ,UIWebViewDelegate,IndicatorIn
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configUI()
-        self.loadData(year: year)
+        self.loadData( year: year)
         
       
     }
@@ -69,9 +69,10 @@ class HTRankViewController:  HTBaseViewController ,UIWebViewDelegate,IndicatorIn
     }
 
     
-    func chooseyear(_ yaer: String, _ league: String) {
+    func chooseyear(_ yaer: String, _ league: String, _ tab: String) {
         self.year = yaer
         self.league = league
+        self.tab = tab;
         self.loadData(year: yaer)
     }
     
@@ -138,7 +139,8 @@ class HTRankViewController:  HTBaseViewController ,UIWebViewDelegate,IndicatorIn
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:HTRankTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HTRankTableViewCell
-        cell.setData(model: self.dataArr[indexPath.row], index: indexPath.row)
+        let model = self.dataArr[indexPath.row];
+        cell.setData(model: model, index: indexPath.row)
         if indexPath.row == 0 {
             cell.selectionStyle = .none
         }

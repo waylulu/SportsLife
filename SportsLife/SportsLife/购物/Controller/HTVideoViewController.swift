@@ -10,6 +10,7 @@ import UIKit
 import XLPagerTabStrip
 import SwiftyJSON
 import AVKit
+import MJRefresh
 
 class HTVideoViewController: HTBaseViewController ,UIWebViewDelegate,IndicatorInfoProvider,UITableViewDelegate,UITableViewDataSource{
     
@@ -23,14 +24,14 @@ class HTVideoViewController: HTBaseViewController ,UIWebViewDelegate,IndicatorIn
     ///数据类型
     var tab    = "积分榜"//赛程
     ///年份
-    var page   = "0"
+    var page:Int   = 0
     var isaddObserver:Bool = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configUI()
         self.loadData(page: page)
-        
+        self.refreshData()
         
     }
     //    MARK:# UI
@@ -48,14 +49,26 @@ class HTVideoViewController: HTBaseViewController ,UIWebViewDelegate,IndicatorIn
         
     }
     
-    
+    func refreshData(){
+        self.tableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {[weak self] in
+            self?.dataArr.removeAll();
+            self?.loadData(page: 0)
+        })
+        
+        self.tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: { [weak self] in
+            self?.page += 1;
+            self?.loadData(page: self?.page ?? 0)
+        })
+    }
     
     //    MARK:# 数据
-    func loadData(page:String) {
+    func loadData(page:Int) {
         
-        HTVideoService().getVideoArr(league: league, page: page, loadingView: self.view) {[weak self] (arr, json) in
+        HTVideoService().getVideoArr(league: league, page: "\(page)", loadingView: self.view) {[weak self] (arr, json) in
+            self?.tableView.mj_header.endRefreshing()
+            self?.tableView.mj_footer.endRefreshing()
             if arr.count > 0{
-                self?.dataArr = arr
+                self?.dataArr += arr
             }
             self?.tableView.reloadData()
 
@@ -95,6 +108,7 @@ class HTVideoViewController: HTBaseViewController ,UIWebViewDelegate,IndicatorIn
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:HTVideoTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HTVideoTableViewCell
+        cell.selectionStyle = .none
         let model = self.dataArr[indexPath.row]
         cell.setData(model: model)
         cell.btnClick = {[weak self] in
@@ -123,7 +137,8 @@ class HTVideoViewController: HTBaseViewController ,UIWebViewDelegate,IndicatorIn
         
         return itemTitle
     }
-    
+    //ca-app-pub-9033627101784845/9430917797
+
     
     func playVideo(url:String){
         let vc = AVPlayerViewController.init()

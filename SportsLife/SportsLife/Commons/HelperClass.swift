@@ -40,15 +40,30 @@ var HTImage:(String) ->UIImage = { string in
     return UIImage.init(named: string) ?? UIImage()
 }
 
+
 var HTurlString:(_ string:String)->String = { str in
     return str.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
 }
 
 ///size:字体大小 font:字体样式""为默认
-
-let HTFont:(_:CGFloat,_:String)->UIFont = { size,font in
+let HTFont:(_:CGFloat,_:String)->UIFont = { size,style in
     
-    return (font == "" ? UIFont.systemFont(ofSize: size) : UIFont.init(name: font, size: size)) ?? defalutFont
+    return (style == "" ? UIFont.systemFont(ofSize: size) : UIFont.init(name: style, size: size)) ?? defalutFont
+    
+}
+
+
+
+///设置label文字和图片共存
+var HtgetAttributedText:(_ string:String,_ font:UIFont,_ image:UIImage)->NSAttributedString = { string,font,image  in
+    
+    let attri = NSMutableAttributedString.init(string: "  \(string)", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13)])
+    let attachment = NSTextAttachment.init()
+    attachment.image = image
+    attachment.bounds = CGRect(x: 0, y: -4, width: 17, height: 17)
+    attri.insert(NSAttributedString.init(attachment: attachment), at: 0)
+    
+    return attri
     
 }
 
@@ -101,13 +116,13 @@ class HelperClass {
 
 }
 
-let TIME_MORE:Double = (-8 * 60 * 60);
+var TIME_MORE:Double = (-8 * 60 * 60);
 
 
-var currentTime:(_ formatterSample:String)->String = { str in
+var currentTime:(_ time:Double ,_ formatterSample:String)->String = { time ,str in
     let formatter = DateFormatter.init()
     formatter.dateFormat = str;
-    let date = Date.init(timeIntervalSinceNow: TIME_MORE)
+    let date = Date.init(timeIntervalSinceNow: time)
     
     return formatter.string(from: date)
 }

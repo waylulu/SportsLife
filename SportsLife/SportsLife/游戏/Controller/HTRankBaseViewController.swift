@@ -13,7 +13,7 @@ import SwiftyJSON
 typealias  ChooseYearCallback = (_ year:String)->()
 
 protocol YearDelegate:NSObjectProtocol{
-    func chooseyear(_ yaer: String, _ league:String)
+    func chooseyear(_ yaer: String, _ league:String,_ tab:String)
 }
 
 @objcMembers
@@ -25,6 +25,7 @@ class HTRankBaseViewController: ButtonBarPagerTabStripViewController {
     var chooseYearBlock:ChooseYearCallback?
     weak var chooseYearDelagate:YearDelegate?
     var year = "2019"
+    var pickView = UIPickerView()
     
     override func viewDidLoad() {
         self.setPageView()
@@ -37,9 +38,12 @@ class HTRankBaseViewController: ButtonBarPagerTabStripViewController {
     func configUI(){
         self.navigationItem.title =  year + " - \(String(describing: Int(year)! + 1))" + "赛季"
         self.buttonBarView.frame = CGRect(x: 0, y: naviHeight, width: WIDTH, height: 30)
+        
         let r = UIBarButtonItem.init(title: "赛季", style: .plain, target: self, action: #selector(rClick))
         self.navigationItem.rightBarButtonItem = r;
         
+//        let l = UIBarButtonItem.init(title: "赛程", style: .plain, target: self, action: #selector(lClick))
+//        self.navigationItem.leftBarButtonItem = l;
 //        self.chooseYearDelagate = self;
         
     }
@@ -53,56 +57,12 @@ class HTRankBaseViewController: ButtonBarPagerTabStripViewController {
         self.popview = YTBubbleView.init(frame:CGRect(x: WIDTH - 314 * scaleWidth, y: naviHeight, width: 300 * scaleWidth, height: CGFloat(textArr.count * 65) * scaleHeight + 15))
         self.popview.backgroundColor = UIColor.clear
         self.popview.popItemAction = {[weak self] index in
-//            print(index)
-//            let vc = GamesTableViewController()
-//            vc.year = index
-//            vc.loadData(year: index)
-
             if self?.chooseYearDelagate != nil {
                 self?.navigationItem.title =  index + " - \(String(describing: Int(index)! + 1))" + "赛季"
                 self?.year = index
-                self?.chooseYearDelagate?.chooseyear(index, self?.titleArr[self?.currentIndex ?? 0] ?? "西甲")
+                self?.chooseYearDelagate?.chooseyear(index, self?.titleArr[self?.currentIndex ?? 0] ?? "西甲", "积分榜")
                 self?.reloadPagerTabStripView()
-        }
-//            if  self?.chooseYearBlock != nil {
-//                self?.chooseYearBlock!(index)
-//            }
-            
-//            switch index {
-//            case 0://添加好友
-////                let view = SearchFriendAndGruopViewController()
-////                view.type = "好友"
-////                view.hidesBottomBarWhenPushed = true
-////                self.navigationController?.pushViewController(view, animated: true)
-//                                print("haoyou")
-//
-//                break
-//            case 1://查找群组
-////                let view = SearchFriendAndGruopViewController()
-////                view.type = "查找群组"
-////                view.hidesBottomBarWhenPushed = true
-////                self.navigationController?.pushViewController(view, animated: true)
-//                print("查找群组")
-//                break
-//            case 2://扫一扫
-////                let view = QRCode()
-////                view.type = "扫一扫"
-////                view.hidesBottomBarWhenPushed = true
-////                self.navigationController?.pushViewController(view, animated: true)
-//
-//                break
-//            default://创建群
-//                //                let create = CreateGruopViewController()
-//                //                let create = GroupManngerTableViewController()
-//                //                create.hidesBottomBarWhenPushed = true
-//                //                create.groupType = .CreateGroup
-//                //                self.navigationController?.pushViewController(create, animated: true)
-////                let vc = QQGCreateGroupViewController()
-////                vc.hidesBottomBarWhenPushed = true
-////                self.navigationController?.pushViewController(vc, animated: true)
-//                print("创建群")
-//                break
-//            }
+            }
             
             self?.popViewDismiss()
             
@@ -160,9 +120,40 @@ class HTRankBaseViewController: ButtonBarPagerTabStripViewController {
 
 extension HTRankBaseViewController{
 
-//    func injected(){
-//        print("injected")
-//        self.configUI()
-//    }
+    func lClick(){
+//        let vc = PresentChooseViewController()
+//        vc.modalPresentationStyle = .custom//蒙版风格overCurrentContext:tabbar跳转,custom
+//        vc.modalTransitionStyle = .crossDissolve;//跳转的风格
+//        self.presentingViewController?.definesPresentationContext = true;
+//        //        self.tabBarController?.tabBar.isHidden = true;
+//        vc.cardType = .one
+//        vc.centerTitle = "选择展示的内容"
+//
+////        if (self.defaultPayData != nil) && cell?.detailTextLabel?.text == self.defaultPayData?.payType{
+////            vc.choosePayData =  self.defaultPayData
+////            vc.cardType = .more
+////        }else if defaultData != nil && cell?.detailTextLabel?.text == self.defaultData?.model.title{
+////            vc.choosePayData =  self.defaultData
+////            vc.cardType = .one
+////        }
+////
+//        self.present(vc, animated: true) {
+//        }
+//        //type = ""时是其他选择.不等于""是选择了支付方式
+//        vc.choosePayTypeBlock = {[weak self] type ,model in
+//            if self?.chooseYearDelagate != nil {
+//                self?.navigationItem.title =  type + " - \(String(describing: Int(type)! + 1))" + "赛季"
+//                self?.year = type
+//                self?.chooseYearDelagate?.chooseyear(type, self?.titleArr[self?.currentIndex ?? 0] ?? "西甲")
+//                self?.reloadPagerTabStripView()
+//            }
+//        }
+        if self.chooseYearDelagate != nil {
+            self.chooseYearDelagate?.chooseyear("2019", self.titleArr[self.currentIndex ], "赛程" )
+            self.reloadPagerTabStripView()
+        }
+    }
     
+    
+
 }

@@ -51,14 +51,14 @@ class HTServices: NSObject {
     static let htNet = HTServices();
     
     func getData(loadingView:UIView, urlString:String, method:HTTPMethod,parameters:Parameters ,completion:@escaping (AlamoFireAndSwiftyJSONCallBackData)) {
-//        let mb = MBProgressHUD.showAdded(to: loadingView, animated: true)
-//        mb.mode = .indeterminate
-//        mb.label.text = ""
-//        mb.hide(animated: true, afterDelay: 10)
+        let mb = MBProgressHUD.showAdded(to: loadingView, animated: true)
+        mb.mode = .indeterminate
+        mb.label.text = ""
+        mb.hide(animated: true, afterDelay: 10)
         
         Alamofire.request(urlString, method: method, parameters: parameters).responseJSON { (data)  in
             DispatchQueue.main.async {
-//                mb.hide(animated: true)
+                mb.hide(animated: true)
                 let json = JSON.init(data.data ?? Data());
                 completion(json)
             }

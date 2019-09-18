@@ -16,7 +16,7 @@ class PresentDataModel {
     
 
     
-    let arr = [["title":"frist","detail":"1","titleImage":"a","isChoose":false],["title":"secend","detail":"2","titleImage":"b","isChoose":false],["title":"third","detail":"3","titleImage":"c","isChoose":false],["title":"forth","detail":"4","titleImage":"d","isChoose":false]];
+    let arr = [["title":"2019","detail":"1","titleImage":"a","isChoose":false],["title":"secend","detail":"2","titleImage":"b","isChoose":false],["title":"third","detail":"3","titleImage":"c","isChoose":false],["title":"forth","detail":"4","titleImage":"d","isChoose":false]];
     
    
     func getCardsdData(){

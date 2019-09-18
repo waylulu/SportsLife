@@ -8,7 +8,9 @@
 
 import UIKit
 import Alamofire
-
+import MJRefresh
+import Photos
+import AssetsLibrary
 
 
 @objcMembers
@@ -23,8 +25,8 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configUI()
-        self.loadData()
-
+        self.loadData(time: TIME_MORE)
+        self.refreshData()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -82,8 +84,14 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
             
             tableView.tag = i;
             tableView.register(UINib.init(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+
+            
             if i == 0 {
                 tableView.register(HTHotNewsTableViewCell.self, forCellReuseIdentifier: hCellId)
+            }else{
+                
+                tableView.register(HTScoreTableViewCell.self, forCellReuseIdentifier: sCell)
+
             }
             tableView.dataSource = self;
             tableView.delegate = self
@@ -91,9 +99,28 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
 //            view.backgroundColor = i == 1 ? UIColor.cyan : UIColor.green
             scrollView.addSubview(tableView)
         }
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
+        }
+        
     }
+    
+    
+    func refreshData(){
+        self.tableViewArr[self.seg.selectedSegmentIndex].mj_header = MJRefreshNormalHeader.init(refreshingBlock: {[weak self] in
+            TIME_MORE = (-8 * 60 * 60) ;
+            self?.newsArr.removeAll();
+            self?.loadData(time: TIME_MORE)
+        })
+        
+        self.tableViewArr[self.seg.selectedSegmentIndex].mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: { [weak self] in
+            TIME_MORE -= (24 * 60 * 60) ;
+            self?.loadData(time: TIME_MORE)
+        })
+    }
+    
     //    MARK:# 数据
-    func loadData() {
+    func loadData(time:Double) {
 
 //        HTServices.htNet.getData(urlString: newsUrl, method: .get, parameters: [:]) { (json) -> (Void) in
 //            DispatchQueue.main.async {
@@ -108,21 +135,27 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
 //            }
 //
 //        }
-        HTNewsDataViewModel().getNewsArr(loadingView: self.view) {[weak self] arr,json  in
-//            DispatchQueue.main.async {
+        HTNewsDataViewModel().getNewsArr(url: newsUrl(time), loadingView: self.view) {[weak self] arr,json  in
     
-                if arr.count > 0{
-                    self?.newsArr = arr;
-                    for tab in self?.tableViewArr ?? [] {
-                        tab.reloadData()
-                    }
-                }else{
-                    AlertView.shard.alertDetail(controller: self!, title: json.stringValue, bloack: {
-                        
-                    })
+            self?.tableViewArr[0].mj_footer.endRefreshing()
+            self?.tableViewArr[0].mj_header.endRefreshing()
+            if arr.count > 0{
+                self?.newsArr += arr;
+                if arr.count < 10{
+                    TIME_MORE -= (24 * 60 * 60) ;
+                    self?.loadData(time: TIME_MORE)
+                    
                 }
+                for tab in self?.tableViewArr ?? [] {
+                    tab.reloadData()
+                }
+            }else{
+                AlertView.shard.alertDetail(controller: self!, title: json.stringValue, bloack: {
+                    
+                })
+                
+            }
              
-//            }
            
         }
 
@@ -148,7 +181,7 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
         if section == 0 {
             return 0.0001
         }
-        return 10
+        return 20
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -167,7 +200,7 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
         if tableView.tag == 0 {
             return hotCellHeight
         }
-        return 40
+        return scoreHeight
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -176,8 +209,11 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
             cell.setData(model: self.newsArr[indexPath.row])
             return cell
         }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            cell.textLabel?.text = "\(arc4random())";
+            
+            let cell:HTScoreTableViewCell = tableView.dequeueReusableCell(withIdentifier: sCell, for: indexPath) as! HTScoreTableViewCell
+
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+//            cell.textLabel?.text = "\(arc4random())";
             return cell
         }
       

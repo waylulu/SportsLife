@@ -34,7 +34,9 @@ pod 'Masonry'
 pod 'RxSwift'
 pod 'RxCocoa'
 pod 'XLPagerTabStrip'
-#pod 'Zip'
-#pod 'SnapKit', '~> 4.0.0'
+pod 'Zip'
+pod 'SnapKit'
+
+pod 'Kingfisher'
 
 end

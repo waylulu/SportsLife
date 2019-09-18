@@ -15,6 +15,7 @@ var HTColor:(_ r:CGFloat,_ g:CGFloat,_ b:CGFloat,_ alpha:CGFloat)->UIColor = {r,
     return UIColor.init(red: r / 255.0, green: r / 255.0, blue: r / 255.0, alpha: a);
 }
 
+///二进制色值处理
 var HTHex:(_ hex:String,_ alpha:CGFloat)->UIColor = {hex,alpha in
     
     var rgb : UInt32 = 0

@@ -47,8 +47,9 @@ class HTVideoTableViewCell: UITableViewCell {
         
         self.backgroundColor = UIColor.init(rgba: arc4random() % 20)
         
-        titleLabel.textColor = UIColor.gray
-        
+        titleLabel.textColor = UIColor.black
+        titleLabel.backgroundColor = UIColor.white
+        titleLabel.alpha = 0.8;
         titleLabel.font = UIFont.systemFont(ofSize: 15)
         
     }
@@ -57,7 +58,7 @@ class HTVideoTableViewCell: UITableViewCell {
         headImageView.mas_makeConstraints { (make) in
             make?.top.mas_equalTo()
             make?.left.right()?.mas_equalTo()
-            make?.bottom.mas_equalTo()(-30)
+            make?.bottom.mas_equalTo()
         }
         
         palyBtn.mas_makeConstraints { [weak self] (make) in
@@ -66,8 +67,8 @@ class HTVideoTableViewCell: UITableViewCell {
         }
         titleLabel.mas_makeConstraints { (make) in
             make?.bottom.mas_equalTo()
-            make?.leading.mas_equalTo()(10)
-            make?.trailing.mas_equalTo()(-10)
+            make?.leading.mas_equalTo()//(10)
+            make?.trailing.mas_equalTo()//(-10)
             make?.height.mas_equalTo()(30)
         }
 

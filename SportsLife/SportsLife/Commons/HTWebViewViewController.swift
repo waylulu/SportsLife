@@ -224,7 +224,7 @@ class HTWebViewViewController: HTBaseViewController ,WKNavigationDelegate,WKUIDe
             return;
         }
         
-        //判断是不是网页
+        //判断是不是有效链接
         if(url?.scheme == "http" || url?.scheme == "https"){
             decisionHandler(WKNavigationActionPolicy.allow)
             return;
@@ -241,8 +241,7 @@ class HTWebViewViewController: HTBaseViewController ,WKNavigationDelegate,WKUIDe
     }
     
     
-    
-    
+
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
     }

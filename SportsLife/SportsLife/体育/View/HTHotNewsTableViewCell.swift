@@ -94,19 +94,8 @@ class HTHotNewsTableViewCell: UITableViewCell {
 //        attachment.image = HTImage("a")
 //        attachment.bounds = CGRect(x: 0, y: -4, width: 17, height: 17)
 //        attri.insert(NSAttributedString.init(attachment: attachment), at: 0)
-        commentsLabel.attributedText = getAttributedText(string: "12", font: defalutFont, HTImage("a"));
+        commentsLabel.attributedText = HtgetAttributedText("12", defalutFont, HTImage("a"));
     }
     
 }
 
-func getAttributedText(string:String, font:UIFont, _ image:UIImage)->NSAttributedString{
-    
-    let attri = NSMutableAttributedString.init(string: "  \(string)", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13)])
-    let attachment = NSTextAttachment.init()
-    attachment.image = image
-    attachment.bounds = CGRect(x: 0, y: -4, width: 17, height: 17)
-    attri.insert(NSAttributedString.init(attachment: attachment), at: 0)
-
-    return attri
-    
-}

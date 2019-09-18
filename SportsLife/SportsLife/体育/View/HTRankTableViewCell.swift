@@ -135,15 +135,16 @@ class HTRankTableViewCell: UITableViewCell {
     
     func setData(model:HTRankModel,index:Int){
 
-        self.球队.text = model.球队
+
+//        if index == 0 {
+            self.球队.text = model.球队
+//        }else{
+//            SDWebImageDownloader.shared.downloadImage(with: URL.init(string: model.icon), options: .continueInBackground, progress: nil) {[weak self] (image, data, err, true) in
+//                self?.球队.attributedText  = HtgetAttributedText(model.球队, defalutFont, image ?? UIImage())
+//            }
+//        }
         self.球队.textAlignment = index == 0 ? .center :.left
 
-        SDWebImageDownloader.shared.downloadImage(with: URL.init(string: model.icon), options: .continueInBackground, progress: nil) {[weak self] (image, data, err, true) in
-            if index != 0 {
-                self?.球队.attributedText  = getAttributedText(string: model.球队, font: defalutFont, image ?? UIImage())
-            }
-        }
-    
         self.排名.text = model.排名;
         self.场次.text  = model.场次;
         self.胜 .text = model.胜;

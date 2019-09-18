@@ -66,6 +66,7 @@ PODS:
   - SecurityGuardSDK (5.1.94)
   - SGMain (5.1.94):
     - SecurityGuardSDK (= 5.1.94)
+  - SnapKit (4.2.0)
   - SwiftyJSON (5.0.0)
   - UMengUShare/Core (6.4.8.2):
     - UMengUShare/Network
@@ -97,6 +98,7 @@ PODS:
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
+  - Zip (1.1.0)
 
 DEPENDENCIES:
   - AFNetworking
@@ -111,6 +113,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SDWebImage
+  - SnapKit
   - SwiftyJSON
   - UMengUShare/Social/QQ
   - UMengUShare/Social/Sina
@@ -120,6 +123,7 @@ DEPENDENCIES:
   - XLPagerTabStrip
   - YWFeedbackFMWK (~> 2.0.3.1)
   - YYKit
+  - Zip
 
 SPEC REPOS:
   http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecs.git:
@@ -147,10 +151,12 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SDWebImage
+    - SnapKit
     - SwiftyJSON
     - UMengUShare
     - WMPageController
     - XLPagerTabStrip
+    - Zip
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -172,6 +178,7 @@ SPEC CHECKSUMS:
   SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
   SecurityGuardSDK: 05f6d782189160f2b23b731eed5cb314ce584855
   SGMain: 8a3008d8a709259d4868f78ae3265659e58e4416
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
   UTDID: c28855683c5ea2e77e597cb14609328f7d470d6e
@@ -179,7 +186,8 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   YWFeedbackFMWK: dcf0f60a24099f9a35d3445ae9ef79f3633ef9f6
   YYKit: fa4ab6a1758d7cf2d4ff6959bc0c711f5874a3d0
+  Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: d4c63802c149632be8df13cb62a1134c903ecb4c
+PODFILE CHECKSUM: e13be043696250f243751414c7eb586bb6f07b5b
 
 COCOAPODS: 1.7.5

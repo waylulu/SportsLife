@@ -84,3 +84,6 @@ class HTRankServices {
     
     
 }
+
+
+let socre = "https://47.110.185.216/json/2019-09-17/373523.htm?device=iPhone11%2C8&time_zone=Asia/Shanghai&appname=zhibo8&os=iOS&UDID=f9842ff0c21fc7e2e86133bd99bbddb21f463206&platform=ios&pk=com.zhibo8.tenyears&_platform=ios&version_code=4.8.4&os_version=12.4.1&usersports=1&blacks_status=enable&IDFA=2D6BD8E3-DA38-46B3-A4C4-749EF4F500F0"
