@@ -9,8 +9,8 @@
 import UIKit
 import SDWebImage
 
-let defalutWidth:CGFloat = WIDTH * (1 / 10 );
-let defalutFont = UIFont.systemFont(ofSize: 12);
+let HTdefalutWidth:CGFloat = WIDTH * (1 / 10 );
+let HTdefalutFont = UIFont.systemFont(ofSize: 12);
 
 class HTRankTableViewCell: UITableViewCell {
     
@@ -59,28 +59,28 @@ class HTRankTableViewCell: UITableViewCell {
     
     func initCell(){
         self.排名.textAlignment = .center
-        self.排名.font = defalutFont
+        self.排名.font = HTdefalutFont
         
 //        self.球队.textAlignment = .center
-        self.球队.font = defalutFont
+        self.球队.font = HTdefalutFont
 
         self.场次.textAlignment = .center
-        self.场次.font = defalutFont
+        self.场次.font = HTdefalutFont
 
         self.胜.textAlignment = .center
-        self.胜.font = defalutFont
+        self.胜.font = HTdefalutFont
 
         self.平.textAlignment = .center
-        self.平.font = defalutFont
+        self.平.font = HTdefalutFont
 
         self.负.textAlignment = .center
-        self.负.font = defalutFont
+        self.负.font = HTdefalutFont
 
         self.净胜球.textAlignment = .center
-        self.净胜球.font = defalutFont
+        self.净胜球.font = HTdefalutFont
 
         self.积分.textAlignment = .center
-        self.积分.font = defalutFont
+        self.积分.font = HTdefalutFont
 
     }
     
@@ -88,37 +88,37 @@ class HTRankTableViewCell: UITableViewCell {
         self.排名.mas_makeConstraints { (make) in
 //            make?.leading.equalTo()
             make?.leading.top()?.bottom()?.equalTo()
-            make?.width.equalTo()(defalutWidth)
+            make?.width.equalTo()(HTdefalutWidth)
         }
         
         self.球队.mas_makeConstraints {[weak self] (make) in
             make?.top.bottom()?.equalTo()
-            make?.width.equalTo()(defalutWidth * 3)
+            make?.width.equalTo()(HTdefalutWidth * 2.5)
             make?.leading.equalTo()(self?.排名.mas_trailing)
         }
         self.场次.mas_makeConstraints {[weak self] (make) in
             make?.top.bottom()?.equalTo()
-            make?.width.equalTo()(defalutWidth)
+            make?.width.equalTo()(HTdefalutWidth)
             make?.leading.equalTo()(self?.球队.mas_trailing)
         }
         self.胜.mas_makeConstraints {[weak self] (make) in
             make?.top.bottom()?.equalTo()
-            make?.width.equalTo()(defalutWidth)
+            make?.width.equalTo()(HTdefalutWidth)
             make?.leading.equalTo()(self?.场次.mas_trailing)
         }
         self.平.mas_makeConstraints {[weak self] (make) in
             make?.top.bottom()?.equalTo()
-            make?.width.equalTo()(defalutWidth)
+            make?.width.equalTo()(HTdefalutWidth)
             make?.leading.equalTo()(self?.胜.mas_trailing)
         }
         self.负.mas_makeConstraints {[weak self] (make) in
             make?.top.bottom()?.equalTo()
-            make?.width.equalTo()(defalutWidth)
+            make?.width.equalTo()(HTdefalutWidth)
             make?.leading.equalTo()(self?.平.mas_trailing)
         }
         self.净胜球.mas_makeConstraints {[weak self] (make) in
             make?.top.bottom()?.equalTo()
-            make?.width.equalTo()(defalutWidth)
+            make?.width.equalTo()(HTdefalutWidth * 1.5)
             make?.leading.equalTo()(self?.负.mas_trailing)
         }
         self.积分.mas_makeConstraints {[weak self] (make) in

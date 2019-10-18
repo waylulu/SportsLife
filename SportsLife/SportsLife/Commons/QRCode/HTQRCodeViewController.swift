@@ -196,7 +196,7 @@ class HTQRCodeViewController: HTBaseViewController,AVCaptureMetadataOutputObject
         self.session.stopRunning()
         
         
-        let url = stringValue?.removingPercentEncoding
+        let url = stringValue?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         if url != "" {
             //url错误处理
             if  (url! as NSString).substring(with: NSMakeRange(0, 4)) != "http"{

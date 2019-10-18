@@ -5,3 +5,4 @@
 //#import "SDWebImage.h"
 #import "YYKit.h"
 #import "AFNetworking.h"
+#import <CloudPushSDK/CloudPushSDK.h>

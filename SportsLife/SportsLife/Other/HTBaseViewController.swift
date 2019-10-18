@@ -8,23 +8,21 @@
 
 import UIKit
 
+@objcMembers
 class HTBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if self.classForCoder != SportsTableViewController.self {
+            let leftBtn = UIBarButtonItem.init(image: HTImage("Icon_Back").withRenderingMode(.alwaysOriginal), style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.popView))
+            self.navigationItem.leftBarButtonItem = leftBtn;
+        }
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func popView(){
+        self.navigationController?.popViewController(animated: true)
     }
-    */
 
+    
 }

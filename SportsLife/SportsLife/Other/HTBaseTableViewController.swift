@@ -8,16 +8,21 @@
 
 import UIKit
 
+@objcMembers
 class HTBaseTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        if self.classForCoder != HTBaseVideoViewController.self  || self.classForCoder != HTRankBaseViewController.self  || self.classForCoder != MineTableViewController.self {
+            let leftBtn = UIBarButtonItem.init(image: HTImage("Icon_Back").withRenderingMode(.alwaysOriginal), style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.popView))
+            self.navigationItem.leftBarButtonItem = leftBtn;
+        }
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+
+    func popView(){
+        self.navigationController?.popViewController(animated: true)
     }
 
     // MARK: - Table view data source

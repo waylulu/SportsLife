@@ -46,6 +46,7 @@ PODS:
     - GoogleUtilities/Logger
   - IQKeyboardManager (6.4.2)
   - JSONModel (1.8.0)
+  - Kingfisher (4.10.1)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
   - MJRefresh (3.2.0)
@@ -107,6 +108,7 @@ DEPENDENCIES:
   - Google-Mobile-Ads-SDK
   - IQKeyboardManager
   - JSONModel
+  - Kingfisher
   - Masonry
   - MBProgressHUD
   - MJRefresh
@@ -143,6 +145,7 @@ SPEC REPOS:
     - GoogleUtilities
     - IQKeyboardManager
     - JSONModel
+    - Kingfisher
     - Masonry
     - MBProgressHUD
     - MJRefresh
@@ -168,6 +171,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: e7dc37039b19df7fe543479d3e4a02ac8d11bb69
   IQKeyboardManager: b41e0a4943fbac4c11a239d31a688667675f962e
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
@@ -188,6 +192,6 @@ SPEC CHECKSUMS:
   YYKit: fa4ab6a1758d7cf2d4ff6959bc0c711f5874a3d0
   Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: e13be043696250f243751414c7eb586bb6f07b5b
+PODFILE CHECKSUM: c71e2cbef3d38622d1f148ea9d1bfbb85ffb8145
 
 COCOAPODS: 1.7.5

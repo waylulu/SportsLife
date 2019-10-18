@@ -90,7 +90,7 @@ class HTRankBaseViewController: ButtonBarPagerTabStripViewController {
         
         //        settings.style.buttonBarLeftContentInset = 15
         //        settings.style.buttonBarRightContentInset = 15
-        changeCurrentIndexProgressive = {[weak self] (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+        changeCurrentIndexProgressive = {/*[weak self]*/ (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
             oldCell?.label.textColor = UIColor.black
             newCell?.label.textColor = .orange

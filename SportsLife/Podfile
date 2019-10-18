@@ -1,6 +1,7 @@
 source 'http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecs.git'
 source 'http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecsMirror.git'
 source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/aliyun/aliyun-specs.git'
 
 platform :ios, '9.0'
 
@@ -38,5 +39,12 @@ pod 'Zip'
 pod 'SnapKit'
 
 pod 'Kingfisher'
+
+
+pod 'AlicloudFeedback', '~> 3.2.0'
+
+
+
+
 
 end

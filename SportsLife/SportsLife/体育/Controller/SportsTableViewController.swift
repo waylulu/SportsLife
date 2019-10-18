@@ -20,7 +20,7 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
     var tableViewArr = [UITableView]()
     var segmentTitles = ["热文","比分"]
     var model = HTNewsDataViewModel()
-    var newsArr = [HTNewsModel]()
+    var newsArr = [newsDetailModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,73 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
         self.setSegmentUI()
         self.setScrollviewUI()
         self.setTableViewUI();
+//        self.testClassAndStruct()
 
+    }
+    
+    
+    func testClassAndStruct(){
+        /**
+         引用类型：将一个对象赋值给另一个对象时，系统不会对此对象进行拷贝，而会将指向这个对象的指针赋值给另一个对象，当修改其中一个对象的值时，另一个对象的值会随之改变。
+
+         值类型：将一个对象赋值给另一个对象时，会对此对象进行拷贝，复制出一份副本给另一个对象，在修改其中一个对象的值时，不影响另外一个对象。
+
+         在swift中，类属于引用类型，结构体属于值类型，相对于其他语言来说，swift的结构体功能更加强大，它除了支持在结构体声明中基础变量之外，它还支持在结构体中声明方法，这相对于其他语言来说，是swift的一个特性之一。此外，除了引用类型和值类型的区别之外，他们还有其他的不同点，下面总结一下在swift中类和结构体的不同点：
+
+         不同点：1.类属于引用类型，结构体属于值类型
+
+         2.类允许被继承，结构体不允许被继承
+
+         3.类中的每一个成员变量都必须被初始化，否则编译器会报错，而结构体不需要，编译器会自动帮我们生成init函数，给变量赋一个默认值
+         
+         */
+        ///1.类属于引用类型,
+        let testClassA = TestClass()
+        
+        print(testClassA.a)//1
+        print(testClassA.b)//testClassA
+        
+        testClassA.a = 2;
+        testClassA.b = "test";
+        print(testClassA.a)//2
+        print(testClassA.b)//test
+        
+        let testCalssB = testClassA;//使用testClassAtest新建一个
+        
+        testCalssB.a = 3
+        testCalssB.b = "testClassB"
+        
+        print(testClassA.a)//3
+        print(testClassA.b)//testClassB
+        
+        
+        
+        
+        ///值类型
+        var testStructA = TestStruct()
+        
+        print(testStructA.a)
+        print(testStructA.b)
+        
+        
+        testStructA.a = 5;
+        testStructA.b = "testStructA"
+        
+        print(testStructA.a)
+        print(testStructA.b)
+        
+        
+        var testStructB = testStructA
+        
+        testStructB.a = 6
+        
+        testStructB.b = "testStructB"
+        
+        print(testStructA.a)
+        print(testStructA.b)
+        
+        
+        
     }
 
     func rightClick(){
@@ -57,7 +123,11 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
         seg.frame = CGRect(x: (WIDTH -  SegWidth * CGFloat(segmentTitles.count)) / 2, y: 0, width: SegWidth * CGFloat(segmentTitles.count), height: 35)
         self.navigationController?.navigationBar.addSubview(seg);
         seg.backgroundColor = UIColor.white;
-        seg.tintColor = UIColor.orange;
+        if #available(iOS 13.0, *) {
+            seg.selectedSegmentTintColor = UIColor.orange
+        } else {
+            seg.tintColor = UIColor.orange
+        };
         seg.selectedSegmentIndex = 0;
         seg.addTarget(self, action: #selector(self.segmentClick(segment:)), for: UIControl.Event.valueChanged);
     
@@ -206,7 +276,7 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
         
         if tableView.tag == 0 {
             let cell:HTHotNewsTableViewCell = tableView.dequeueReusableCell(withIdentifier: hCellId, for: indexPath) as! HTHotNewsTableViewCell
-            cell.setData(model: self.newsArr[indexPath.row])
+            cell.setNewsData(model: self.newsArr[indexPath.row])
             return cell
         }else{
             

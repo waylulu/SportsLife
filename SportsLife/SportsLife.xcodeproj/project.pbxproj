@@ -16,13 +16,27 @@
 		14022721231E4BB4006B0063 /* HTVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14022720231E4BB4006B0063 /* HTVideoTableViewCell.swift */; };
 		1403313E231652D800CFC872 /* HTRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1403313D231652D800CFC872 /* HTRankTableViewCell.swift */; };
 		1407454B2330C38A0052061F /* HTScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407454A2330C38A0052061F /* HTScoreTableViewCell.swift */; };
+		140AFF8A2356F5A400C22C22 /* AliyunEmasServices-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 140AFF892356F5A400C22C22 /* AliyunEmasServices-Info.plist */; };
+		140AFF8C2356F73200C22C22 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 140AFF8B2356F73200C22C22 /* libz.tbd */; };
+		140AFF8E2356F73A00C22C22 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 140AFF8D2356F73A00C22C22 /* libresolv.tbd */; };
+		140AFF902356F74200C22C22 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 140AFF8F2356F74200C22C22 /* libsqlite3.tbd */; };
+		140AFF922356F74C00C22C22 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140AFF912356F74C00C22C22 /* CoreMotion.framework */; };
+		140AFF972357FA2000C22C22 /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140AFF932357FA1E00C22C22 /* UTDID.framework */; };
+		140AFF982357FA2000C22C22 /* AlicloudUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140AFF942357FA1F00C22C22 /* AlicloudUtils.framework */; };
+		140AFF992357FA2000C22C22 /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140AFF952357FA1F00C22C22 /* UTMini.framework */; };
+		140AFF9A2357FA2000C22C22 /* CloudPushSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140AFF962357FA2000C22C22 /* CloudPushSDK.framework */; };
 		140D49D52314E00900FDA4E8 /* NetworkError.html in Resources */ = {isa = PBXBuildFile; fileRef = 140D49D42314E00900FDA4E8 /* NetworkError.html */; };
+		140DB2BE233312CA00F87692 /* HTTeamDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140DB2BD233312CA00F87692 /* HTTeamDataTableViewController.swift */; };
+		140DB2C023331F9800F87692 /* HTTeamDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140DB2BF23331F9800F87692 /* HTTeamDataModel.swift */; };
+		140DB2C22333319600F87692 /* HTCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140DB2C12333319600F87692 /* HTCustomViewController.swift */; };
 		141F7BFA2320A981001B1716 /* HTTimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141F7BF92320A981001B1716 /* HTTimeHelper.swift */; };
 		1424690D230F8D0B008E6987 /* HTQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424690C230F8D0B008E6987 /* HTQRCodeViewController.swift */; };
 		1424690F230F8D2C008E6987 /* HTQRErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424690E230F8D2C008E6987 /* HTQRErrorViewController.swift */; };
 		14246911230F8DEA008E6987 /* HTQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14246910230F8DEA008E6987 /* HTQRCode.swift */; };
 		14246913230FB606008E6987 /* tipsSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14246912230FB606008E6987 /* tipsSound.mp3 */; };
 		14246915230FC4EC008E6987 /* HTBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14246914230FC4EC008E6987 /* HTBaseTableViewController.swift */; };
+		14353BF4234199FE00665C17 /* HTSquadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14353BF3234199FE00665C17 /* HTSquadTableViewCell.swift */; };
+		14353BF6234DAC3E00665C17 /* HTScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14353BF5234DAC3E00665C17 /* HTScheduleTableViewCell.swift */; };
 		1440A53523138C8700165CA5 /* HTServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A53423138C8700165CA5 /* HTServices.swift */; };
 		1440A5372313D00600165CA5 /* HTHotNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A5362313D00600165CA5 /* HTHotNewsTableViewCell.swift */; };
 		1440A5392313D9AD00165CA5 /* HTNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A5382313D9AD00165CA5 /* HTNewsModel.swift */; };
@@ -30,6 +44,10 @@
 		1440A53D23142BB900165CA5 /* HTColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A53C23142BB900165CA5 /* HTColors.swift */; };
 		146517E42316C3CB00A7E19D /* HTRankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146517E32316C3CB00A7E19D /* HTRankModel.swift */; };
 		146517E62317A79900A7E19D /* HTRankBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146517E52317A79900A7E19D /* HTRankBaseViewController.swift */; };
+		14AA90A0233858AA004B4D3B /* HTTeamDataBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AA909F233858AA004B4D3B /* HTTeamDataBaseViewController.swift */; };
+		14AA90DC2339B3F1004B4D3B /* HTTeamDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AA90DB2339B3F1004B4D3B /* HTTeamDataTableViewCell.swift */; };
+		14AA90DE2339B403004B4D3B /* HTCellHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AA90DD2339B403004B4D3B /* HTCellHeaderView.swift */; };
+		14AA90E02339BB22004B4D3B /* HTplayerInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AA90DF2339BB22004B4D3B /* HTplayerInfoCollectionViewCell.swift */; };
 		14DB2CE3230E2FD20014F19C /* MineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CBB230E2FD20014F19C /* MineTableViewController.swift */; };
 		14DB2CE4230E2FD20014F19C /* PresentChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CBC230E2FD20014F19C /* PresentChooseViewController.swift */; };
 		14DB2CE5230E2FD20014F19C /* PresentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB2CBE230E2FD20014F19C /* PresentDataModel.swift */; };
@@ -81,13 +99,28 @@
 		14022720231E4BB4006B0063 /* HTVideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTVideoTableViewCell.swift; sourceTree = "<group>"; };
 		1403313D231652D800CFC872 /* HTRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTRankTableViewCell.swift; sourceTree = "<group>"; };
 		1407454A2330C38A0052061F /* HTScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTScoreTableViewCell.swift; sourceTree = "<group>"; };
+		140AFF892356F5A400C22C22 /* AliyunEmasServices-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AliyunEmasServices-Info.plist"; sourceTree = "<group>"; };
+		140AFF8B2356F73200C22C22 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		140AFF8D2356F73A00C22C22 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		140AFF8F2356F74200C22C22 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		140AFF912356F74C00C22C22 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		140AFF932357FA1E00C22C22 /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
+		140AFF942357FA1F00C22C22 /* AlicloudUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlicloudUtils.framework; sourceTree = "<group>"; };
+		140AFF952357FA1F00C22C22 /* UTMini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTMini.framework; sourceTree = "<group>"; };
+		140AFF962357FA2000C22C22 /* CloudPushSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CloudPushSDK.framework; sourceTree = "<group>"; };
+		140AFF9B2358051E00C22C22 /* SportsLifeDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SportsLifeDebug.entitlements; sourceTree = "<group>"; };
 		140D49D42314E00900FDA4E8 /* NetworkError.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NetworkError.html; sourceTree = "<group>"; };
+		140DB2BD233312CA00F87692 /* HTTeamDataTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTeamDataTableViewController.swift; sourceTree = "<group>"; };
+		140DB2BF23331F9800F87692 /* HTTeamDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTeamDataModel.swift; sourceTree = "<group>"; };
+		140DB2C12333319600F87692 /* HTCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCustomViewController.swift; sourceTree = "<group>"; };
 		141F7BF92320A981001B1716 /* HTTimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTimeHelper.swift; sourceTree = "<group>"; };
 		1424690C230F8D0B008E6987 /* HTQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTQRCodeViewController.swift; sourceTree = "<group>"; };
 		1424690E230F8D2C008E6987 /* HTQRErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTQRErrorViewController.swift; sourceTree = "<group>"; };
 		14246910230F8DEA008E6987 /* HTQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTQRCode.swift; sourceTree = "<group>"; };
 		14246912230FB606008E6987 /* tipsSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tipsSound.mp3; sourceTree = "<group>"; };
 		14246914230FC4EC008E6987 /* HTBaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTBaseTableViewController.swift; sourceTree = "<group>"; };
+		14353BF3234199FE00665C17 /* HTSquadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTSquadTableViewCell.swift; sourceTree = "<group>"; };
+		14353BF5234DAC3E00665C17 /* HTScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		1440A53423138C8700165CA5 /* HTServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTServices.swift; sourceTree = "<group>"; };
 		1440A5362313D00600165CA5 /* HTHotNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTHotNewsTableViewCell.swift; sourceTree = "<group>"; };
 		1440A5382313D9AD00165CA5 /* HTNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTNewsModel.swift; sourceTree = "<group>"; };
@@ -95,6 +128,10 @@
 		1440A53C23142BB900165CA5 /* HTColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTColors.swift; sourceTree = "<group>"; };
 		146517E32316C3CB00A7E19D /* HTRankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTRankModel.swift; sourceTree = "<group>"; };
 		146517E52317A79900A7E19D /* HTRankBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTRankBaseViewController.swift; sourceTree = "<group>"; };
+		14AA909F233858AA004B4D3B /* HTTeamDataBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTeamDataBaseViewController.swift; sourceTree = "<group>"; };
+		14AA90DB2339B3F1004B4D3B /* HTTeamDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTeamDataTableViewCell.swift; sourceTree = "<group>"; };
+		14AA90DD2339B403004B4D3B /* HTCellHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCellHeaderView.swift; sourceTree = "<group>"; };
+		14AA90DF2339BB22004B4D3B /* HTplayerInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTplayerInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		14DB2CBB230E2FD20014F19C /* MineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineTableViewController.swift; sourceTree = "<group>"; };
 		14DB2CBC230E2FD20014F19C /* PresentChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentChooseViewController.swift; sourceTree = "<group>"; };
 		14DB2CBE230E2FD20014F19C /* PresentDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentDataModel.swift; sourceTree = "<group>"; };
@@ -148,15 +185,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140AFF992357FA2000C22C22 /* UTMini.framework in Frameworks */,
+				14DB2D13230E317E0014F19C /* SystemConfiguration.framework in Frameworks */,
+				14DB2D09230E31510014F19C /* CoreTelephony.framework in Frameworks */,
+				140AFF982357FA2000C22C22 /* AlicloudUtils.framework in Frameworks */,
+				140AFF9A2357FA2000C22C22 /* CloudPushSDK.framework in Frameworks */,
+				140AFF922356F74C00C22C22 /* CoreMotion.framework in Frameworks */,
+				140AFF902356F74200C22C22 /* libsqlite3.tbd in Frameworks */,
+				140AFF8E2356F73A00C22C22 /* libresolv.tbd in Frameworks */,
+				140AFF8C2356F73200C22C22 /* libz.tbd in Frameworks */,
 				14DB2D17230E318C0014F19C /* UIKit.framework in Frameworks */,
 				14DB2D15230E31850014F19C /* Security.framework in Frameworks */,
-				14DB2D13230E317E0014F19C /* SystemConfiguration.framework in Frameworks */,
 				14DB2D11230E31780014F19C /* QuartzCore.framework in Frameworks */,
 				14DB2D0F230E316F0014F19C /* MobileCoreServices.framework in Frameworks */,
 				14DB2D0D230E31610014F19C /* ImageIO.framework in Frameworks */,
 				14DB2D0B230E31590014F19C /* Foundation.framework in Frameworks */,
-				14DB2D09230E31510014F19C /* CoreTelephony.framework in Frameworks */,
 				14DB2D07230E314A0014F19C /* CoreText.framework in Frameworks */,
+				140AFF972357FA2000C22C22 /* UTDID.framework in Frameworks */,
 				14DB2D05230E31430014F19C /* CoreImage.framework in Frameworks */,
 				14DB2D03230E313B0014F19C /* CoreGraphics.framework in Frameworks */,
 				14DB2D01230E31310014F19C /* CoreFoundation.framework in Frameworks */,
@@ -183,6 +228,18 @@
 				14022720231E4BB4006B0063 /* HTVideoTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		140AFF882356F58F00C22C22 /* 阿里云 */ = {
+			isa = PBXGroup;
+			children = (
+				140AFF942357FA1F00C22C22 /* AlicloudUtils.framework */,
+				140AFF962357FA2000C22C22 /* CloudPushSDK.framework */,
+				140AFF932357FA1E00C22C22 /* UTDID.framework */,
+				140AFF952357FA1F00C22C22 /* UTMini.framework */,
+				140AFF892356F5A400C22C22 /* AliyunEmasServices-Info.plist */,
+			);
+			path = "阿里云";
 			sourceTree = "<group>";
 		};
 		1424690B230F8C92008E6987 /* QRCode */ = {
@@ -227,6 +284,7 @@
 		146517E12316904700A7E19D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				140DB2BF23331F9800F87692 /* HTTeamDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +292,11 @@
 		146517E22316905100A7E19D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				14AA90DB2339B3F1004B4D3B /* HTTeamDataTableViewCell.swift */,
+				14AA90DD2339B403004B4D3B /* HTCellHeaderView.swift */,
+				14AA90DF2339BB22004B4D3B /* HTplayerInfoCollectionViewCell.swift */,
+				14353BF3234199FE00665C17 /* HTSquadTableViewCell.swift */,
+				14353BF5234DAC3E00665C17 /* HTScheduleTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,6 +304,7 @@
 		14DB2CB9230E2FD20014F19C /* 个人中心 */ = {
 			isa = PBXGroup;
 			children = (
+				140AFF882356F58F00C22C22 /* 阿里云 */,
 				14DB2CBA230E2FD20014F19C /* Controller */,
 				14DB2CBD230E2FD20014F19C /* Model */,
 				14DB2CC0230E2FD20014F19C /* View */,
@@ -327,6 +391,7 @@
 				14DB2CD9230E2FD20014F19C /* AppDelegate.swift */,
 				14DB2CDB230E2FD20014F19C /* OCViewController.h */,
 				14246914230FC4EC008E6987 /* HTBaseTableViewController.swift */,
+				140DB2C12333319600F87692 /* HTCustomViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -374,6 +439,8 @@
 				14DB2CE2230E2FD20014F19C /* GamesTableViewController.swift */,
 				146517E52317A79900A7E19D /* HTRankBaseViewController.swift */,
 				14022712231E00C5006B0063 /* HTRankViewController.swift */,
+				140DB2BD233312CA00F87692 /* HTTeamDataTableViewController.swift */,
+				14AA909F233858AA004B4D3B /* HTTeamDataBaseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -381,6 +448,10 @@
 		4EB67C44752F295A0C4B1E3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				140AFF912356F74C00C22C22 /* CoreMotion.framework */,
+				140AFF8F2356F74200C22C22 /* libsqlite3.tbd */,
+				140AFF8D2356F73A00C22C22 /* libresolv.tbd */,
+				140AFF8B2356F73200C22C22 /* libz.tbd */,
 				14DB2D16230E318C0014F19C /* UIKit.framework */,
 				14DB2D14230E31850014F19C /* Security.framework */,
 				14DB2D12230E317E0014F19C /* SystemConfiguration.framework */,
@@ -432,6 +503,7 @@
 		7EFC389E20DA2884005616D0 /* SportsLife */ = {
 			isa = PBXGroup;
 			children = (
+				140AFF9B2358051E00C22C22 /* SportsLifeDebug.entitlements */,
 				1440A53323138C4A00165CA5 /* Network */,
 				14DB2CB9230E2FD20014F19C /* 个人中心 */,
 				14DB2CDC230E2FD20014F19C /* 购物 */,
@@ -508,6 +580,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140AFF8A2356F5A400C22C22 /* AliyunEmasServices-Info.plist in Resources */,
 				14DB2CF5230E2FD20014F19C /* Main.storyboard in Resources */,
 				14DB2CEC230E2FD20014F19C /* 文档 in Resources */,
 				140D49D52314E00900FDA4E8 /* NetworkError.html in Resources */,
@@ -536,6 +609,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
@@ -559,6 +633,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
@@ -630,7 +705,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14353BF4234199FE00665C17 /* HTSquadTableViewCell.swift in Sources */,
 				14DB2CE3230E2FD20014F19C /* MineTableViewController.swift in Sources */,
+				14AA90DC2339B3F1004B4D3B /* HTTeamDataTableViewCell.swift in Sources */,
 				141F7BFA2320A981001B1716 /* HTTimeHelper.swift in Sources */,
 				14DB2CE9230E2FD20014F19C /* ChooseTypeHeaderView.swift in Sources */,
 				14DB2CF3230E2FD20014F19C /* OCViewController.m in Sources */,
@@ -642,6 +719,8 @@
 				1403313E231652D800CFC872 /* HTRankTableViewCell.swift in Sources */,
 				1407454B2330C38A0052061F /* HTScoreTableViewCell.swift in Sources */,
 				14246915230FC4EC008E6987 /* HTBaseTableViewController.swift in Sources */,
+				14353BF6234DAC3E00665C17 /* HTScheduleTableViewCell.swift in Sources */,
+				14AA90A0233858AA004B4D3B /* HTTeamDataBaseViewController.swift in Sources */,
 				14DB2CE6230E2FD20014F19C /* CradsModel.swift in Sources */,
 				14022719231E4486006B0063 /* HTBaseVideoViewController.swift in Sources */,
 				14DB2CFA230E2FD20014F19C /* ShopCollectionViewController.swift in Sources */,
@@ -650,20 +729,25 @@
 				1440A53D23142BB900165CA5 /* HTColors.swift in Sources */,
 				14022713231E00C5006B0063 /* HTRankViewController.swift in Sources */,
 				14022711231D0004006B0063 /* YTBubbleView.swift in Sources */,
+				140DB2BE233312CA00F87692 /* HTTeamDataTableViewController.swift in Sources */,
 				14DB2CF0230E2FD20014F19C /* ViewController.swift in Sources */,
+				140DB2C023331F9800F87692 /* HTTeamDataModel.swift in Sources */,
 				1402271B231E450E006B0063 /* HTVideoViewController.swift in Sources */,
 				14DB2CE8230E2FD20014F19C /* TableViewCell.swift in Sources */,
 				14DB2CE5230E2FD20014F19C /* PresentDataModel.swift in Sources */,
 				1440A53B2313DA7600165CA5 /* HTNewsDataViewModel.swift in Sources */,
+				14AA90DE2339B403004B4D3B /* HTCellHeaderView.swift in Sources */,
 				146517E62317A79900A7E19D /* HTRankBaseViewController.swift in Sources */,
 				14DB2CF7230E2FD20014F19C /* HTBaseViewController.swift in Sources */,
 				14DB2CEE230E2FD20014F19C /* HTNewsTableViewController.swift in Sources */,
 				14DB2CE4230E2FD20014F19C /* PresentChooseViewController.swift in Sources */,
 				1440A5392313D9AD00165CA5 /* HTNewsModel.swift in Sources */,
+				140DB2C22333319600F87692 /* HTCustomViewController.swift in Sources */,
 				14246911230F8DEA008E6987 /* HTQRCode.swift in Sources */,
 				14DB2CEF230E2FD20014F19C /* SportsTableViewController.swift in Sources */,
 				14022717231E367F006B0063 /* HTNODataView.swift in Sources */,
 				1402271E231E4582006B0063 /* HTVideoModel.swift in Sources */,
+				14AA90E02339BB22004B4D3B /* HTplayerInfoCollectionViewCell.swift in Sources */,
 				14DB2CF8230E2FD20014F19C /* AppDelegate.swift in Sources */,
 				1424690F230F8D2C008E6987 /* HTQRErrorViewController.swift in Sources */,
 				1440A5372313D00600165CA5 /* HTHotNewsTableViewCell.swift in Sources */,
@@ -811,17 +895,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SportsLife/SportsLifeDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8NC9AT93C5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SportsLife/个人中心/阿里云",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/SportsLife/Other/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.west.SportsLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SportsLife/Other/SportsLife-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -833,15 +923,20 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8NC9AT93C5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SportsLife/个人中心/阿里云",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/SportsLife/Other/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.west.SportsLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SportsLife/Other/SportsLife-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

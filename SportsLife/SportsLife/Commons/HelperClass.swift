@@ -7,19 +7,23 @@
 //
 
 import UIKit
-
+///宽
 let WIDTH = UIScreen.main.bounds.size.width
+///高
 let HEIGHT = UIScreen.main.bounds.size.height
 //let sourceViewHeight:CGFloat = 400;
 var cellHeight:CGFloat =  40;
 let headerHeight:CGFloat = 40;
 let btnWidth:CGFloat = 60;
 
+///是否是刘海屏
 let isIPhoneX = HEIGHT == 812 || HEIGHT == 896 ? true : false
+
 let bottomHeight:CGFloat = isIPhoneX ? 34 : 0
 
 let SegWidth:CGFloat = 60;
 
+//导航栏高度
 let naviHeight:CGFloat = isIPhoneX ? 88 : 64
 ///支付类型
 enum PayType {
@@ -40,7 +44,7 @@ var HTImage:(String) ->UIImage = { string in
     return UIImage.init(named: string) ?? UIImage()
 }
 
-
+///url转义中文
 var HTurlString:(_ string:String)->String = { str in
     return str.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
 }
@@ -48,7 +52,7 @@ var HTurlString:(_ string:String)->String = { str in
 ///size:字体大小 font:字体样式""为默认
 let HTFont:(_:CGFloat,_:String)->UIFont = { size,style in
     
-    return (style == "" ? UIFont.systemFont(ofSize: size) : UIFont.init(name: style, size: size)) ?? defalutFont
+    return (style == "" ? UIFont.systemFont(ofSize: size) : UIFont.init(name: style, size: size)) ?? HTdefalutFont
     
 }
 
@@ -75,7 +79,7 @@ class HelperClass {
 
 //    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
 //    //设置格式
-//    formatter.dateFormat = @"yyyy-MM-dd";//【重点】
+//    formatter.dateFormat = @"yyyy-MM-dd";
 //    //获取当前系统时间
 //    //    NSDate *date = [NSDate date];
 //    NSDate *date1 = [NSDate   dateWithTimeIntervalSinceNow:page * TIME_MORE];
@@ -126,6 +130,8 @@ var currentTime:(_ time:Double ,_ formatterSample:String)->String = { time ,str 
     
     return formatter.string(from: date)
 }
+
+
 
 
 
@@ -362,5 +368,28 @@ extension String{
         CFStringTransform(mutableString, nil, kCFStringTransformStripDiacritics, false)
         let string = String(mutableString)
         return string.replacingOccurrences(of: " ", with: "")
+    }
+}
+
+
+extension String {
+    
+    func heightWithFont(font : UIFont, maxSize: CGSize) -> CGSize {
+        let attrs = [NSAttributedString.Key.font: font]
+        let rect = self.boundingRect(with: maxSize, options:.usesLineFragmentOrigin, attributes: attrs, context:nil)
+        return rect.size
+    }
+}
+
+
+///对Data类型进行扩展
+extension Data {
+    //将Data转换为String
+    var hexString: String {
+        return withUnsafeBytes {(bytes: UnsafePointer<UInt8>) -> String in
+            let buffer = UnsafeBufferPointer(start: bytes, count: count)
+            return buffer.map {String(format: "%02hhx", $0)}.reduce("", { $0 + $1 })
+        }
+        
     }
 }

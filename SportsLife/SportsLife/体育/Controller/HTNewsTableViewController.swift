@@ -23,6 +23,10 @@ class HTNewsTableViewController: HTBaseTableViewController {
         self.tableView.register(UINib.init(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         let btn = UIButton.init()
         btn.rx.base.titleLabel?.text = "124";
+        
+        
+        
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -67,4 +71,15 @@ class HTNewsTableViewController: HTBaseTableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
+}
+
+
+class TestClass {
+    var a = 1;
+    var b = "testClass"
+}
+
+struct TestStruct {
+    var a = 1
+    var b = "testStruct"
 }

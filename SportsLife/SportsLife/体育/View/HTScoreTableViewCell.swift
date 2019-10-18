@@ -40,26 +40,26 @@ class HTScoreTableViewCell: UITableViewCell {
         self.contentView.addSubview(collectionImage)
         tabLabel = UILabel.init()
         tabLabel.textAlignment = .right;
-        tabLabel.font = defalutFont;
+        tabLabel.font = HTdefalutFont;
         self.contentView.addSubview(tabLabel)
         
         timeLabel = UILabel.init()
         timeLabel.textAlignment = .right;
-        timeLabel.font = defalutFont;
+        timeLabel.font = HTdefalutFont;
 
         self.contentView.addSubview(timeLabel)
         
         ballLabel = UILabel.init()
-        ballLabel.font = defalutFont;
+        ballLabel.font = HTdefalutFont;
 
         self.contentView.addSubview(ballLabel)
         
         homeTeam = UILabel.init()
         self.contentView.addSubview(homeTeam)
-        homeTeam.font = defalutFont;
+        homeTeam.font = HTdefalutFont;
 
         awayTeme = UILabel.init()
-        awayTeme.font = defalutFont;
+        awayTeme.font = HTdefalutFont;
 
         self.contentView.addSubview(awayTeme)
         centerImageView = UIImageView.init()

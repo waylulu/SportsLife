@@ -50,7 +50,7 @@ class ChooseTypeHeaderView: UIView {
     
     
     func leftBtnUI(){
-        leftBtn = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: btnWidth, height: headerHeight))
+        leftBtn = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: btnWidth, height: self.frame.height))
         self.addSubview(leftBtn)
         leftBtn.setTitle(leftBtnTitle, for: UIControl.State.normal)
         leftBtn.setTitleColor(UIColor.gray, for: UIControl.State.normal)
@@ -59,7 +59,7 @@ class ChooseTypeHeaderView: UIView {
     }
     
     func centerTitleLabelUI(){
-        centerTitleLabel = UILabel.init(frame: CGRect(x: btnWidth, y: 0, width: WIDTH - 120, height: headerHeight))
+        centerTitleLabel = UILabel.init(frame: CGRect(x: btnWidth, y: 0, width: WIDTH - 120, height: self.frame.height))
         self.addSubview(centerTitleLabel)
         centerTitleLabel.textAlignment = .center
         centerTitleLabel.text = centerTitle;
@@ -68,7 +68,7 @@ class ChooseTypeHeaderView: UIView {
     }
     
     func rightBtnUI(){
-        rightBtn = UIButton.init(frame: CGRect(x: WIDTH - btnWidth, y: 0, width: btnWidth, height: headerHeight))
+        rightBtn = UIButton.init(frame: CGRect(x: WIDTH - btnWidth, y: 0, width: btnWidth, height: self.frame.height))
         self.addSubview(rightBtn)
         rightBtn.setTitle(rightBtnTitle, for: UIControl.State.normal)
         rightBtn.setTitleColor(UIColor.black, for: UIControl.State.normal)

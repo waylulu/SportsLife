@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>config</key>
+	<dict>
+            <key>emas.appKey</key>
+            <string>25062079</string>
+            <key>emas.appSecret</key>
+            <string>4afc0d449c5c4e82e232da9131058890</string>
+            <key>emas.bundleId</key>
+            <string>com.west.SportsLife</string>
+            <key>hotfix.idSecret</key>
+            <string>25062079-2</string>
+            <key>hotfix.rsaSecret</key>
+            <string>MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCIfmJjFMFxle9mNYoMAtLVz8ORsyOfoOF8k86S2bjvJBq7NHBO8qol9pYOnEEOQuB4Jqe1SgBGLzW/PpF/GXyHZ3mWmN+tth9leYSrEPOFHTHs/Ghg8czb0ZIobyuVCxrMpa0AzcbO1JSa65sa1WLOeHcsYegKy8sXGR96FWTwGFfrWf9wEs9MRynWT4Blg13YIb4lSS0Hk+XGgP2GkK/FfJ8l1I+zyMTIhfJlm4Gu7wC5h4bAZoHM4+KS0EA5MiCynRBaJqoLsvON4/KZeUFUp8S1/nX7LXv9NOBAbyDyymPW4hM/4Ngiv56C9/7lqPfFcD6tgEurdsRSjqzFTLQ5AgMBAAECggEAT8vjZR17QhZv0Qc333G/JLTEFuftyaLacGRQ/lU+4r/uyMcNaXpAstUIQR5kghvi8xtWLIxIwL9U4quHkBCsVtTNppdVHU8956s1PnU4iPfaejvOIe763wAUPINRrV7CmiW5kKC8u6pX/oIDOZrKmv6eXVoXuEgQQT60wkDDtAEHcNXnYt9BeOQyEdOK0SVmsbqAmgHuzSa9IXWH8Yd6VpMZeBkOMxsRq1fe/TrvkpCWjXTQNLVmOH5THO01yxKVNA8Xt2APmTGuYPpYFds5+2YqJloatijtHRTwNnlGTLJTe2CRQpGQlF150RdS9FooBfRNCHAv95AO6Lcuh4ubAQKBgQDpAEY4aVBKCpTK4RIiir4Wl5P+6USWo7RtjhoWNQKi0hC3Cl2Da2UITeWW5rptnjAkODbnclbiAwSydfoJw/84HwGl9onugSXFpgQuYQseo9Gw+GB8mzqPMcV8nuC8Bq0Nx3jF4SoVw52aGTG0I7psTP6IEg12RVPKMrqCrN3dcQKBgQCV93S9YuUuuoC7vSuJJZ3l2mkJMlpLRJsgxRKV3Mb3MfO0LtoDqZJ2X2G8JQ1HV/URkgKHlpzhiVmxC+Bq3dt/YG/rb1wrDJuIyO7tOx7uuvAZMH/VNkjh4HfyRkMIm+5L2kdXiCXaj0Ds3QMAQnBaX4UA1c+m78PCunsu+0X/SQKBgCdFepBrf7LbEbUYNlxIEj3wkms2me7h7LlCaDcx/B3BVjvjrVtHMKIzruy+OtHbBbY1G1vrM6WoaJRDuj8HH+8vmrGEWj8u2VT05GOEy8EAT4mKc4jNCRO1idm1VZ+baHOYGU0Q5G0CqX+dm3kHRJaYa5Y3pLk4eiTsY+8+f66hAoGARRjDHQ+X8TPVZKsAiCxg2CsOAkLE/7EYmLy0l4Al3HeThg2gPde/t/KyoXGg8KJCNFpF+BsZJYGXZc/HEvYt0D6q0pt4qA0jDJ8oFv4Kfox7W9/QxnhAlHJMUcC12h2eaiykelwstMsUaw5Z96ClC76/FWduSchnNi2d3EPCOKECgYAnmWy093Kaf2qrwGLABNHz6WFaDa5mt8u8vuRT9/PpeW2FWYfyAHXJibX5KocPTTdgx4hzRNesSWbO2iKRp+cqBnVuywrHnHPcus4LRlQzFR8HXv5hInJsHJqIjZ1r7s/mVmFpywwfch1UNrt5r/JljZaOFI6dGPQMIfce3Pt/tg==</string>
+            <key>httpdns.accountId</key>
+            <string>153213</string>
+            <key>httpdns.secretKey</key>
+            <string>4ef57b5d8925be21312a4e01fb47cfb1</string>
+            <key>appmonitor.tlog.rsaSecret</key>
+            <string>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCe1vuTm8wO3a0Ck4xHLgd8LVgfViiOrR82XgDIGwq9kYVgvm4ZeY003JbXc/gie+ntBJSFeibUaHJtM4udcgCCLuBgZa5q9gY0mDqxlTJesGTBjNdnVyJTLdKW4N7mirbwAwz8Gzcs07WhsmndKGWFa0sQKZ80N0QZLka6UjGIQwIDAQAB</string>
+    	</dict>
+	<key>services</key>
+	<dict>
+		<key>httpdns_service</key>
+		<dict>
+			<key>status</key>
+			<integer>1</integer>
+			<key>version</key>
+			<string>1.17.3</string>
+		</dict>
+		<key>cps_service</key>
+		<dict>
+			<key>status</key>
+			<integer>1</integer>
+			<key>version</key>
+			<string>1.9.9</string>
+		</dict>
+		<key>feedback_service</key>
+		<dict>
+			<key>status</key>
+			<integer>1</integer>
+			<key>version</key>
+			<string>3.3.6</string>
+		</dict>
+		<key>man_service</key>
+		<dict>
+			<key>status</key>
+			<integer>0</integer>
+			<key>version</key>
+			<string>1.0.13</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

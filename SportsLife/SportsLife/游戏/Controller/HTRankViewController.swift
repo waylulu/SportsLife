@@ -148,7 +148,30 @@ class HTRankViewController:  HTBaseViewController ,UIWebViewDelegate,IndicatorIn
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        let model = self.dataArr[indexPath.row]
+        
+        let vc = HTTeamDataBaseViewController()
+        vc.teamId = model.teamId
+        vc.hidesBottomBarWhenPushed = true;
+        self.navigationController?.pushViewController(vc, animated: true);
+        
+        
+//        let vc = HTWebViewViewController();
+//        vc.hidesBottomBarWhenPushed = true
+////        vc.type = "zhibo8"//https://db.qiumibao.com/f/zuqiu/team/base?device=iPhone11%2C8&time_zone=Asia/Shanghai&id=138&appname=zhibo8&os=iOS&UDID=f9842ff0c21fc7e2e86133bd99bbddb21f463206&platform=ios&pk=com.zhibo8.tenyears&_platform=ios&version_code=4.8.4&os_version=12.4.1&usersports=1&blacks_status=enable&IDFA=2D6BD8E3-DA38-46B3-A4C4-749EF4F500F0
+//        let url = "https://db.qiumibao.com/f/zuqiu/team/base?device=iPhone11%2C8&time_zone=Asia/Shanghai&id=\(model.teamId)&appname=zhibo8&os=iOS&UDID=f9842ff0c21fc7e2e86133bd99bbddb21f463206&platform=ios&pk=com.zhibo8.tenyears&_platform=ios&version_code=4.8.4&os_version=12.4.1&usersports=1&blacks_status=enable&IDFA=2D6BD8E3-DA38-46B3-A4C4-749EF4F500F0"//球队数据
+////        self.navigationController?.pushViewController(vc, animated: true)
+//        HTServices.htNet.getData(loadingView: self.view, urlString: url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: .get, parameters: [:]) { json  -> (Void)  in
+//            print(json)
+//            AlertView.shard.alertDetail(controller: self, title: "点击了\(json)", bloack: {
+//
+//            })
+//        }
+
     }
+    
+    
     //    MARK:# 其他
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -198,7 +221,19 @@ class HTRankViewController:  HTBaseViewController ,UIWebViewDelegate,IndicatorIn
         return  HelperClass.shared.requestUrl(urlString: HTRuleWebUrl(league.chineseToPinYin()))
     }
 
+    
+    func getData(){
+        HTServices.htNet.getData(loadingView: self.view, urlString: yingChaoRickoUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: .get, parameters: [:]) { json  -> (Void)  in
+            
+            AlertView.shard.alertDetail(controller: self, title: "点击了\(json)", bloack: {
+                
+            })
+        }
+        
+    }
+
 }
+
 
 
 

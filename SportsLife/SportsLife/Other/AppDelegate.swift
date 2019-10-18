@@ -9,8 +9,10 @@
 import UIKit
 import GoogleMobileAds
 
+
+@objcMembers
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterDelegate{
 
     var window: UIWindow?
 
@@ -41,6 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //        AlertView.shard.alertDetail(controller: (self.window?.rootViewController!)!, title: "该版本已不支持请前往App Store更新") {
 //        }
+        
+        
+        self.initCloudPush()
+        self.registerAPNs(application)
     }
     func applicationWillResignActive(_ application: UIApplication) {
 
@@ -62,6 +68,67 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     
+    func initCloudPush(){
+        
+        CloudPushSDK.asyncInit("25062079", appSecret: "4afc0d449c5c4e82e232da9131058890") { (result) in
+            if result!.success{
+                print("deviceId====\(CloudPushSDK.getDeviceId()!)")
+            }else{
+                print((result?.error)!)
+            }
+        }
+    }
+    
+    
+    func registerAPNs(_ application:UIApplication){
+
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.delegate = self
+        let type = UNAuthorizationOptions.init(arrayLiteral: [.alert,.badge,.sound])
+        notificationCenter.requestAuthorization(options: type) { (isPush, err) in
+            if isPush{
+                print("success")
+            }else{
+                print(err)
+            }
+        }
+        UIApplication.shared.registerForRemoteNotifications()
+    }
+    
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+//        print("token====\(deviceToken.hexString)")//64f82195635e2901a2a3e520a8f0589e936117990fcb25529ce906e3b1d4bf4d
+
+          CloudPushSDK.registerDevice(deviceToken) { (res) in
+                  if (res?.success)!{
+                      print("success")
+                  }else{
+                      print(res?.error)
+                  }
+              }
+    }
+  
+    
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+          print(error)
+      }
+      
+      func registerMessageReceice() {
+          NotificationCenter.default.addObserver(self, selector: #selector(onMessageNoti(noti:)), name: NSNotification.Name(rawValue: "CCPDidReceiveMessageNotification"), object: nil)
+      }
+    
+    
+    func onMessageNoti(noti:Notification){
+        let message:CCPSysMessage = noti.object as! CCPSysMessage
+        print(message)
+    }
+    
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print(userInfo)
+    }
 }
 
 

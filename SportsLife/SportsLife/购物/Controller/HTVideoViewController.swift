@@ -69,6 +69,8 @@ class HTVideoViewController: HTBaseViewController ,UIWebViewDelegate,IndicatorIn
             self?.tableView.mj_footer.endRefreshing()
             if arr.count > 0{
                 self?.dataArr += arr
+            }else{
+                self?.tableView.mj_footer.isHidden = true;
             }
             self?.tableView.reloadData()
 

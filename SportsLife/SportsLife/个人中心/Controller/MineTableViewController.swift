@@ -28,7 +28,8 @@ class MineTableViewController: HTBaseTableViewController {
         self.navigationItem.title = "个人中心"
         self.tabBarItem.title = "个人中心"
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-
+//       let s =  1500 - 10.92 = 1489.08
+        
     }
     //    MARK:# 数据
     func loadData() {
@@ -111,6 +112,17 @@ class MineTableViewController: HTBaseTableViewController {
         }
     }
  
+    
+    
+    @available(iOS 11.0, *)
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let d = UIContextualAction.init()
+        d.image = HTImage("a")
+        
+        return UISwipeActionsConfiguration.init(actions: [d]);
+    }
+    
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

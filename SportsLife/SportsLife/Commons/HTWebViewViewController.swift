@@ -23,7 +23,7 @@ class HTWebViewViewController: HTBaseViewController ,WKNavigationDelegate,WKUIDe
     var closeBtn = UIButton()
     var type = ""
     var bannerView: GADBannerView!
-
+    var isNews :Bool = true;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +83,12 @@ class HTWebViewViewController: HTBaseViewController ,WKNavigationDelegate,WKUIDe
         config.allowsInlineMediaPlayback = true;
         config.allowsAirPlayForMediaPlayback = true;
         
-        webView = WKWebView.init(frame: self.view.bounds, configuration: config);
+        webView = WKWebView.init(frame:CGRect.init(x: 0, y: 60, width: WIDTH, height: HEIGHT - 60), configuration: config);
+        if isNews == false {
+            var rect = webView.frame;
+            rect.origin.y += 50
+            webView.frame = rect;
+        }
         self.view.addSubview(webView);
         self.webView.scrollView.bounces = false;//回弹效果
         self.webView.scrollView.showsVerticalScrollIndicator = false;
@@ -96,8 +101,7 @@ class HTWebViewViewController: HTBaseViewController ,WKNavigationDelegate,WKUIDe
 //            }else{
                 self.webView.navigationDelegate = self;
                 self.webView.uiDelegate = self;
-
-                webView.load(URLRequest.init(url: URL.init(string: url)!))
+            webView.load(URLRequest.init(url: URL.init(string: url) ?? URL.init(string: "https://baidu.com")!))
 //            }
 
         }else{
