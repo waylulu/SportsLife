@@ -333,10 +333,20 @@ class AlertView {
         let alert = UIAlertController.init(title: "", message: title, preferredStyle: .alert)
 
         let ok = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (a) in
+
             alert.dismiss(animated: true, completion: {
                 bloack()
             })
         }
+        
+        if #available(iOS 11.0, *) {
+            let attri = NSMutableAttributedString.init(string: title)
+            attri.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 10), range: NSMakeRange(0, title.count))
+            attri.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.cyan, range: NSMakeRange(0, title.count))
+            ok.accessibilityAttributedValue = attri;
+        } else {
+        }
+        
         alert.addAction(ok);
         controller.present(alert, animated: true, completion: {
           
@@ -379,7 +389,13 @@ extension String {
         let rect = self.boundingRect(with: maxSize, options:.usesLineFragmentOrigin, attributes: attrs, context:nil)
         return rect.size
     }
+    
+    func stringToUrl() ->URL{
+        
+        return URL.init(string: self)!
+    }
 }
+
 
 
 ///对Data类型进行扩展

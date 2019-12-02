@@ -11,15 +11,16 @@ import SwiftyJSON
 import Metal
 import XLPagerTabStrip
 import SDWebImage
+import WebKit
 
-class HTRankViewController:  HTBaseViewController ,UIWebViewDelegate,IndicatorInfoProvider,UITableViewDelegate,UITableViewDataSource,YearDelegate{
+class HTRankViewController:  HTBaseViewController ,IndicatorInfoProvider,UITableViewDelegate,UITableViewDataSource,YearDelegate,WKUIDelegate{
     
     
     var tableView = UITableView();
     
     var dataArr = [HTRankModel]();
     
-    var cellWeb = UIWebView()
+    var cellWeb = WKWebView()
     ///联赛
     var league = "中超"
     ///数据类型
@@ -42,7 +43,8 @@ class HTRankViewController:  HTBaseViewController ,UIWebViewDelegate,IndicatorIn
         self.tableView.backgroundColor = UIColor.gray
         self.tableView = UITableView.init(frame: CGRect(x: 0, y: 30, width: WIDTH, height: HEIGHT - naviHeight - 30 - bottomHeight - 49))
         self.tableView.register(HTRankTableViewCell.self, forCellReuseIdentifier: "cell")
-        
+        self.tableView.bounces = false
+   
         //        frame.origin.y = naviHeight + 30
         //        self.tableView.frame = frame
         //        self.tableView.estimatedRowHeight = 0;
@@ -78,8 +80,8 @@ class HTRankViewController:  HTBaseViewController ,UIWebViewDelegate,IndicatorIn
     
     func setCellWeb(){
         
-        cellWeb.delegate = self
-        cellWeb.loadRequest(URLRequest.init(url: URL.init(string: HTRuleWebUrl(league.chineseToPinYin()))!))
+        cellWeb.uiDelegate = self
+        cellWeb.load(URLRequest.init(url: URL.init(string: HTRuleWebUrl(league.chineseToPinYin()))!))
         
         self.tableView.tableFooterView = self.isRequest() ? cellWeb : nil
         
@@ -181,7 +183,7 @@ class HTRankViewController:  HTBaseViewController ,UIWebViewDelegate,IndicatorIn
     //监听
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "contentSize"{
-            
+            print("forKeyPath");
             let s = object as! UIScrollView
             let h = s.contentSize.height
             
@@ -193,14 +195,39 @@ class HTRankViewController:  HTBaseViewController ,UIWebViewDelegate,IndicatorIn
         
     }
     
-    func webViewDidFinishLoad(_ webView: UIWebView) {
+//    func webViewDidFinishLoad(_ webView: WKWebView) {
+//
+//
+//        let height = (Double(self.cellWeb.stringByEvaluatingJavaScript(from: "document.body.offsetHeight")) ?? 0)
+//        self.cellWeb.frame = CGRect(x: self.cellWeb.frame.origin.x, y: self.cellWeb.frame.origin.y, width: UIScreen.main.bounds.width, height: CGFloat(height))
+//
+//        self.tableView.reloadData()
+//    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        var wh = 0.0
+        print("didFinish");
+
+        webView.evaluateJavaScript("document.body.offsetHeight") {[weak self] (val, err) in
+            if (val != nil){
+                let s = self?.cellWeb.sizeThatFits(CGSize.zero)
+                if let h:Double = val as? Double {
+                    wh = h
+                }
+                DispatchQueue.main.async { [unowned self] in
+                    var tempFrame: CGRect = (self?.cellWeb.frame)!
+                    tempFrame.size.height = CGFloat(wh)
+                    self?.cellWeb.frame = tempFrame
+//                    self.testScrollView.contentSize = CGSize(width: self.testScrollView.frame.size.width, height: self.changeWebView.frame.size.height + self.testLabel.frame.size.height)
+                    self?.tableView.reloadData()
+
+                }
+            }
+        }
         
-        
-        let height = (Double(self.cellWeb.stringByEvaluatingJavaScript(from: "document.body.offsetHeight")!) ?? 0)
-        self.cellWeb.frame = CGRect(x: self.cellWeb.frame.origin.x, y: self.cellWeb.frame.origin.y, width: UIScreen.main.bounds.width, height: CGFloat(height))
-        
-        self.tableView.reloadData()
+           
     }
+           
     
     deinit {
         if self.isaddObserver {

@@ -81,6 +81,20 @@ class MineTableViewController: HTBaseTableViewController {
             self.navigationController?.pushViewController(vc, animated: true)
             return;
             
+        }else if indexPath.row == 1{
+            
+            let actvc = UIActivityViewController.init(activityItems: ["test",HTImage("a"),URL.init(string: "www.baidu.com")!], applicationActivities: nil)
+            actvc.view.backgroundColor = UIColor.white
+            self.navigationController?.present(actvc, animated: true, completion: nil)
+            return;
+        }else if indexPath.row == 2{
+            AlertView.shard.alertDetail(controller: self, title:"test", bloack: {
+                              
+                self.view.addSubview(SwiftUIView_Previews.previews as! UIView);
+            })
+            
+            
+            return;
         }
         let vc = PresentChooseViewController()
         vc.modalPresentationStyle = .custom//蒙版风格overCurrentContext:tabbar跳转,custom

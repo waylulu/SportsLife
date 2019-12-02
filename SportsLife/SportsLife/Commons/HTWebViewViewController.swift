@@ -208,7 +208,6 @@ class HTWebViewViewController: HTBaseViewController ,WKNavigationDelegate,WKUIDe
     
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
         if self.webView.canGoBack {
             self.closeBtn.isHidden = false;
         }else{

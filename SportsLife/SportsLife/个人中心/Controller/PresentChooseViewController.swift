@@ -259,6 +259,7 @@ extension PresentChooseViewController:UITableViewDelegate,UITableViewDataSource{
 
             cell.setData(type: cardType, model: self.choosePayData?.payType == baseModel.title ? self.choosePayData?.model.title == model.title ? self.choosePayData!.model : model : model)
         }
+        cell.selectionStyle = .none;
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -8,6 +8,8 @@
 
 import UIKit
 import RxSwift
+import AVKit
+
 
 class HTNewsTableViewController: HTBaseTableViewController {
 
@@ -27,6 +29,9 @@ class HTNewsTableViewController: HTBaseTableViewController {
         
         
         
+    }
+    func video(){
+        let player = AVPlayer.init()
     }
 
     override func viewWillAppear(_ animated: Bool) {

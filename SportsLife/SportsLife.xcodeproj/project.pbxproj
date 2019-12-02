@@ -29,6 +29,8 @@
 		140DB2BE233312CA00F87692 /* HTTeamDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140DB2BD233312CA00F87692 /* HTTeamDataTableViewController.swift */; };
 		140DB2C023331F9800F87692 /* HTTeamDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140DB2BF23331F9800F87692 /* HTTeamDataModel.swift */; };
 		140DB2C22333319600F87692 /* HTCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140DB2C12333319600F87692 /* HTCustomViewController.swift */; };
+		1417FB3623715B1E00EB65F6 /* NSObject+HTTestCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1417FB3523715B1E00EB65F6 /* NSObject+HTTestCategory.m */; };
+		1417FB3823715DC000EB65F6 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1417FB3723715DC000EB65F6 /* SwiftUIView.swift */; };
 		141F7BFA2320A981001B1716 /* HTTimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141F7BF92320A981001B1716 /* HTTimeHelper.swift */; };
 		1424690D230F8D0B008E6987 /* HTQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424690C230F8D0B008E6987 /* HTQRCodeViewController.swift */; };
 		1424690F230F8D2C008E6987 /* HTQRErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424690E230F8D2C008E6987 /* HTQRErrorViewController.swift */; };
@@ -37,6 +39,7 @@
 		14246915230FC4EC008E6987 /* HTBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14246914230FC4EC008E6987 /* HTBaseTableViewController.swift */; };
 		14353BF4234199FE00665C17 /* HTSquadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14353BF3234199FE00665C17 /* HTSquadTableViewCell.swift */; };
 		14353BF6234DAC3E00665C17 /* HTScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14353BF5234DAC3E00665C17 /* HTScheduleTableViewCell.swift */; };
+		143EA0FE235D7D5D00941ACB /* HTVideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143EA0FD235D7D5D00941ACB /* HTVideoPlayerViewController.swift */; };
 		1440A53523138C8700165CA5 /* HTServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A53423138C8700165CA5 /* HTServices.swift */; };
 		1440A5372313D00600165CA5 /* HTHotNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A5362313D00600165CA5 /* HTHotNewsTableViewCell.swift */; };
 		1440A5392313D9AD00165CA5 /* HTNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A5382313D9AD00165CA5 /* HTNewsModel.swift */; };
@@ -108,11 +111,13 @@
 		140AFF942357FA1F00C22C22 /* AlicloudUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlicloudUtils.framework; sourceTree = "<group>"; };
 		140AFF952357FA1F00C22C22 /* UTMini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTMini.framework; sourceTree = "<group>"; };
 		140AFF962357FA2000C22C22 /* CloudPushSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CloudPushSDK.framework; sourceTree = "<group>"; };
-		140AFF9B2358051E00C22C22 /* SportsLifeDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SportsLifeDebug.entitlements; sourceTree = "<group>"; };
 		140D49D42314E00900FDA4E8 /* NetworkError.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NetworkError.html; sourceTree = "<group>"; };
 		140DB2BD233312CA00F87692 /* HTTeamDataTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTeamDataTableViewController.swift; sourceTree = "<group>"; };
 		140DB2BF23331F9800F87692 /* HTTeamDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTeamDataModel.swift; sourceTree = "<group>"; };
 		140DB2C12333319600F87692 /* HTCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCustomViewController.swift; sourceTree = "<group>"; };
+		1417FB3423715B1E00EB65F6 /* NSObject+HTTestCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+HTTestCategory.h"; sourceTree = "<group>"; };
+		1417FB3523715B1E00EB65F6 /* NSObject+HTTestCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HTTestCategory.m"; sourceTree = "<group>"; };
+		1417FB3723715DC000EB65F6 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		141F7BF92320A981001B1716 /* HTTimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTimeHelper.swift; sourceTree = "<group>"; };
 		1424690C230F8D0B008E6987 /* HTQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTQRCodeViewController.swift; sourceTree = "<group>"; };
 		1424690E230F8D2C008E6987 /* HTQRErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTQRErrorViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +126,7 @@
 		14246914230FC4EC008E6987 /* HTBaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTBaseTableViewController.swift; sourceTree = "<group>"; };
 		14353BF3234199FE00665C17 /* HTSquadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTSquadTableViewCell.swift; sourceTree = "<group>"; };
 		14353BF5234DAC3E00665C17 /* HTScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		143EA0FD235D7D5D00941ACB /* HTVideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTVideoPlayerViewController.swift; sourceTree = "<group>"; };
 		1440A53423138C8700165CA5 /* HTServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTServices.swift; sourceTree = "<group>"; };
 		1440A5362313D00600165CA5 /* HTHotNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTHotNewsTableViewCell.swift; sourceTree = "<group>"; };
 		1440A5382313D9AD00165CA5 /* HTNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTNewsModel.swift; sourceTree = "<group>"; };
@@ -253,6 +259,14 @@
 			path = QRCode;
 			sourceTree = "<group>";
 		};
+		143EA0FC235D7D2500941ACB /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				143EA0FD235D7D5D00941ACB /* HTVideoPlayerViewController.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 		1440A53123138C2E00165CA5 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +318,7 @@
 		14DB2CB9230E2FD20014F19C /* 个人中心 */ = {
 			isa = PBXGroup;
 			children = (
+				143EA0FC235D7D2500941ACB /* Video */,
 				140AFF882356F58F00C22C22 /* 阿里云 */,
 				14DB2CBA230E2FD20014F19C /* Controller */,
 				14DB2CBD230E2FD20014F19C /* Model */,
@@ -317,6 +332,8 @@
 			children = (
 				14DB2CBB230E2FD20014F19C /* MineTableViewController.swift */,
 				14DB2CBC230E2FD20014F19C /* PresentChooseViewController.swift */,
+				1417FB3423715B1E00EB65F6 /* NSObject+HTTestCategory.h */,
+				1417FB3523715B1E00EB65F6 /* NSObject+HTTestCategory.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -441,6 +458,7 @@
 				14022712231E00C5006B0063 /* HTRankViewController.swift */,
 				140DB2BD233312CA00F87692 /* HTTeamDataTableViewController.swift */,
 				14AA909F233858AA004B4D3B /* HTTeamDataBaseViewController.swift */,
+				1417FB3723715DC000EB65F6 /* SwiftUIView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -503,7 +521,6 @@
 		7EFC389E20DA2884005616D0 /* SportsLife */ = {
 			isa = PBXGroup;
 			children = (
-				140AFF9B2358051E00C22C22 /* SportsLifeDebug.entitlements */,
 				1440A53323138C4A00165CA5 /* Network */,
 				14DB2CB9230E2FD20014F19C /* 个人中心 */,
 				14DB2CDC230E2FD20014F19C /* 购物 */,
@@ -706,6 +723,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14353BF4234199FE00665C17 /* HTSquadTableViewCell.swift in Sources */,
+				143EA0FE235D7D5D00941ACB /* HTVideoPlayerViewController.swift in Sources */,
 				14DB2CE3230E2FD20014F19C /* MineTableViewController.swift in Sources */,
 				14AA90DC2339B3F1004B4D3B /* HTTeamDataTableViewCell.swift in Sources */,
 				141F7BFA2320A981001B1716 /* HTTimeHelper.swift in Sources */,
@@ -742,11 +760,13 @@
 				14DB2CEE230E2FD20014F19C /* HTNewsTableViewController.swift in Sources */,
 				14DB2CE4230E2FD20014F19C /* PresentChooseViewController.swift in Sources */,
 				1440A5392313D9AD00165CA5 /* HTNewsModel.swift in Sources */,
+				1417FB3623715B1E00EB65F6 /* NSObject+HTTestCategory.m in Sources */,
 				140DB2C22333319600F87692 /* HTCustomViewController.swift in Sources */,
 				14246911230F8DEA008E6987 /* HTQRCode.swift in Sources */,
 				14DB2CEF230E2FD20014F19C /* SportsTableViewController.swift in Sources */,
 				14022717231E367F006B0063 /* HTNODataView.swift in Sources */,
 				1402271E231E4582006B0063 /* HTVideoModel.swift in Sources */,
+				1417FB3823715DC000EB65F6 /* SwiftUIView.swift in Sources */,
 				14AA90E02339BB22004B4D3B /* HTplayerInfoCollectionViewCell.swift in Sources */,
 				14DB2CF8230E2FD20014F19C /* AppDelegate.swift in Sources */,
 				1424690F230F8D2C008E6987 /* HTQRErrorViewController.swift in Sources */,
@@ -897,14 +917,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SportsLife/SportsLifeDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 8NC9AT93C5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SportsLife/个人中心/阿里云",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/SportsLife/Other/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.west.SportsLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -922,15 +942,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SportsLife/SportsLifeRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 8NC9AT93C5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SportsLife/个人中心/阿里云",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/SportsLife/Other/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.west.SportsLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";

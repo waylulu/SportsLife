@@ -33,8 +33,7 @@ class HTQRCode: UIView {
             
             rectY = (sizeH-scanSize.height)/2
             self.addLine()
-            timer = Timer(timeInterval: SsLineAnimateDuration, target: self, selector: #selector(lineDrop), userInfo: nil, repeats: true)
-            RunLoop.current.add(timer, forMode: .default)
+            self.startAnimation()
             
         }
         

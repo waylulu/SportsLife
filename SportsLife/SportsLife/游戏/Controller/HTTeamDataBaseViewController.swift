@@ -12,7 +12,7 @@ import XLPagerTabStrip
 @objcMembers
 class HTTeamDataBaseViewController: ButtonBarPagerTabStripViewController {
     
-    var headerView = UIView()
+    var headerView = UIImageView()
     
     var tabTitleArr = [teamTabDetail]()
     
@@ -43,8 +43,8 @@ class HTTeamDataBaseViewController: ButtonBarPagerTabStripViewController {
     
     func configUI(){
         self.view.backgroundColor = BGColor;
-        self.headerView =  UIView.init(frame: CGRect(x: 0, y: 0, width: WIDTH, height: 100))
-        self.headerView.backgroundColor = UIColor.cyan;
+        self.headerView =  UIImageView.init(frame: CGRect(x: 0, y: 0, width: WIDTH, height: 100))
+//        self.headerView.backgroundColor = UIColor.cyan;
         self.buttonBarView.frame = CGRect(x: 0, y: 100, width: WIDTH, height: 40);
         self.view.addSubview(headerView);
         
@@ -63,6 +63,8 @@ class HTTeamDataBaseViewController: ButtonBarPagerTabStripViewController {
             self?.navigationItem.title = model.info.name_cn
             self?.dataModel = model;
             self?.tabTitleArr = self?.dataModel.tab.list ?? [teamTabDetail]()
+            self?.headerView.kf.setImage(with:self?.dataModel.info.logo.stringToUrl())
+
             self?.reloadPagerTabStripView()
           
         }

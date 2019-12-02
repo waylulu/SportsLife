@@ -24,7 +24,7 @@ class PresentDataModel {
             self.cardModelArr.append(CardsModel.init(json: JSON.init(dic)))
         }
     }
-    let payArr = [["title":"银行卡","headerImage":"a", "detail" : [["title":"14122434235235","detail":"中国银行","titleImage":"a","isChoose":false],["title":"3525253252353252525252","detail":"招商银行","titleImage":"b","isChoose":false]]],["title":"支付宝","headerImage":"c", "detail" : [["title":"124141411@qq.com","detail":"2","titleImage":"c","isChoose":false]]],["title":"微信","headerImage":"d", "detail" : [["title":"13211111111","detail":"2","titleImage":"d","isChoose":false]]]]
+    let payArr = [["title":"银行卡","headerImage":"a", "detail" : [["title":"14122434235235","detail":"中国银行","titleImage":"a","isChoose":false],["title":"3525253252353252525252","detail":"招商银行","titleImage":"b","isChoose":false]]],["title":"支付宝","headerImage":"c", "detail" : [["title":"124141411@qq.com","detail":"2","titleImage":"c","isChoose":false]]],["title":"微信","headerImage":"d", "detail" : [["title":"13211111111","detail":"2","titleImage":"d","isChoose":false]]],]
     
     func getPayTypesData(){
         
