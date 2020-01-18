@@ -55,7 +55,7 @@ class HTServices: NSObject {
         mb.mode = .indeterminate
         mb.label.text = ""
         mb.hide(animated: true, afterDelay: 10)
-        
+        print(parameters)
         Alamofire.request(urlString, method: method, parameters: parameters).responseJSON { (data)  in
             DispatchQueue.main.async {
                 mb.hide(animated: true)

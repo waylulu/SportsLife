@@ -26,6 +26,9 @@ class ShopCollectionViewController: UICollectionViewController,UICollectionViewD
         self.collectionView.alwaysBounceVertical = true;
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
+        HelperClass.shared.requestUrl(urlString: HTRuleWebUrl("中超".chineseToPinYin())) { (b) in
+            print(b)
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

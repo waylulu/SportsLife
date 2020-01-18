@@ -30,9 +30,7 @@ class HTQRCodeViewController: HTBaseViewController,AVCaptureMetadataOutputObject
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if session != nil {
-            self.session.stopRunning()
-        }
+
     }
     
     override func viewDidLoad() {
@@ -206,7 +204,7 @@ class HTQRCodeViewController: HTBaseViewController,AVCaptureMetadataOutputObject
                 self.navigationController?.pushViewController(qrErrorVC, animated: true)
                 
             }else{
-                
+                print(url)
                 let webVc = HTWebViewViewController()
                 webVc.url = url!
                 webVc.hidesBottomBarWhenPushed = true
@@ -231,7 +229,8 @@ class HTQRCodeViewController: HTBaseViewController,AVCaptureMetadataOutputObject
         //赋值
         AudioServicesCreateSystemSoundID(baseURL, &soundID)
         //提醒（同上面唯一的一个区别）
-        AudioServicesPlayAlertSound(soundID)
+        AudioServicesPlayAlertSound(1007)
+        
     }
     
     func pushInputCodeClick() {
@@ -240,6 +239,8 @@ class HTQRCodeViewController: HTBaseViewController,AVCaptureMetadataOutputObject
     
     
     deinit {
-        
+        if session != nil {
+            self.session.stopRunning()
+        }
     }
 }

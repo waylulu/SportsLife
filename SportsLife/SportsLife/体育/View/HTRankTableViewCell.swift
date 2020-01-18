@@ -10,7 +10,6 @@ import UIKit
 import SDWebImage
 
 let HTdefalutWidth:CGFloat = WIDTH * (1 / 10 );
-let HTdefalutFont = UIFont.systemFont(ofSize: 12);
 
 class HTRankTableViewCell: UITableViewCell {
     

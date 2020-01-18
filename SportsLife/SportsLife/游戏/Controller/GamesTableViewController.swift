@@ -59,6 +59,11 @@ class GamesTableViewController: HTBaseViewController ,UIWebViewDelegate,Indicato
 //        ChooseYearCallback = { str in
 //            
 //        }
+        
+        HelperClass.shared.requestUrl(urlString: HTRuleWebUrl(league.chineseToPinYin())) { (b) in
+            print(b)
+        }
+
     }
     func chooseyear(_ yaer: String) {
         self.loadData(year: yaer)

@@ -38,6 +38,8 @@ class HTWebViewViewController: HTBaseViewController ,WKNavigationDelegate,WKUIDe
         super.viewWillDisappear(animated)
         self.webView.addObserver(self, forKeyPath: "title", options: .new, context: nil);
         self.webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil);
+        self.webView.addObserver(self, forKeyPath: "canGoBack", options: .new, context: nil);
+
 
     }
 
@@ -203,16 +205,18 @@ class HTWebViewViewController: HTBaseViewController ,WKNavigationDelegate,WKUIDe
             if webView.estimatedProgress >= 1.0{
                 progressView.setProgress(0.0, animated: false)
             }
+        }else if keyPath == "canGoBack"{
+            if self.webView.canGoBack {
+                self.closeBtn.isHidden = false;
+            }else{
+                self.closeBtn.isHidden = true;
+            }
         }
     }
     
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        if self.webView.canGoBack {
-            self.closeBtn.isHidden = false;
-        }else{
-            self.closeBtn.isHidden = true;
-        }
+
         
     }
     
@@ -268,6 +272,8 @@ class HTWebViewViewController: HTBaseViewController ,WKNavigationDelegate,WKUIDe
         print("deinit")
         self.webView.removeObserver(self, forKeyPath: "title");
         self.webView.removeObserver(self, forKeyPath: "estimatedProgress");
+        self.webView.removeObserver(self, forKeyPath: "canGoBack");
+
 
     }
     override func viewWillDisappear(_ animated: Bool) {

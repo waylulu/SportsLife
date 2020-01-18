@@ -45,6 +45,8 @@
 		1440A5392313D9AD00165CA5 /* HTNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A5382313D9AD00165CA5 /* HTNewsModel.swift */; };
 		1440A53B2313DA7600165CA5 /* HTNewsDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A53A2313DA7600165CA5 /* HTNewsDataViewModel.swift */; };
 		1440A53D23142BB900165CA5 /* HTColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A53C23142BB900165CA5 /* HTColors.swift */; };
+		1454FDFA23D1AEA6008539F7 /* HTFontClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1454FDF923D1AEA6008539F7 /* HTFontClass.swift */; };
+		1454FE0123D2ABE1008539F7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1454FE0323D2ABE1008539F7 /* Localizable.strings */; };
 		146517E42316C3CB00A7E19D /* HTRankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146517E32316C3CB00A7E19D /* HTRankModel.swift */; };
 		146517E62317A79900A7E19D /* HTRankBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146517E52317A79900A7E19D /* HTRankBaseViewController.swift */; };
 		14AA90A0233858AA004B4D3B /* HTTeamDataBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AA909F233858AA004B4D3B /* HTTeamDataBaseViewController.swift */; };
@@ -132,6 +134,11 @@
 		1440A5382313D9AD00165CA5 /* HTNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTNewsModel.swift; sourceTree = "<group>"; };
 		1440A53A2313DA7600165CA5 /* HTNewsDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTNewsDataViewModel.swift; sourceTree = "<group>"; };
 		1440A53C23142BB900165CA5 /* HTColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTColors.swift; sourceTree = "<group>"; };
+		1454FDF923D1AEA6008539F7 /* HTFontClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTFontClass.swift; sourceTree = "<group>"; };
+		1454FDFF23D2AB5C008539F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		1454FE0023D2AB5C008539F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		1454FE0223D2ABE1008539F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		1454FE0423D2AC16008539F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		146517E32316C3CB00A7E19D /* HTRankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTRankModel.swift; sourceTree = "<group>"; };
 		146517E52317A79900A7E19D /* HTRankBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTRankBaseViewController.swift; sourceTree = "<group>"; };
 		14AA909F233858AA004B4D3B /* HTTeamDataBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTeamDataBaseViewController.swift; sourceTree = "<group>"; };
@@ -370,6 +377,7 @@
 				140D49D42314E00900FDA4E8 /* NetworkError.html */,
 				14022716231E367F006B0063 /* HTNODataView.swift */,
 				141F7BF92320A981001B1716 /* HTTimeHelper.swift */,
+				1454FDF923D1AEA6008539F7 /* HTFontClass.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -409,6 +417,7 @@
 				14DB2CDB230E2FD20014F19C /* OCViewController.h */,
 				14246914230FC4EC008E6987 /* HTBaseTableViewController.swift */,
 				140DB2C12333319600F87692 /* HTCustomViewController.swift */,
+				1454FE0323D2ABE1008539F7 /* Localizable.strings */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -581,6 +590,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 7EFC389320DA2884005616D0;
 			productRefGroup = 7EFC389D20DA2884005616D0 /* Products */;
@@ -599,6 +609,7 @@
 			files = (
 				140AFF8A2356F5A400C22C22 /* AliyunEmasServices-Info.plist in Resources */,
 				14DB2CF5230E2FD20014F19C /* Main.storyboard in Resources */,
+				1454FE0123D2ABE1008539F7 /* Localizable.strings in Resources */,
 				14DB2CEC230E2FD20014F19C /* 文档 in Resources */,
 				140D49D52314E00900FDA4E8 /* NetworkError.html in Resources */,
 				7E7F330020DB9D1E00AA02EE /* Podfile in Resources */,
@@ -726,6 +737,7 @@
 				143EA0FE235D7D5D00941ACB /* HTVideoPlayerViewController.swift in Sources */,
 				14DB2CE3230E2FD20014F19C /* MineTableViewController.swift in Sources */,
 				14AA90DC2339B3F1004B4D3B /* HTTeamDataTableViewCell.swift in Sources */,
+				1454FDFA23D1AEA6008539F7 /* HTFontClass.swift in Sources */,
 				141F7BFA2320A981001B1716 /* HTTimeHelper.swift in Sources */,
 				14DB2CE9230E2FD20014F19C /* ChooseTypeHeaderView.swift in Sources */,
 				14DB2CF3230E2FD20014F19C /* OCViewController.m in Sources */,
@@ -778,10 +790,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		1454FE0323D2ABE1008539F7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1454FE0223D2ABE1008539F7 /* zh-Hans */,
+				1454FE0423D2AC16008539F7 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		14DB2CD2230E2FD20014F19C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				14DB2CD3230E2FD20014F19C /* Base */,
+				1454FDFF23D2AB5C008539F7 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -790,6 +812,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				14DB2CD5230E2FD20014F19C /* Base */,
+				1454FE0023D2AB5C008539F7 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -801,6 +824,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -860,6 +884,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -924,7 +949,7 @@
 					"$(PROJECT_DIR)/SportsLife/个人中心/阿里云",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/SportsLife/Other/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.west.SportsLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -951,7 +976,7 @@
 					"$(PROJECT_DIR)/SportsLife/个人中心/阿里云",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/SportsLife/Other/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.west.SportsLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";

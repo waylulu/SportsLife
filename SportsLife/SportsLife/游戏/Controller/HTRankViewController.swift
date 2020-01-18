@@ -245,7 +245,13 @@ class HTRankViewController:  HTBaseViewController ,IndicatorInfoProvider,UITable
     
     
     func isRequest()->Bool{
-        return  HelperClass.shared.requestUrl(urlString: HTRuleWebUrl(league.chineseToPinYin()))
+        var isb: Bool ;
+//        HelperClass.shared.requestUrl(urlString:  HTRuleWebUrl(league.chineseToPinYin()), c: { (isBool) in
+//            isb = isBool;
+//        })
+//        return isb;
+        
+        return true //HelperClass.shared.requestUrl(urlString: HTRuleWebUrl(league.chineseToPinYin()), c: <#((Bool) -> Void)#>)
     }
 
     

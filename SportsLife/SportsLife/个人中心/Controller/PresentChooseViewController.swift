@@ -38,10 +38,8 @@ class PresentChooseViewController: UIViewController ,UIGestureRecognizerDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.loadData()
         self.configUI()
-
     }
     
     func configUI(){

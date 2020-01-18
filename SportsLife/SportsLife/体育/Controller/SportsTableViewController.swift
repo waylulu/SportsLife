@@ -42,7 +42,7 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
         self.setSegmentUI()
         self.setScrollviewUI()
         self.setTableViewUI();
-//        self.testClassAndStruct()
+        self.testClassAndStruct()
 
     }
     
@@ -107,11 +107,20 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
         print(testStructA.a)
         print(testStructA.b)
         
-        
-        
+        print([5,6,2,6,7,23,7,2,347,45,4363,2,346,3].sorted())
+        print([5,6,2,6,7,23,7,2,347,45,4363,2,346,3].sorted(by: {$0>$1}))
     }
 
     func rightClick(){
+        
+        var i:Int = 0;
+        
+        for j in 0...10 {
+            i += j;
+        }
+        print(i)
+
+        
         let vc = HTQRCodeViewController()
         vc.hidesBottomBarWhenPushed = true;
         self.seg.isHidden = true;
@@ -301,8 +310,10 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
         self.navigationController?.pushViewController(vc, animated: true)
 //        https://m.zhibo8.cc/news/web/zuqiu/2019-09-03/5d6e7562d45b4.htm?key=20190904095944
 //        self.getData()
-//        self.login();
 //        AlertView.shard.MBProgressHUDWithMessage(view: self.view, message: "点击了第\(tableView.tag)tableView的\(indexPath.row)")
+        if indexPath.section == 0 && indexPath.row == 0 {
+            self.login();
+        }
     }
     //    MARK:# 其他
     override func didReceiveMemoryWarning() {

@@ -90,7 +90,12 @@ class MineTableViewController: HTBaseTableViewController {
         }else if indexPath.row == 2{
             AlertView.shard.alertDetail(controller: self, title:"test", bloack: {
                               
-                self.view.addSubview(SwiftUIView_Previews.previews as! UIView);
+//                self.view.addSubview(SwiftUIView_Previews.previews as! UIView);
+                let vc = HTWebViewViewController();
+                vc.hidesBottomBarWhenPushed = true
+                vc.type = "zhibo8"
+                vc.url = "https://www.baidu.com"
+                self.navigationController?.pushViewController(vc, animated: true)
             })
             
             
@@ -141,6 +146,14 @@ class MineTableViewController: HTBaseTableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        print(self.s(s: 1,1,2,3))
+    }
+    func s(s:Int...)->Int{
+        var t:Int = 0;
+        for i in s {
+            t += i;
+        }
+        return t;
     }
 }
 

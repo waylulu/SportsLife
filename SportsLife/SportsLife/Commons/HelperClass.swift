@@ -25,6 +25,10 @@ let SegWidth:CGFloat = 60;
 
 //导航栏高度
 let naviHeight:CGFloat = isIPhoneX ? 88 : 64
+
+
+
+
 ///支付类型
 enum PayType {
     case unionPay
@@ -39,6 +43,8 @@ enum CradType {
     case notPay
     case defalut
 }
+
+
 ///本地图片
 var HTImage:(String) ->UIImage = { string in
     return UIImage.init(named: string) ?? UIImage()
@@ -48,14 +54,6 @@ var HTImage:(String) ->UIImage = { string in
 var HTurlString:(_ string:String)->String = { str in
     return str.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
 }
-
-///size:字体大小 font:字体样式""为默认
-let HTFont:(_:CGFloat,_:String)->UIFont = { size,style in
-    
-    return (style == "" ? UIFont.systemFont(ofSize: size) : UIFont.init(name: style, size: size)) ?? HTdefalutFont
-    
-}
-
 
 
 ///设置label文字和图片共存
@@ -92,28 +90,54 @@ class HelperClass {
         formatter.dateFormat = "yyyy-MM-dd";
         return ""
     }
-    
-    func requestUrl(urlString: String) -> Bool {
+
+    func requestUrl(urlString: String,c:(@escaping(_ isRes:Bool)-> Void))  {
         let url: NSURL = NSURL(string: urlString)!
-        let request: NSMutableURLRequest = NSMutableURLRequest(url: url as URL)
+        var request: URLRequest = URLRequest(url: url as URL)
         request.timeoutInterval = 5
-        
+
         var response: URLResponse?
-        
-        do {
-            try NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: &response)
-            if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    print("response:\(httpResponse.statusCode)")
-                    return true
+
+        URLSession.shared.dataTask(with: request) { (data, res, err) in
+            if let httpRes = res as? HTTPURLResponse{
+                if httpRes.statusCode == 200 {
+                    print(httpRes);
+                    c(true)
                 }
+                c(false)
             }
-            return false
+            c(false)
         }
-        catch (let error) {
-            print("error:\(error)")
-            return false
-        }
+            
+//    func requestUrl(urlString: String) -> Bool {
+//        let url: NSURL = NSURL(string: urlString)!
+//        var request: URLRequest = URLRequest(url: url as URL)
+//        request.timeoutInterval = 5
+//
+//        var response: URLResponse?
+//
+//        URLSession.shared.dataTask(with: request) { (data, res, err) in
+//            if let httpRes = res as? HTTPURLResponse{
+//                if httpRes.statusCode == 200 {
+//                    print(httpRes);
+//                    return true;
+//                }
+//            }
+//        }
+//        do {
+//            try NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: &response)
+//            if let httpResponse = response as? HTTPURLResponse {
+//                if httpResponse.statusCode == 200 {
+//                    print("response:\(httpResponse.statusCode)")
+//                    return true
+//                }
+//            }
+//            return false
+//        }
+//        catch (let error) {
+//            print("error:\(error)")
+//            return false
+//        }
     }
     
     
@@ -268,6 +292,8 @@ extension UIImageView{
     }
     
 }
+
+
 extension UIColor{
     
     
@@ -408,4 +434,5 @@ extension Data {
         }
         
     }
+    
 }

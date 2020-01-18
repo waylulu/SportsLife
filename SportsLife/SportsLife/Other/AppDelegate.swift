@@ -98,7 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
-        print("token====\(deviceToken.hexString)")//64f82195635e2901a2a3e520a8f0589e936117990fcb25529ce906e3b1d4bf4d//3f2e470a1c44847a0abf3f058ea1a514406e9f43fe54349a6e9fd997222dc8a4/3b91b14a02cf52ef86a122815b1c76058f06ecd79da715d41fd5fb3c1cbac30a
+        print("deviceToken====\(deviceToken.hexString)")//64f82195635e2901a2a3e520a8f0589e936117990fcb25529ce906e3b1d4bf4d//3f2e470a1c44847a0abf3f058ea1a514406e9f43fe54349a6e9fd997222dc8a4/3b91b14a02cf52ef86a122815b1c76058f06ecd79da715d41fd5fb3c1cbac30a//f0b1b842138949fedc0ec08c20ab5d7f5c658022e97779acae56e69e3ebc2924
 
         UserDefaults.standard.set(deviceToken.hexString, forKey: "deviceToken");
           CloudPushSDK.registerDevice(deviceToken) { (res) in
@@ -108,6 +108,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
                       print(res?.error)
                   }
               }
+        
+        var deviceTokenString = String()
+               let bytes = [UInt8](deviceToken)
+               for item in bytes {
+                   deviceTokenString += String(format:"%02x", item&0x000000FF)
+               }
+              print("deviceToken：\(deviceTokenString)")
     }
   
     
