@@ -37,7 +37,7 @@ var HTFontSemibold:(CGFloat) ->UIFont = { f in
     return UIFont.init(name: "PingFangSC-Semibold", size: f) ?? HTdefalutFont
 }
 
-///字体"PingFangSC-Medium"
+///字体"Helvetica"
 var HTFontHelvetica:(CGFloat) ->UIFont = { f in
     return UIFont.init(name: "Helvetica", size: f) ?? HTdefalutFont
 }

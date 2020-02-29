@@ -297,7 +297,8 @@ extension HTTeamDataTableViewController{
             }
         
         }else if self.teamDataType == .squad{
-            let cell = tableView.dequeueReusableCell(withIdentifier: squadCell, for: indexPath) as! HTSquadTableViewCell
+            let cell:HTSquadTableViewCell = tableView.dequeueReusableCell(withIdentifier: squadCell, for: indexPath) as! HTSquadTableViewCell
+            
             if indexPath.section == 0 {
                 
                 cell.setCoachData(model: self.squadData.coaching_staff.list[indexPath.section])
@@ -365,12 +366,15 @@ extension HTTeamDataTableViewController{
         let vc = HTWebViewViewController();
         vc.hidesBottomBarWhenPushed = true
         vc.type = "zhibo8"
-        vc.url =  HTurlString(url)
+        vc.url =  HTUrlString(url)
         vc.isNews = self.teamDataType == .news ? true : false;
         self.navigationController?.pushViewController(vc, animated: true)
+        
+
     }
     
     
+
 }
 
 

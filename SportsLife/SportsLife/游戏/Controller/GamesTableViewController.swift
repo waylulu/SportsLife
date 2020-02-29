@@ -80,9 +80,9 @@ class GamesTableViewController: HTBaseViewController ,UIWebViewDelegate,Indicato
     func loadData(year:String) {
         HTRankServices().getNewsArr(league: league, tab: tab, year: year, loadingView: self.view) { (arr, json) in
             print(json)
-            if arr.count > 0{
+//            if arr.count > 0{
                 self.dataArr = arr;
-            }
+//            }
             self.tableView.reloadData()
         }
     }

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import EventKit
+import EventKitUI
 
 class MineTableViewController: HTBaseTableViewController {
 
@@ -26,10 +28,9 @@ class MineTableViewController: HTBaseTableViewController {
     //    MARK:# UI
     func configUI() {
         self.navigationItem.title = "个人中心"
-        self.tabBarItem.title = "个人中心"
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 //       let s =  1500 - 10.92 = 1489.08
-        
+        self.navigationItem.leftBarButtonItem = nil;
     }
     //    MARK:# 数据
     func loadData() {
@@ -133,12 +134,20 @@ class MineTableViewController: HTBaseTableViewController {
  
     
     
+    //ios11系统自带侧滑图片
     @available(iOS 11.0, *)
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let d = UIContextualAction.init()
+        let d = UIContextualAction.init(style: .normal, title: "test") { (a, v, c) in
+//            AlertView.shard.MBProgressHUDWithMessage(view: v, message: "点击了\(indexPath.row)");
+            c(true)
+        }
         d.image = HTImage("a")
-        
-        return UISwipeActionsConfiguration.init(actions: [d]);
+//        d.handler(d, self.view){_ in
+//            print("11111111");
+//        }
+        let c = UIContextualAction.init()
+        c.image = HTImage("a")
+        return UISwipeActionsConfiguration.init(actions: [d,c]);
     }
     
 
@@ -147,6 +156,7 @@ class MineTableViewController: HTBaseTableViewController {
         super.viewWillAppear(animated)
 
         print(self.s(s: 1,1,2,3))
+        self.lacationNot()
     }
     func s(s:Int...)->Int{
         var t:Int = 0;
@@ -154,6 +164,12 @@ class MineTableViewController: HTBaseTableViewController {
             t += i;
         }
         return t;
+    }
+    
+    
+    func lacationNot(){
+        ///数据求和
+        print([1,1,2,3,4].reduce(0, +))
     }
 }
 

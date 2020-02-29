@@ -59,7 +59,7 @@ class HTScheduleTableViewCell: UITableViewCell {
         homeItemImageView.snp.makeConstraints { (make) in
             make.trailing.equalTo(scoreLabel.snp.leading).offset(-10)
             make.width.equalTo(25)
-            make.height.equalTo(30)
+            make.height.equalTo(25)
             make.centerY.equalTo(self)
         }
         

@@ -51,13 +51,13 @@ var HTImage:(String) ->UIImage = { string in
 }
 
 ///url转义中文
-var HTurlString:(_ string:String)->String = { str in
+var HTUrlString:(_ string:String)->String = { str in
     return str.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
 }
 
 
 ///设置label文字和图片共存
-var HtgetAttributedText:(_ string:String,_ font:UIFont,_ image:UIImage)->NSAttributedString = { string,font,image  in
+var HTGetAttributedText:(_ string:String,_ font:UIFont,_ image:UIImage)->NSAttributedString = { string,font,image  in
     
     let attri = NSMutableAttributedString.init(string: "  \(string)", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13)])
     let attachment = NSTextAttachment.init()

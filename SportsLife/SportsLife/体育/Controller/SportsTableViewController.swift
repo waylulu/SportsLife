@@ -312,8 +312,15 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
 //        self.getData()
 //        AlertView.shard.MBProgressHUDWithMessage(view: self.view, message: "点击了第\(tableView.tag)tableView的\(indexPath.row)")
         if indexPath.section == 0 && indexPath.row == 0 {
-            self.login();
+//            self.login();
+            let t:Any = a(arg: 1, a: 1)
+            print(t)
         }
+    }
+    
+
+    func a<T>(arg:T,a:T){
+        print(arg);
     }
     //    MARK:# 其他
     override func didReceiveMemoryWarning() {

@@ -121,7 +121,7 @@ class HTHotNewsTableViewCell: UITableViewCell {
         
         HTServices.htNet.getData(loadingView: UIView(), urlString: pl(model.pinglun), method: .get, parameters: [:]) {[weak self](json) -> (Void) in
             
-            self?.commentsLabel.attributedText = HtgetAttributedText(Comments.init(json: json).all_short_num, HTdefalutFont, HTImage("common"));
+            self?.commentsLabel.attributedText = HTGetAttributedText(Comments.init(json: json).all_short_num, HTdefalutFont, HTImage("common"));
         }
         
         self.playVideoImageView.image = HTImage("play")

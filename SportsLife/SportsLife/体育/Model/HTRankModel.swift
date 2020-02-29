@@ -9,9 +9,12 @@
 import UIKit
 import SwiftyJSON
 
-class HTRankModel: NSObject {
+/**
+ struct 和class 的区别
+ 
+ */
+struct HTRankModel {
 
-    
     var 排名 = "1";
     var 球队  = "2";
     var icon = ""
@@ -23,8 +26,7 @@ class HTRankModel: NSObject {
     var 积分  = "7";
     var teamId = "";
     
-    convenience init(json:JSON) {
-        self.init()
+    init(json:JSON) {
         排名 = json["排名"].stringValue
         球队 = json["球队"].stringValue
         场次 = json["场次"].stringValue
@@ -44,13 +46,13 @@ var yingChaoRickoUrl = "http://dc.qiumibao.com/shuju/public/index.php?_url=/data
 ///积分url
 var HTRankUrl:(_ league:String,_ tab:String,_ year:String)->String = { league,tab,year in
     
-    return HTurlString("http://dc.qiumibao.com/shuju/public/index.php?_url=/data/index&league=\(league)&tab=\(tab)&year=\(year)")
+    return HTUrlString("http://dc.qiumibao.com/shuju/public/index.php?_url=/data/index&league=\(league)&tab=\(tab)&year=\(year)")
 
 }
 ///规则url
 var HTRuleWebUrl:( _ type:String)->String = { string in
     
-    return HTurlString("http://dc.qiumibao.com/data/rule/words/\(string).php")   
+    return HTUrlString("http://dc.qiumibao.com/data/rule/words/\(string).php")   
 }
 
 
