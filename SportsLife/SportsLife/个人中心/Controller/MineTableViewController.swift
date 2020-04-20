@@ -38,18 +38,19 @@ class MineTableViewController: HTBaseTableViewController {
     }
     //    MARK:# 代理方法
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 10
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
     }
     //rowheaderheight
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return 0.0001
-        }
-        return 10
+//        if section == 0 {
+//            return 0.0001
+//        }
+        return 40
     }
+
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.0001
@@ -59,7 +60,10 @@ class MineTableViewController: HTBaseTableViewController {
         return nil
     }
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return nil
+        let label = UILabel.init(frame: CGRect(x: 0, y: 0, width: WIDTH, height: 40));
+        label.text = "Text";
+        label.backgroundColor = UIColor.clear;
+        return label;
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
@@ -132,7 +136,12 @@ class MineTableViewController: HTBaseTableViewController {
         }
     }
  
-    
+    func test(_ frame:CGRect){
+        let maskLayer = CALayer.init()
+        maskLayer.backgroundColor = UIColor.white.cgColor
+        maskLayer.frame = frame;
+        self.la
+    }
     
     //ios11系统自带侧滑图片
     @available(iOS 11.0, *)
@@ -151,6 +160,25 @@ class MineTableViewController: HTBaseTableViewController {
     }
     
 
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.textLabel?.isHidden = false;
+        print("2222");
+
+
+    }
+    
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.textLabel?.isHidden = true;
+        print("3333");
+
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        print("1111");
+    }
+
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -173,3 +201,6 @@ class MineTableViewController: HTBaseTableViewController {
     }
 }
 
+extension UITableViewCell{
+    
+}
