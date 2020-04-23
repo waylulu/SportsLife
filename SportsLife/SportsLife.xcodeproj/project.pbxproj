@@ -29,7 +29,6 @@
 		140DB2BE233312CA00F87692 /* HTTeamDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140DB2BD233312CA00F87692 /* HTTeamDataTableViewController.swift */; };
 		140DB2C023331F9800F87692 /* HTTeamDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140DB2BF23331F9800F87692 /* HTTeamDataModel.swift */; };
 		140DB2C22333319600F87692 /* HTCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140DB2C12333319600F87692 /* HTCustomViewController.swift */; };
-		1410BFCA244DCE2600CF5F32 /* HTCustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1410BFC9244DCE2600CF5F32 /* HTCustomAlertView.swift */; };
 		1417FB3623715B1E00EB65F6 /* NSObject+HTTestCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1417FB3523715B1E00EB65F6 /* NSObject+HTTestCategory.m */; };
 		1417FB3823715DC000EB65F6 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1417FB3723715DC000EB65F6 /* SwiftUIView.swift */; };
 		141F7BFA2320A981001B1716 /* HTTimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141F7BF92320A981001B1716 /* HTTimeHelper.swift */; };
@@ -46,7 +45,6 @@
 		1440A5392313D9AD00165CA5 /* HTNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A5382313D9AD00165CA5 /* HTNewsModel.swift */; };
 		1440A53B2313DA7600165CA5 /* HTNewsDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A53A2313DA7600165CA5 /* HTNewsDataViewModel.swift */; };
 		1440A53D23142BB900165CA5 /* HTColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1440A53C23142BB900165CA5 /* HTColors.swift */; };
-		144D22D924518077005FE88C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 144D22DB24518077005FE88C /* InfoPlist.strings */; };
 		1454FDFA23D1AEA6008539F7 /* HTFontClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1454FDF923D1AEA6008539F7 /* HTFontClass.swift */; };
 		1454FE0123D2ABE1008539F7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1454FE0323D2ABE1008539F7 /* Localizable.strings */; };
 		146517E42316C3CB00A7E19D /* HTRankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146517E32316C3CB00A7E19D /* HTRankModel.swift */; };
@@ -119,7 +117,6 @@
 		140DB2BD233312CA00F87692 /* HTTeamDataTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTeamDataTableViewController.swift; sourceTree = "<group>"; };
 		140DB2BF23331F9800F87692 /* HTTeamDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTeamDataModel.swift; sourceTree = "<group>"; };
 		140DB2C12333319600F87692 /* HTCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCustomViewController.swift; sourceTree = "<group>"; };
-		1410BFC9244DCE2600CF5F32 /* HTCustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTCustomAlertView.swift; sourceTree = "<group>"; };
 		1417FB3423715B1E00EB65F6 /* NSObject+HTTestCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+HTTestCategory.h"; sourceTree = "<group>"; };
 		1417FB3523715B1E00EB65F6 /* NSObject+HTTestCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HTTestCategory.m"; sourceTree = "<group>"; };
 		1417FB3723715DC000EB65F6 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
@@ -137,9 +134,6 @@
 		1440A5382313D9AD00165CA5 /* HTNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTNewsModel.swift; sourceTree = "<group>"; };
 		1440A53A2313DA7600165CA5 /* HTNewsDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTNewsDataViewModel.swift; sourceTree = "<group>"; };
 		1440A53C23142BB900165CA5 /* HTColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTColors.swift; sourceTree = "<group>"; };
-		144D22D424517FC1005FE88C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
-		144D22DA24518077005FE88C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		144D22DC2451807C005FE88C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		1454FDF923D1AEA6008539F7 /* HTFontClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTFontClass.swift; sourceTree = "<group>"; };
 		1454FDFF23D2AB5C008539F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		1454FE0023D2AB5C008539F7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -367,7 +361,6 @@
 				14DB2CC2230E2FD20014F19C /* TableViewCell.swift */,
 				14DB2CC3230E2FD20014F19C /* ChooseTypeHeaderView.swift */,
 				14DB2CC4230E2FD20014F19C /* TableViewCell.xib */,
-				1410BFC9244DCE2600CF5F32 /* HTCustomAlertView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -615,7 +608,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				140AFF8A2356F5A400C22C22 /* AliyunEmasServices-Info.plist in Resources */,
-				144D22D924518077005FE88C /* InfoPlist.strings in Resources */,
 				14DB2CF5230E2FD20014F19C /* Main.storyboard in Resources */,
 				1454FE0123D2ABE1008539F7 /* Localizable.strings in Resources */,
 				14DB2CEC230E2FD20014F19C /* 文档 in Resources */,
@@ -777,7 +769,6 @@
 				14AA90DE2339B403004B4D3B /* HTCellHeaderView.swift in Sources */,
 				146517E62317A79900A7E19D /* HTRankBaseViewController.swift in Sources */,
 				14DB2CF7230E2FD20014F19C /* HTBaseViewController.swift in Sources */,
-				1410BFCA244DCE2600CF5F32 /* HTCustomAlertView.swift in Sources */,
 				14DB2CEE230E2FD20014F19C /* HTNewsTableViewController.swift in Sources */,
 				14DB2CE4230E2FD20014F19C /* PresentChooseViewController.swift in Sources */,
 				1440A5392313D9AD00165CA5 /* HTNewsModel.swift in Sources */,
@@ -799,23 +790,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		144D22D224517FB3005FE88C /* Info.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				144D22D424517FC1005FE88C /* en */,
-			);
-			name = Info.plist;
-			sourceTree = "<group>";
-		};
-		144D22DB24518077005FE88C /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				144D22DA24518077005FE88C /* en */,
-				144D22DC2451807C005FE88C /* zh-Hans */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		1454FE0323D2ABE1008539F7 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
