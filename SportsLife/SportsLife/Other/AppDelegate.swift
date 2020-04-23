@@ -109,12 +109,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
                   }
               }
         
-        var deviceTokenString = String()
-               let bytes = [UInt8](deviceToken)
-               for item in bytes {
-                   deviceTokenString += String(format:"%02x", item&0x000000FF)
-               }
-              print("deviceToken：\(deviceTokenString)")
+//        var deviceTokenString = String()
+//        let bytes = [UInt8](deviceToken)
+//        for item in bytes {
+//            deviceTokenString += String(format:"%02x", item&0x000000FF)
+//        }
+        print("deviceTokendeviceTokenString====：\(deviceToken.deviceTokenString)")
+        print("deviceTokenDataToString====：\(deviceTokenDataToString(deviceToken))")
+
     }
   
     

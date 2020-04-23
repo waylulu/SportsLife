@@ -21,12 +21,11 @@ let isIPhoneX = HEIGHT == 812 || HEIGHT == 896 ? true : false
 
 let bottomHeight:CGFloat = isIPhoneX ? 34 : 0
 
-let SegWidth:CGFloat = 60;
-
 //导航栏高度
 let naviHeight:CGFloat = isIPhoneX ? 88 : 64
 
 
+let SegWidth:CGFloat = 60;
 
 
 ///支付类型
@@ -420,6 +419,7 @@ extension String {
         
         return URL.init(string: self)!
     }
+    
 }
 
 
@@ -434,5 +434,31 @@ extension Data {
         }
         
     }
+    
+    
+    var deviceTokenString : String {
+        var str = "";
+        let bytes = [UInt8](self)
+        for item in bytes {
+            str += String(format:"%02x", item&0x000000FF)
+        }
+        return str;
+    }
+    
+    
+}
+
+
+var deviceTokenDataToString:(_ data:Data)->String = { data in
+    var str = "";
+    let bytes = [UInt8](data)
+    for item in bytes {
+        str += String(format:"%02x", item&0x000000FF)
+    }
+    return str;
+
+}
+
+extension UIButton{
     
 }
