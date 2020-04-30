@@ -19,10 +19,11 @@ class HTBaseViewController: UIViewController {
         }
     }
     
-
     func popView(){
         self.navigationController?.popViewController(animated: true)
+        
     }
 
+    
     
 }

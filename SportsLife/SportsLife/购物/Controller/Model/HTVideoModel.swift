@@ -47,14 +47,14 @@ class HTVideoService {
     var videoModels = [HTVideoModel]()
     
     func getVideoArr(league:String,page:String , loadingView:UIView, callBack:@escaping (([HTVideoModel],JSON)->())){
-        HTServices.htNet.getData(loadingView: loadingView, urlString: videoUrl(league, page), method: .get, parameters: [:]) { (json) -> (Void) in
+        HTServices.htNet.getData(loadingView: loadingView, urlString: videoUrl(league, page), method: .get, parameters: [:]) {[weak self] (json) -> (Void) in
             
             print(json)
             if json["error_code"].intValue == 1{
                 for js in json["data"].arrayValue {
-                    self.videoModels.append(HTVideoModel.init(json: js))
+                    self?.videoModels.append(HTVideoModel.init(json: js))
                 }
-                callBack(self.videoModels, json)
+                callBack((self?.videoModels)!, json)
                 
             }else{
                 callBack([],json)

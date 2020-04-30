@@ -85,18 +85,18 @@ class HelperClass {
 //    NSString *dateString = [formatter  stringFromDate:date1];
 //    NSString * url = [NSString stringWithFormat:@"http://m.zhibo8.cc/json/news/zuqiu/%@.json?",dateString];
     
-    func  getTime()->String{
-        let formatter = DateFormatter.init()
-        formatter.dateFormat = "yyyy-MM-dd";
-        return ""
-    }
-
+//    func  getTime()->String{
+//        let formatter = DateFormatter.init()
+//        formatter.dateFormat = "yyyy-MM-dd";
+//        return ""
+//    }
+///工具HTTPURLResponse的statusCode == 200 判断当前网络状态
     func requestUrl(urlString: String,c:(@escaping(_ isRes:Bool)-> Void))  {
         let url: NSURL = NSURL(string: urlString)!
         var request: URLRequest = URLRequest(url: url as URL)
         request.timeoutInterval = 5
 
-        var response: URLResponse?
+//        var response: URLResponse?
 
         URLSession.shared.dataTask(with: request) { (data, res, err) in
             if let httpRes = res as? HTTPURLResponse{
@@ -143,10 +143,12 @@ class HelperClass {
     
 
 }
-
+//东八区
 var TIME_MORE:Double = (-8 * 60 * 60);
-
-
+/**
+    time:时差(-8 * 60 * 60)
+   formatterSample : "yyyy-MM-dd"
+ */
 var currentTime:(_ time:Double ,_ formatterSample:String)->String = { time ,str in
     let formatter = DateFormatter.init()
     formatter.dateFormat = str;
@@ -320,7 +322,7 @@ extension UIColor{
 }
 
 //    MARK:# 其他
-
+///提示框修改
 class AlertView {
     
     static let shard = AlertView()
@@ -398,6 +400,7 @@ var HTrep:(_ str:String,_ old:[String],_ new:[String])->String = { str,old,new i
 
 
 extension String{
+    ///中文转拼音
     func chineseToPinYin()->String{
         let mutableString = NSMutableString(string: self)
         CFStringTransform(mutableString, nil, kCFStringTransformToLatin, false)
@@ -409,13 +412,13 @@ extension String{
 
 
 extension String {
-    
+    ///计算字符串宽高
     func heightWithFont(font : UIFont, maxSize: CGSize) -> CGSize {
         let attrs = [NSAttributedString.Key.font: font]
         let rect = self.boundingRect(with: maxSize, options:.usesLineFragmentOrigin, attributes: attrs, context:nil)
         return rect.size
     }
-    
+    ///字符串转URL
     func stringToUrl() ->URL{
         
         return URL.init(string: self)!
@@ -432,7 +435,31 @@ extension Data {
             let buffer = UnsafeBufferPointer(start: bytes, count: count)
             return buffer.map {String(format: "%02hhx", $0)}.reduce("", { $0 + $1 })
         }
-        
     }
+        
+    var deviceTokenString : String {
+        var str = "";
+        let bytes = [UInt8](self)
+        for item in bytes {
+            str += String(format:"%02x", item&0x000000FF)
+        }
+        return str;
+    }
+    
+    
+}
+
+
+var deviceTokenDataToString:(_ data:Data)->String = { data in
+    var str = "";
+    let bytes = [UInt8](data)
+    for item in bytes {
+        str += String(format:"%02x", item&0x000000FF)
+    }
+    return str;
+
+}
+
+extension UIButton{
     
 }

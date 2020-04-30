@@ -23,16 +23,16 @@ class HTNewsDataViewModel: NSObject {
     var newsModels = [newsDetailModel]()
     
     func getNewsArr(url:String ,loadingView:UIView,callBack:@escaping (([newsDetailModel],JSON)->())){
-        HTServices.htNet.getData(loadingView: loadingView, urlString: url, method: .get, parameters: [:]) { (json) -> (Void) in
+        HTServices.htNet.getData(loadingView: loadingView, urlString: url, method: .get, parameters: [:]) {[weak self] (json) -> (Void) in
         
             print(json)
             if json["video_arr"].arrayValue.count > 0{
                 for js in json["video_arr"].arrayValue {
                     if js["lable"].stringValue.contains("西甲"){
-                        self.newsModels.append(newsDetailModel.init(json: js))
+                        self?.newsModels.append(newsDetailModel.init(json: js))
                     }
                 }
-                callBack(self.newsModels, json)
+                callBack((self?.newsModels)!, json)
                 
             }else{
                 callBack([],json)

@@ -101,6 +101,10 @@ class MineTableViewController: HTBaseTableViewController {
             
             
             return;
+        }else if indexPath.row == 3{
+           let vc = HTLanguageTableViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+            return;
         }
         let vc = PresentChooseViewController()
         vc.modalPresentationStyle = .custom//蒙版风格overCurrentContext:tabbar跳转,custom

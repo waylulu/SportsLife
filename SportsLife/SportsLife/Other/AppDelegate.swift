@@ -18,19 +18,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
 
 
 //    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        
+//
+//        HTLanguageHelper.shard.initLanguage()
+//        self.initCloudPush()
+//        self.registerAPNs(application)
+//
 //        self.window = UIWindow.init(frame: UIScreen.main.bounds)
 //        self.window?.backgroundColor = UIColor.white
 //        self.window?.makeKeyAndVisible()
 //        self.window?.rootViewController = RootTabBarViewController()
-//        
+//
+//
 //        return true
 //    }
 
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
+        
+        
+        HTLanguageHelper.shard.initLanguage()
+        
+        self.initCloudPush()
+        self.registerAPNs(application)
+        
         GADMobileAds.sharedInstance().start(completionHandler: nil)
-
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
@@ -38,15 +49,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
         #if DEBUG
 
 //        Bundle.init(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load();
-        
+
         #endif
 
 //        AlertView.shard.alertDetail(controller: (self.window?.rootViewController!)!, title: "该版本已不支持请前往App Store更新") {
 //        }
-        
-        
-        self.initCloudPush()
-        self.registerAPNs(application)
+
     }
     func applicationWillResignActive(_ application: UIApplication) {
 
@@ -109,12 +117,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
                   }
               }
         
-        var deviceTokenString = String()
-               let bytes = [UInt8](deviceToken)
-               for item in bytes {
-                   deviceTokenString += String(format:"%02x", item&0x000000FF)
-               }
-              print("deviceToken：\(deviceTokenString)")
+        //        var deviceTokenString = String()
+        //        let bytes = [UInt8](deviceToken)
+        //        for item in bytes {
+        //            deviceTokenString += String(format:"%02x", item&0x000000FF)
+        //        }
+                print("deviceTokendeviceTokenString====：\(deviceToken.deviceTokenString)")
+                print("deviceTokenDataToString====：\(deviceTokenDataToString(deviceToken))")
     }
   
     

@@ -57,11 +57,15 @@ class HTServices: NSObject {
         mb.hide(animated: true, afterDelay: 10)
         print(parameters)
         Alamofire.request(urlString, method: method, parameters: parameters).responseJSON { (data)  in
-            DispatchQueue.main.async {
+            DispatchQueue.main.async(execute: {
                 mb.hide(animated: true)
-                let json = JSON.init(data.data ?? Data());
-                completion(json)
-            }
+                if (data.data != nil){
+                    let json = JSON.init(data.data!);
+                    completion(json)
+                }else{
+                    completion(JSON.null)
+                }
+            })
         }
         
     }

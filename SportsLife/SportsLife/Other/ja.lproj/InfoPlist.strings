@@ -1,0 +1,31 @@
+/* 
+  InfoPlist.strings
+  SportsLife
+
+  Created by seven on 2020/4/23.
+  Copyright © 2020 west. All rights reserved.
+*/
+
+        
+
+
+
+"NSAppleMusicUsageDescription" = "APPにはあなたの同意が必要です";
+
+"NSBluetoothPeripheralUsageDescription" = "Appはあなたの同意が必要です";
+
+"NSCalendarsUsageDescription" = "カレンダーにアクセスするためにはアプリの承認が必要です";
+
+"NSCameraUsageDescription" = "このアプリはスキャンコードの検証とアップロードのカメラ権限にアクセスする";
+
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "APPメディアコーパスにアクセスするためにはあなたの同意が必要です";
+
+"NSLocationUsageDescription" = "Appはあなたの同意が必要で、利用期間中に位置にアクセスすることができます。";
+"NSLocationWhenInUseUsageDescription" = "Appはあなたの同意が必要で、常に位置にアクセスできる";
+"NSMicrophoneUsageDescription" = "アプリはあなたの同意がなければマイクにアクセスできない";
+
+"NSMotionUsageDescription" = "アプリはあなたの同意がなければ、運動や健康にアクセスできない";
+
+"NSPhotoLibraryUsageDescription" = "Appはあなたの同意が必要です。アルバムにアクセスできます。";
+"NSRemindersUsageDescription" = "アプリにはあなたの同意が必要です";
+

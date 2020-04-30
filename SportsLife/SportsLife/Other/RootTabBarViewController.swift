@@ -10,13 +10,12 @@ import UIKit
 
 class RootTabBarViewController: UITabBarController {
 
-    var defaultImageArr = ["新闻2","视频2","数据2","我的2"]
-    var selectImageArr  = ["新闻1","视频1","数据1","我的1"]
+    var defaultImageArr = ["新闻2","视频2","数据2","我的2"];
+    var selectImageArr  = ["新闻1","视频1","数据1","我的1"];
     var viewControllerArr = [SportsTableViewController(),ShopCollectionViewController(),HTRankBaseViewController(),MineTableViewController()]
-    var titleArr = ["首页","视频","数据","设置"]
+    var titleArr = [HTLanguageString("title"),"视频","数据","设置"]
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.configUI()
     }
 
@@ -35,7 +34,7 @@ class RootTabBarViewController: UITabBarController {
                                 four
                                 ]
         
-        one.title = "首页"
+        one.title = HTLanguageString("title")
         two.title = "视频"
         three.title = "数据"
         four.title = "设置"

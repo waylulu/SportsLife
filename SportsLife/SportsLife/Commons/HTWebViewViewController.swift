@@ -193,7 +193,11 @@ class HTWebViewViewController: HTBaseViewController ,WKNavigationDelegate,WKUIDe
     }
     
     func refreshWeb(){
-        webView.reload()
+        
+//        webView.reload()
+        
+        
+        self.webView.scrollView.snapshotView(afterScreenUpdates: true);
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -279,5 +283,7 @@ class HTWebViewViewController: HTBaseViewController ,WKNavigationDelegate,WKUIDe
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
+    
+    
     
 }

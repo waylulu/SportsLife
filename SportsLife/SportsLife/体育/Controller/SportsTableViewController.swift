@@ -412,9 +412,9 @@ extension SportsTableViewController{
     
     
     func getData(){
-        HTServices.htNet.getData(loadingView: self.view, urlString: yingChaoRickoUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: .get, parameters: [:]) { json  -> (Void)  in
+        HTServices.htNet.getData(loadingView: self.view, urlString: yingChaoRickoUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: .get, parameters: [:]) {[weak self] json  -> (Void)  in
 
-            AlertView.shard.alertDetail(controller: self, title: "点击了\(json)", bloack: {
+            AlertView.shard.alertDetail(controller: self!, title: "点击了\(json)", bloack: {
                 
             })
         }
@@ -423,7 +423,7 @@ extension SportsTableViewController{
     
     func login(){
         let dic = ["user_auth":"bf5Pqu7yrG3110vAulsqk6x807%2Bqp8XlApTwqy1etrkBfrR%2BhGR8IGBAcWNjA%2FeT0jizECpj%2Bggaw7YDeLnlu%2Fpz8F2rk1mrNVFrWLS0QXuSL8wfmYYz6YvRXzTrJEcGl%2691bcg3Zb5p6eK3Jkp4cIyiui%2BPVWz5rf15f3yDNri4jizhgi1kg%60pHiFZeiBMvdTGGuRv5GXg9sYxv","is_rookie":"0"]
-        HTServices.htNet.getData(loadingView: self.view, urlString: "https://pl.zhibo8.cc/mobile/sms_login_and_check.php", method: .post, parameters: dic) { (json) -> (Void) in
+        HTServices.htNet.getData(loadingView: self.view, urlString: "https://pl.zhibo8.cc/mobile/sms_login_and_check.php", method: .post, parameters: dic) {[weak self] (json) -> (Void) in
             print(json)
         }
     }
