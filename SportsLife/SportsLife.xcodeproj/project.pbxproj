@@ -94,6 +94,7 @@
 		14DB2D13230E317E0014F19C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2D12230E317E0014F19C /* SystemConfiguration.framework */; };
 		14DB2D15230E31850014F19C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2D14230E31850014F19C /* Security.framework */; };
 		14DB2D17230E318C0014F19C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DB2D16230E318C0014F19C /* UIKit.framework */; };
+		14F9FE39248DEDCD00847460 /* HTDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F9FE38248DEDCD00847460 /* HTDataBase.m */; };
 		7E7F330020DB9D1E00AA02EE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7E7F32FF20DB9D1D00AA02EE /* Podfile */; };
 		7EFC38D220DA2CCE005616D0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EFC38D120DA2CCE005616D0 /* Default-568h@2x.png */; };
 		B763FD29657F778BF255C48D /* Pods_SportsLife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 533DA9604F19D714F6EF2D3C /* Pods_SportsLife.framework */; };
@@ -208,6 +209,9 @@
 		14DB2D14230E31850014F19C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		14DB2D16230E318C0014F19C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		14DB2D1A230E33190014F19C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14F9FE37248DEDCD00847460 /* HTDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataBase.h; sourceTree = "<group>"; };
+		14F9FE38248DEDCD00847460 /* HTDataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataBase.m; sourceTree = "<group>"; };
+		14F9FE3A248DEE0600847460 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		533DA9604F19D714F6EF2D3C /* Pods_SportsLife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsLife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7F32FF20DB9D1D00AA02EE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7EFC389C20DA2884005616D0 /* SportsLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -478,6 +482,7 @@
 				14246914230FC4EC008E6987 /* HTBaseTableViewController.swift */,
 				140DB2C12333319600F87692 /* HTCustomViewController.swift */,
 				1454FE0323D2ABE1008539F7 /* Localizable.strings */,
+				14F9FE3A248DEE0600847460 /* PrefixHeader.pch */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -530,6 +535,15 @@
 				1417FB3723715DC000EB65F6 /* SwiftUIView.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		14F9FE36248DEDA700847460 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				14F9FE37248DEDCD00847460 /* HTDataBase.h */,
+				14F9FE38248DEDCD00847460 /* HTDataBase.m */,
+			);
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 		4EB67C44752F295A0C4B1E3F /* Frameworks */ = {
@@ -590,6 +604,7 @@
 		7EFC389E20DA2884005616D0 /* SportsLife */ = {
 			isa = PBXGroup;
 			children = (
+				14F9FE36248DEDA700847460 /* DataBase */,
 				1440A53323138C4A00165CA5 /* Network */,
 				14DB2CB9230E2FD20014F19C /* 个人中心 */,
 				14DB2CDC230E2FD20014F19C /* 购物 */,
@@ -837,6 +852,7 @@
 				14DB2CF7230E2FD20014F19C /* HTBaseViewController.swift in Sources */,
 				14DB2CEE230E2FD20014F19C /* HTNewsTableViewController.swift in Sources */,
 				144D22FF24518F01005FE88C /* HTLanguageDataModel.swift in Sources */,
+				14F9FE39248DEDCD00847460 /* HTDataBase.m in Sources */,
 				14DB2CE4230E2FD20014F19C /* PresentChooseViewController.swift in Sources */,
 				1440A5392313D9AD00165CA5 /* HTNewsModel.swift in Sources */,
 				1417FB3623715B1E00EB65F6 /* NSObject+HTTestCategory.m in Sources */,

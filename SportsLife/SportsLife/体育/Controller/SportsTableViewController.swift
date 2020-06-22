@@ -177,6 +177,7 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
             self.tableViewArr.append(tableView)
 //            view.backgroundColor = i == 1 ? UIColor.cyan : UIColor.green
             scrollView.addSubview(tableView)
+            
         }
         
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
@@ -196,6 +197,10 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
             TIME_MORE -= (24 * 60 * 60) ;
             self?.loadData(time: TIME_MORE)
         })
+        
+        self.tableViewArr[self.seg.selectedSegmentIndex].mj_header.addObserver(self, forKeyPath: "state", options: .new, context: nil);
+        self.tableViewArr[self.seg.selectedSegmentIndex].mj_footer.addObserver(self, forKeyPath: "state", options: .new, context: nil);
+
     }
     
     //    MARK:# 数据
@@ -214,6 +219,7 @@ class SportsTableViewController: HTBaseViewController,UITableViewDelegate,UITabl
 //            }
 //
 //        }
+        
         HTNewsDataViewModel().getNewsArr(url: newsUrl(time), loadingView: self.view) {[weak self] arr,json  in
     
             self?.tableViewArr[0].mj_footer.endRefreshing()
@@ -428,4 +434,35 @@ extension SportsTableViewController{
         }
     }
   
+    //监听
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+            print("==============")
+        if keyPath == "state" {
+            if self.tableViewArr[seg.selectedSegmentIndex].mj_header.state == .pulling || self.tableViewArr[seg.selectedSegmentIndex].mj_footer.state == .pulling {
+                self.feedbackGenerator();
+            }
+        }
+            print(keyPath);
+            print(object);
+                    
+    }
+    ///iOS10之后的震动反馈
+    func feedbackGenerator() {
+        let gen = UIImpactFeedbackGenerator.init(style: .light);//light震动效果的强弱
+        gen.prepare();//反馈延迟最小化
+        gen.impactOccurred()//触发效果
+//
+        //处理某类试件反馈
+//        let gen = UINotificationFeedbackGenerator.init()
+//        gen.notificationOccurred(.warning);//效果
+        
+//        选择时
+//        let gen = UISelectionFeedbackGenerator.init();
+//        gen.selectionChanged();
+        
+        
+        //message提醒震动太大
+//        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+
+    }
 }

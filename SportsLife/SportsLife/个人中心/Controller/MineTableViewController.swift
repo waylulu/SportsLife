@@ -103,6 +103,7 @@ class MineTableViewController: HTBaseTableViewController {
             return;
         }else if indexPath.row == 3{
            let vc = HTLanguageTableViewController()
+            vc.title = "国际化"
             self.navigationController?.pushViewController(vc, animated: true)
             return;
         }
